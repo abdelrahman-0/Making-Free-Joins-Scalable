@@ -1,0 +1,599 @@
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/5b
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/19c
+Num Nodes:	3
+Num Atoms:	5 2 4 
+Num Attributes:	2 1 3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/10b
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	3 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/8d
+Num Nodes:	1
+Num Atoms:	6 
+Num Attributes:	3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/12a
+Num Nodes:	4
+Num Atoms:	4 2 2 3 
+Num Attributes:	1 1 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/13b
+Num Nodes:	4
+Num Atoms:	5 2 2 3 
+Num Attributes:	2 1 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/4b
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/24a
+Num Nodes:	3
+Num Atoms:	6 2 2 
+Num Attributes:	2 1 1 
+Num Nodes:	1
+Num Atoms:	4 
+Num Attributes:	3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/1d
+Num Nodes:	3
+Num Atoms:	3 2 2 
+Num Attributes:	1 1 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/16d
+Num Nodes:	3
+Num Atoms:	5 2 2 
+Num Attributes:	2 1 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/7b
+Num Nodes:	3
+Num Atoms:	3 2 3 
+Num Attributes:	1 1 1 
+Num Nodes:	2
+Num Atoms:	2 2 
+Num Attributes:	1 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/6e
+Num Nodes:	1
+Num Atoms:	4 
+Num Attributes:	2 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/19b
+Num Nodes:	3
+Num Atoms:	5 2 4 
+Num Attributes:	2 1 3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/23a
+Num Nodes:	4
+Num Atoms:	6 2 2 3 
+Num Attributes:	2 1 1 2 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/2c
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/9a
+Num Nodes:	1
+Num Atoms:	7 
+Num Attributes:	4 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/4c
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/1a
+Num Nodes:	3
+Num Atoms:	3 2 2 
+Num Attributes:	1 1 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/26b
+Num Nodes:	1
+Num Atoms:	7 
+Num Attributes:	3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/27b
+Num Nodes:	1
+Num Atoms:	8 
+Num Attributes:	3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/2b
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/10c
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	3 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/4a
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/24b
+Num Nodes:	3
+Num Atoms:	6 2 2 
+Num Attributes:	2 1 1 
+Num Nodes:	1
+Num Atoms:	4 
+Num Attributes:	3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/9b
+Num Nodes:	1
+Num Atoms:	7 
+Num Attributes:	4 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/2d
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/33a
+Num Nodes:	2
+Num Atoms:	5 4 
+Num Attributes:	2 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/16c
+Num Nodes:	3
+Num Atoms:	5 2 2 
+Num Attributes:	2 1 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/8b
+Num Nodes:	1
+Num Atoms:	6 
+Num Attributes:	3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/10a
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	3 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/11b
+Num Nodes:	4
+Num Atoms:	4 2 2 3 
+Num Attributes:	1 1 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/15b
+Num Nodes:	3
+Num Atoms:	6 2 3 
+Num Attributes:	2 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/15d
+Num Nodes:	3
+Num Atoms:	6 2 3 
+Num Attributes:	2 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/11c
+Num Nodes:	4
+Num Atoms:	4 2 2 3 
+Num Attributes:	1 1 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/22b
+Num Nodes:	2
+Num Atoms:	6 2 
+Num Attributes:	2 1 
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/28b
+Num Nodes:	1
+Num Atoms:	8 
+Num Attributes:	3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/32b
+Num Nodes:	3
+Num Atoms:	3 3 2 
+Num Attributes:	1 2 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/13d
+Num Nodes:	4
+Num Atoms:	5 2 2 3 
+Num Attributes:	2 1 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/6a
+Num Nodes:	1
+Num Atoms:	4 
+Num Attributes:	2 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/3b
+Num Nodes:	1
+Num Atoms:	4 
+Num Attributes:	2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/6c
+Num Nodes:	1
+Num Atoms:	4 
+Num Attributes:	2 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/11a
+Num Nodes:	4
+Num Atoms:	4 2 2 3 
+Num Attributes:	1 1 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/9c
+Num Nodes:	1
+Num Atoms:	7 
+Num Attributes:	4 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/29b
+Num Nodes:	1
+Num Atoms:	8 
+Num Attributes:	3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	5 
+Num Attributes:	2 
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/15c
+Num Nodes:	3
+Num Atoms:	6 2 3 
+Num Attributes:	2 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/29a
+Num Nodes:	1
+Num Atoms:	8 
+Num Attributes:	3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	5 
+Num Attributes:	2 
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/17a
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	2 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/22a
+Num Nodes:	2
+Num Atoms:	6 2 
+Num Attributes:	2 1 
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/17c
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	2 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/17e
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	2 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/33c
+Num Nodes:	2
+Num Atoms:	5 4 
+Num Attributes:	2 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/17d
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	2 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/12b
+Num Nodes:	4
+Num Atoms:	4 2 2 3 
+Num Attributes:	1 1 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/17b
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	2 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/15a
+Num Nodes:	3
+Num Atoms:	6 2 3 
+Num Attributes:	2 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/16a
+Num Nodes:	3
+Num Atoms:	5 2 2 
+Num Attributes:	2 1 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/8a
+Num Nodes:	1
+Num Atoms:	6 
+Num Attributes:	3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/11d
+Num Nodes:	4
+Num Atoms:	4 2 2 3 
+Num Attributes:	1 1 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/29c
+Num Nodes:	1
+Num Atoms:	8 
+Num Attributes:	3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	5 
+Num Attributes:	2 
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/27a
+Num Nodes:	1
+Num Atoms:	8 
+Num Attributes:	3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/7c
+Num Nodes:	3
+Num Atoms:	3 2 3 
+Num Attributes:	1 1 1 
+Num Nodes:	2
+Num Atoms:	2 2 
+Num Attributes:	1 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/16b
+Num Nodes:	3
+Num Atoms:	5 2 2 
+Num Attributes:	2 1 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/33b
+Num Nodes:	2
+Num Atoms:	5 4 
+Num Attributes:	2 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/7a
+Num Nodes:	3
+Num Atoms:	3 2 3 
+Num Attributes:	1 1 1 
+Num Nodes:	2
+Num Atoms:	2 2 
+Num Attributes:	1 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/9d
+Num Nodes:	1
+Num Atoms:	7 
+Num Attributes:	4 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/23c
+Num Nodes:	4
+Num Atoms:	6 2 2 3 
+Num Attributes:	2 1 1 2 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/32a
+Num Nodes:	3
+Num Atoms:	3 3 2 
+Num Attributes:	1 2 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/8c
+Num Nodes:	1
+Num Atoms:	6 
+Num Attributes:	3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/23b
+Num Nodes:	4
+Num Atoms:	6 2 2 3 
+Num Attributes:	2 1 1 2 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/2a
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/19a
+Num Nodes:	3
+Num Atoms:	5 2 4 
+Num Attributes:	2 1 3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/1b
+Num Nodes:	3
+Num Atoms:	3 2 2 
+Num Attributes:	1 1 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/12c
+Num Nodes:	4
+Num Atoms:	4 2 2 3 
+Num Attributes:	1 1 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/1c
+Num Nodes:	3
+Num Atoms:	3 2 2 
+Num Attributes:	1 1 1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/17f
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	2 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/21b
+Num Nodes:	4
+Num Atoms:	5 2 2 3 
+Num Attributes:	1 1 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/13c
+Num Nodes:	4
+Num Atoms:	5 2 2 3 
+Num Attributes:	2 1 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/13a
+Num Nodes:	4
+Num Atoms:	5 2 2 3 
+Num Attributes:	2 1 1 2 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/19d
+Num Nodes:	3
+Num Atoms:	5 2 4 
+Num Attributes:	2 1 3 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/18a
+Num Nodes:	3
+Num Atoms:	4 2 2 
+Num Attributes:	1 1 1 
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 

@@ -1,0 +1,2114 @@
+Query: 10a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( mc ⨝ t ) ⨝ ct ) ⨝ cn ) ⨝ ( ci ⨝ rt ) ) ⨝ chn ) )
+Logical Operator Tree:		π( FJ( mc t ct cn FJ( ci rt ) chn ) )
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ( ct.id ) ( cn.id ) ( ci.movie_id ) ][ COVER( ci.person_role_id ) COVER( chn.id ) ]
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	3 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.role_id ) COVER( rt.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 10b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( mc ⨝ t ) ⨝ ct ) ⨝ cn ) ⨝ ( ci ⨝ rt ) ) ⨝ chn ) )
+Logical Operator Tree:		π( FJ( mc t ct cn FJ( ci rt ) chn ) )
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ( ct.id ) ( cn.id ) ( ci.movie_id ) ][ COVER( ci.person_role_id ) COVER( chn.id ) ]
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	3 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.role_id ) COVER( rt.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 10c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( mc ⨝ t ) ⨝ ct ) ⨝ cn ) ⨝ ( ci ⨝ rt ) ) ⨝ chn ) )
+Logical Operator Tree:		π( FJ( mc t ct cn FJ( ci rt ) chn ) )
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ( ct.id ) ( cn.id ) ( ci.movie_id ) ][ COVER( ci.person_role_id ) COVER( chn.id ) ]
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	3 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.role_id ) COVER( rt.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 11a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( t ⨝ ml ) ⨝ mk ) ⨝ mc ) ⨝ lt ) ⨝ k ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t ml mk mc lt k ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.movie_id ) COVER( mk.movie_id ) COVER( mc.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( mk.keyword_id ) COVER( k.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	4 2 2 3 
+Num Attributes:	1 1 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 11b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( t ⨝ ml ) ⨝ mk ) ⨝ mc ) ⨝ lt ) ⨝ k ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t ml mk mc lt k ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.movie_id ) COVER( mk.movie_id ) COVER( mc.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( mk.keyword_id ) COVER( k.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	4 2 2 3 
+Num Attributes:	1 1 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 11c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( t ⨝ ml ) ⨝ mk ) ⨝ mc ) ⨝ lt ) ⨝ k ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t ml mk mc lt k ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.movie_id ) COVER( mk.movie_id ) COVER( mc.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( mk.keyword_id ) COVER( k.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	4 2 2 3 
+Num Attributes:	1 1 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 11d
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( t ⨝ ml ) ⨝ mk ) ⨝ mc ) ⨝ lt ) ⨝ k ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t ml mk mc lt k ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.movie_id ) COVER( mk.movie_id ) COVER( mc.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( mk.keyword_id ) COVER( k.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	4 2 2 3 
+Num Attributes:	1 1 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 12a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( t ⨝ mi_idx ) ⨝ mi ) ⨝ mc ) ⨝ it2 ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t mi_idx mi mc it2 it1 ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mi.movie_id ) COVER( mc.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it2.id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	4 2 2 3 
+Num Attributes:	1 1 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 12b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( t ⨝ mi_idx ) ⨝ mi ) ⨝ mc ) ⨝ it2 ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t mi_idx mi mc it2 it1 ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mi.movie_id ) COVER( mc.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it2.id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	4 2 2 3 
+Num Attributes:	1 1 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 12c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( t ⨝ mi_idx ) ⨝ mi ) ⨝ mc ) ⨝ it2 ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t mi_idx mi mc it2 it1 ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mi.movie_id ) COVER( mc.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it2.id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	4 2 2 3 
+Num Attributes:	1 1 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 13a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( t ⨝ miidx ) ⨝ mi ) ⨝ mc ) ⨝ kt ) ⨝ it2 ) ⨝ it ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t miidx mi mc kt it2 it ct cn ) )
+Free Join Plan:	[ COVER( t.id t.kind_id ) ( miidx.movie_id ) ( mi.movie_id ) ( mc.movie_id ) ( kt.id ) ][ COVER( miidx.info_type_id ) COVER( it.id ) ][ COVER( mi.info_type_id ) COVER( it2.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	5 2 2 3 
+Num Attributes:	2 1 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 13b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( t ⨝ miidx ) ⨝ mi ) ⨝ mc ) ⨝ kt ) ⨝ it2 ) ⨝ it ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t miidx mi mc kt it2 it ct cn ) )
+Free Join Plan:	[ COVER( t.id t.kind_id ) ( miidx.movie_id ) ( mi.movie_id ) ( mc.movie_id ) ( kt.id ) ][ COVER( miidx.info_type_id ) COVER( it.id ) ][ COVER( mi.info_type_id ) COVER( it2.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	5 2 2 3 
+Num Attributes:	2 1 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 13c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( t ⨝ miidx ) ⨝ mi ) ⨝ mc ) ⨝ kt ) ⨝ it2 ) ⨝ it ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t miidx mi mc kt it2 it ct cn ) )
+Free Join Plan:	[ COVER( t.id t.kind_id ) ( miidx.movie_id ) ( mi.movie_id ) ( mc.movie_id ) ( kt.id ) ][ COVER( miidx.info_type_id ) COVER( it.id ) ][ COVER( mi.info_type_id ) COVER( it2.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	5 2 2 3 
+Num Attributes:	2 1 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 13d
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( t ⨝ miidx ) ⨝ mi ) ⨝ mc ) ⨝ kt ) ⨝ it2 ) ⨝ it ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t miidx mi mc kt it2 it ct cn ) )
+Free Join Plan:	[ COVER( t.id t.kind_id ) ( miidx.movie_id ) ( mi.movie_id ) ( mc.movie_id ) ( kt.id ) ][ COVER( miidx.info_type_id ) COVER( it.id ) ][ COVER( mi.info_type_id ) COVER( it2.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	5 2 2 3 
+Num Attributes:	2 1 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 15a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ k ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) ⨝ at ) )
+Logical Operator Tree:		π( FJ( mk t mi mc k it1 ct cn at ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( at.movie_id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	3
+Num Atoms:	6 2 3 
+Num Attributes:	2 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 1
+
+
+Query: 15b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ k ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) ⨝ at ) )
+Logical Operator Tree:		π( FJ( mk t mi mc k it1 ct cn at ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( at.movie_id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	3
+Num Atoms:	6 2 3 
+Num Attributes:	2 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 1
+
+
+Query: 15c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ k ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) ⨝ at ) )
+Logical Operator Tree:		π( FJ( mk t mi mc k it1 ct cn at ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( at.movie_id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	3
+Num Atoms:	6 2 3 
+Num Attributes:	2 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 1
+
+
+Query: 15d
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ k ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) ⨝ at ) )
+Logical Operator Tree:		π( FJ( mk t mi mc k it1 ct cn at ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( at.movie_id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	3
+Num Atoms:	6 2 3 
+Num Attributes:	2 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 1
+
+
+Query: 16a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) an ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ) COVER( an.person_id ) ]
+Num Nodes:	3
+Num Atoms:	5 2 2 
+Num Attributes:	2 1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 16b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) an ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ) COVER( an.person_id ) ]
+Num Nodes:	3
+Num Atoms:	5 2 2 
+Num Attributes:	2 1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 16c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) an ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ) COVER( an.person_id ) ]
+Num Nodes:	3
+Num Atoms:	5 2 2 
+Num Attributes:	2 1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 16d
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) an ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ) COVER( an.person_id ) ]
+Num Nodes:	3
+Num Atoms:	5 2 2 
+Num Attributes:	2 1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 17a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 17b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 17c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 17d
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 17e
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 17f
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 18a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( t ⨝ mi_idx ) ⨝ mi ) ⨝ it2 ) ⨝ it1 ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( t mi_idx mi it2 it1 FJ( ci n ) ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mi.movie_id ) COVER( ci.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it2.id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ]
+Num Nodes:	3
+Num Atoms:	4 2 2 
+Num Attributes:	1 1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 19a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mi ⨝ mc ) ⨝ it ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mi mc it cn FJ( ci n ) rt t chn an ) )
+Free Join Plan:	[ COVER( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ( it.id ) ( ci.movie_id ) ( t.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ci.person_role_id ci.role_id ) ( rt.id ) ( chn.id ) ( an.person_id ) ]
+Num Nodes:	3
+Num Atoms:	5 2 4 
+Num Attributes:	2 1 3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+Trie Height: 2
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 19b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mi ⨝ mc ) ⨝ it ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mi mc it cn FJ( ci n ) rt t chn an ) )
+Free Join Plan:	[ COVER( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ( it.id ) ( ci.movie_id ) ( t.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ci.person_role_id ci.role_id ) ( rt.id ) ( chn.id ) ( an.person_id ) ]
+Num Nodes:	3
+Num Atoms:	5 2 4 
+Num Attributes:	2 1 3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+Trie Height: 2
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 19c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mi ⨝ mc ) ⨝ it ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mi mc it cn FJ( ci n ) rt t chn an ) )
+Free Join Plan:	[ COVER( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ( it.id ) ( ci.movie_id ) ( t.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ci.person_role_id ci.role_id ) ( rt.id ) ( chn.id ) ( an.person_id ) ]
+Num Nodes:	3
+Num Atoms:	5 2 4 
+Num Attributes:	2 1 3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+Trie Height: 2
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 19d
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mi ⨝ mc ) ⨝ it ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mi mc it cn FJ( ci n ) rt t chn an ) )
+Free Join Plan:	[ COVER( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ( it.id ) ( ci.movie_id ) ( t.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ci.person_role_id ci.role_id ) ( rt.id ) ( chn.id ) ( an.person_id ) ]
+Num Nodes:	3
+Num Atoms:	5 2 4 
+Num Attributes:	2 1 3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+Trie Height: 2
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 1a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( t ⨝ mi_idx ) ⨝ mc ) ⨝ it ) ⨝ ct ) )
+Logical Operator Tree:		π( FJ( t mi_idx mc it ct ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mc.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it.id ) ][ COVER( mc.company_type_id ) COVER( ct.id ) ]
+Num Nodes:	3
+Num Atoms:	3 2 2 
+Num Attributes:	1 1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 1b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( t ⨝ mi_idx ) ⨝ mc ) ⨝ it ) ⨝ ct ) )
+Logical Operator Tree:		π( FJ( t mi_idx mc it ct ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mc.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it.id ) ][ COVER( mc.company_type_id ) COVER( ct.id ) ]
+Num Nodes:	3
+Num Atoms:	3 2 2 
+Num Attributes:	1 1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 1c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( t ⨝ mi_idx ) ⨝ mc ) ⨝ it ) ⨝ ct ) )
+Logical Operator Tree:		π( FJ( t mi_idx mc it ct ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mc.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it.id ) ][ COVER( mc.company_type_id ) COVER( ct.id ) ]
+Num Nodes:	3
+Num Atoms:	3 2 2 
+Num Attributes:	1 1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 1d
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( t ⨝ mi_idx ) ⨝ mc ) ⨝ it ) ⨝ ct ) )
+Logical Operator Tree:		π( FJ( t mi_idx mc it ct ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mc.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it.id ) ][ COVER( mc.company_type_id ) COVER( ct.id ) ]
+Num Nodes:	3
+Num Atoms:	3 2 2 
+Num Attributes:	1 1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 21b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( t ⨝ ml ) ⨝ mk ) ⨝ mi ) ⨝ mc ) ⨝ lt ) ⨝ k ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t ml mk mi mc lt k ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.movie_id ) COVER( mk.movie_id ) COVER( mi.movie_id ) COVER( mc.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( mk.keyword_id ) COVER( k.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	5 2 2 3 
+Num Attributes:	1 1 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 22a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( t ⨝ mi_idx ) ⨝ kt ) ⨝ it2 ) ⨝ ( ( mc ⨝ cn ) ⨝ ct ) ) ⨝ ( mk ⨝ k ) ) ⨝ ( mi ⨝ it1 ) ) )
+Logical Operator Tree:		π( FJ( t mi_idx kt it2 FJ( mc cn ct ) FJ( mk k ) FJ( mi it1 ) ) )
+Free Join Plan:	[ COVER( t.id t.kind_id ) ( mi_idx.movie_id ) ( kt.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it2.id ) ]
+Num Nodes:	2
+Num Atoms:	6 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id ) ( cn.id ) ( ct.id ) ]
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mi.info_type_id ) COVER( it1.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 22b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( t ⨝ mi_idx ) ⨝ kt ) ⨝ it2 ) ⨝ ( ( mc ⨝ cn ) ⨝ ct ) ) ⨝ ( mk ⨝ k ) ) ⨝ ( mi ⨝ it1 ) ) )
+Logical Operator Tree:		π( FJ( t mi_idx kt it2 FJ( mc cn ct ) FJ( mk k ) FJ( mi it1 ) ) )
+Free Join Plan:	[ COVER( t.id t.kind_id ) ( mi_idx.movie_id ) ( kt.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it2.id ) ]
+Num Nodes:	2
+Num Atoms:	6 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id ) ( cn.id ) ( ct.id ) ]
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mi.info_type_id ) COVER( it1.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 23a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ kt ) ⨝ k ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) ⨝ ( cc ⨝ cct1 ) ) )
+Logical Operator Tree:		π( FJ( mk t mi mc kt k it1 ct cn FJ( cc cct1 ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( cc.movie_id ) ][ COVER( t.kind_id ) COVER( kt.id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	6 2 2 3 
+Num Attributes:	2 1 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 2
+
+Free Join Plan:	[ COVER( cc.status_id ) COVER( cct1.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 23b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ kt ) ⨝ k ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) ⨝ ( cc ⨝ cct1 ) ) )
+Logical Operator Tree:		π( FJ( mk t mi mc kt k it1 ct cn FJ( cc cct1 ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( cc.movie_id ) ][ COVER( t.kind_id ) COVER( kt.id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	6 2 2 3 
+Num Attributes:	2 1 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 2
+
+Free Join Plan:	[ COVER( cc.status_id ) COVER( cct1.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 23c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ kt ) ⨝ k ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) ⨝ ( cc ⨝ cct1 ) ) )
+Logical Operator Tree:		π( FJ( mk t mi mc kt k it1 ct cn FJ( cc cct1 ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( cc.movie_id ) ][ COVER( t.kind_id ) COVER( kt.id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	6 2 2 3 
+Num Attributes:	2 1 1 2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 2
+
+Free Join Plan:	[ COVER( cc.status_id ) COVER( cct1.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 24a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ k ) ⨝ it ) ⨝ cn ) ⨝ ( ( ( ci ⨝ chn ) ⨝ rt ) ⨝ ( n ⨝ an ) ) ) )
+Logical Operator Tree:		π( FJ( mk t mi mc k it cn FJ( ci chn rt FJ( n an ) ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mi.info_type_id ) COVER( it.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	3
+Num Atoms:	6 2 2 
+Num Attributes:	2 1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) ( n.id an.person_id ) ]
+Num Nodes:	1
+Num Atoms:	4 
+Num Attributes:	3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( n.id ) COVER( an.person_id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 24b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ k ) ⨝ it ) ⨝ cn ) ⨝ ( ( ( ci ⨝ chn ) ⨝ rt ) ⨝ ( n ⨝ an ) ) ) )
+Logical Operator Tree:		π( FJ( mk t mi mc k it cn FJ( ci chn rt FJ( n an ) ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mi.info_type_id ) COVER( it.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	3
+Num Atoms:	6 2 2 
+Num Attributes:	2 1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) ( n.id an.person_id ) ]
+Num Nodes:	1
+Num Atoms:	4 
+Num Attributes:	3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( n.id ) COVER( an.person_id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 26b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( cc ⨝ cct1 ) ⨝ cct2 ) ⨝ ( mi_idx ⨝ it2 ) ) ⨝ ( t ⨝ kt ) ) ⨝ ( mk ⨝ k ) ) ⨝ ( ( ci ⨝ n ) ⨝ chn ) ) )
+Logical Operator Tree:		π( FJ( cc cct1 cct2 FJ( mi_idx it2 ) FJ( t kt ) FJ( mk k ) FJ( ci n chn ) ) )
+Free Join Plan:	[ COVER( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( mi_idx.movie_id ) ( t.id ) ( mk.movie_id ) ( ci.movie_id ) ]
+Num Nodes:	1
+Num Atoms:	7 
+Num Attributes:	3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mi_idx.info_type_id ) COVER( it2.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( t.kind_id ) COVER( kt.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ci.person_role_id ) ( n.id ) ( chn.id ) ]
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+
+
+Query: 27a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( cc ⨝ cct1 ) ⨝ cct2 ) ⨝ ( ml ⨝ lt ) ) ⨝ t ) ⨝ ( ( mc ⨝ ct ) ⨝ cn ) ) ⨝ ( mk ⨝ k ) ) ⨝ mi ) )
+Logical Operator Tree:		π( FJ( cc cct1 cct2 FJ( ml lt ) t FJ( mc ct cn ) FJ( mk k ) mi ) )
+Free Join Plan:	[ COVER( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( ml.movie_id ) ( t.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ]
+Num Nodes:	1
+Num Atoms:	8 
+Num Attributes:	3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ml.link_type_id ) COVER( lt.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 27b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( cc ⨝ cct1 ) ⨝ cct2 ) ⨝ ( ml ⨝ lt ) ) ⨝ t ) ⨝ ( ( mc ⨝ ct ) ⨝ cn ) ) ⨝ ( mk ⨝ k ) ) ⨝ mi ) )
+Logical Operator Tree:		π( FJ( cc cct1 cct2 FJ( ml lt ) t FJ( mc ct cn ) FJ( mk k ) mi ) )
+Free Join Plan:	[ COVER( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( ml.movie_id ) ( t.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ]
+Num Nodes:	1
+Num Atoms:	8 
+Num Attributes:	3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ml.link_type_id ) COVER( lt.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 28b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( cc ⨝ cct1 ) ⨝ cct2 ) ⨝ ( mi_idx ⨝ it2 ) ) ⨝ ( t ⨝ kt ) ) ⨝ ( ( mc ⨝ cn ) ⨝ ct ) ) ⨝ ( mk ⨝ k ) ) ⨝ ( mi ⨝ it1 ) ) )
+Logical Operator Tree:		π( FJ( cc cct1 cct2 FJ( mi_idx it2 ) FJ( t kt ) FJ( mc cn ct ) FJ( mk k ) FJ( mi it1 ) ) )
+Free Join Plan:	[ COVER( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( mi_idx.movie_id ) ( t.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ]
+Num Nodes:	1
+Num Atoms:	8 
+Num Attributes:	3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mi_idx.info_type_id ) COVER( it2.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( t.kind_id ) COVER( kt.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id ) ( cn.id ) ( ct.id ) ]
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mi.info_type_id ) COVER( it1.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 29a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( cc ⨝ cct1 ) ⨝ cct2 ) ⨝ t ) ⨝ ( mc ⨝ cn ) ) ⨝ ( mk ⨝ k ) ) ⨝ ( mi ⨝ it ) ) ⨝ ( ( ( ( pi ⨝ an ) ⨝ it3 ) ⨝ n ) ⨝ ( ( ci ⨝ chn ) ⨝ rt ) ) ) )
+Logical Operator Tree:		π( FJ( cc cct1 cct2 t FJ( mc cn ) FJ( mk k ) FJ( mi it ) FJ( pi an it3 n FJ( ci chn rt ) ) ) )
+Free Join Plan:	[ COVER( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( t.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ( ci.movie_id ) ]
+Num Nodes:	1
+Num Atoms:	8 
+Num Attributes:	3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mi.info_type_id ) COVER( it.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( pi.info_type_id pi.person_id ) ( an.person_id ) ( it3.id ) ( n.id ) ( ci.person_id ) ]
+Num Nodes:	1
+Num Atoms:	5 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) ]
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+
+
+Query: 29b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( cc ⨝ cct1 ) ⨝ cct2 ) ⨝ t ) ⨝ ( mc ⨝ cn ) ) ⨝ ( mk ⨝ k ) ) ⨝ ( mi ⨝ it ) ) ⨝ ( ( ( ( pi ⨝ an ) ⨝ it3 ) ⨝ n ) ⨝ ( ( ci ⨝ chn ) ⨝ rt ) ) ) )
+Logical Operator Tree:		π( FJ( cc cct1 cct2 t FJ( mc cn ) FJ( mk k ) FJ( mi it ) FJ( pi an it3 n FJ( ci chn rt ) ) ) )
+Free Join Plan:	[ COVER( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( t.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ( ci.movie_id ) ]
+Num Nodes:	1
+Num Atoms:	8 
+Num Attributes:	3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mi.info_type_id ) COVER( it.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( pi.info_type_id pi.person_id ) ( an.person_id ) ( it3.id ) ( n.id ) ( ci.person_id ) ]
+Num Nodes:	1
+Num Atoms:	5 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) ]
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+
+
+Query: 29c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( cc ⨝ cct1 ) ⨝ cct2 ) ⨝ t ) ⨝ ( mc ⨝ cn ) ) ⨝ ( mk ⨝ k ) ) ⨝ ( mi ⨝ it ) ) ⨝ ( ( ( ( pi ⨝ an ) ⨝ it3 ) ⨝ n ) ⨝ ( ( ci ⨝ chn ) ⨝ rt ) ) ) )
+Logical Operator Tree:		π( FJ( cc cct1 cct2 t FJ( mc cn ) FJ( mk k ) FJ( mi it ) FJ( pi an it3 n FJ( ci chn rt ) ) ) )
+Free Join Plan:	[ COVER( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( t.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ( ci.movie_id ) ]
+Num Nodes:	1
+Num Atoms:	8 
+Num Attributes:	3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mi.info_type_id ) COVER( it.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( pi.info_type_id pi.person_id ) ( an.person_id ) ( it3.id ) ( n.id ) ( ci.person_id ) ]
+Num Nodes:	1
+Num Atoms:	5 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) ]
+Num Nodes:	1
+Num Atoms:	3 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+
+
+Query: 2a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+
+Query: 2b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+
+Query: 2c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+
+Query: 2d
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+
+Query: 32a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( t1 ⨝ ml ) ⨝ t2 ) ⨝ mk ) ⨝ lt ) ⨝ k ) )
+Logical Operator Tree:		π( FJ( t1 ml t2 mk lt k ) )
+Free Join Plan:	[ COVER( t1.id ) COVER( ml.movie_id ) COVER( mk.movie_id ) ][ COVER( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ( lt.id ) ][ COVER( mk.keyword_id ) COVER( k.id ) ]
+Num Nodes:	3
+Num Atoms:	3 3 2 
+Num Attributes:	1 2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 32b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( t1 ⨝ ml ) ⨝ t2 ) ⨝ mk ) ⨝ lt ) ⨝ k ) )
+Logical Operator Tree:		π( FJ( t1 ml t2 mk lt k ) )
+Free Join Plan:	[ COVER( t1.id ) COVER( ml.movie_id ) COVER( mk.movie_id ) ][ COVER( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ( lt.id ) ][ COVER( mk.keyword_id ) COVER( k.id ) ]
+Num Nodes:	3
+Num Atoms:	3 3 2 
+Num Attributes:	1 2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+
+
+Query: 33a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( mi_idx1 ⨝ it1 ) ⨝ ( ml ⨝ lt ) ) ⨝ ( mi_idx2 ⨝ it2 ) ) ⨝ ( t1 ⨝ kt1 ) ) ⨝ ( t2 ⨝ kt2 ) ) ⨝ ( mc1 ⨝ cn1 ) ) ⨝ ( mc2 ⨝ cn2 ) ) )
+Logical Operator Tree:		π( FJ( mi_idx1 it1 FJ( ml lt ) FJ( mi_idx2 it2 ) FJ( t1 kt1 ) FJ( t2 kt2 ) FJ( mc1 cn1 ) FJ( mc2 cn2 ) ) )
+Free Join Plan:	[ COVER( mi_idx1.info_type_id mi_idx1.movie_id ) ( it1.id ) ( ml.movie_id ) ( t1.id ) ( mc1.movie_id ) ][ COVER( ml.linked_movie_id ) COVER( mi_idx2.movie_id ) COVER( t2.id ) COVER( mc2.movie_id ) ]
+Num Nodes:	2
+Num Atoms:	5 4 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ml.link_type_id ) COVER( lt.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mi_idx2.info_type_id ) COVER( it2.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( t1.kind_id ) COVER( kt1.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( t2.kind_id ) COVER( kt2.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc1.company_id ) COVER( cn1.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc2.company_id ) COVER( cn2.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 33b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( mi_idx1 ⨝ it1 ) ⨝ ( ml ⨝ lt ) ) ⨝ ( mi_idx2 ⨝ it2 ) ) ⨝ ( t1 ⨝ kt1 ) ) ⨝ ( t2 ⨝ kt2 ) ) ⨝ ( mc1 ⨝ cn1 ) ) ⨝ ( mc2 ⨝ cn2 ) ) )
+Logical Operator Tree:		π( FJ( mi_idx1 it1 FJ( ml lt ) FJ( mi_idx2 it2 ) FJ( t1 kt1 ) FJ( t2 kt2 ) FJ( mc1 cn1 ) FJ( mc2 cn2 ) ) )
+Free Join Plan:	[ COVER( mi_idx1.info_type_id mi_idx1.movie_id ) ( it1.id ) ( ml.movie_id ) ( t1.id ) ( mc1.movie_id ) ][ COVER( ml.linked_movie_id ) COVER( mi_idx2.movie_id ) COVER( t2.id ) COVER( mc2.movie_id ) ]
+Num Nodes:	2
+Num Atoms:	5 4 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ml.link_type_id ) COVER( lt.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mi_idx2.info_type_id ) COVER( it2.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( t1.kind_id ) COVER( kt1.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( t2.kind_id ) COVER( kt2.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc1.company_id ) COVER( cn1.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc2.company_id ) COVER( cn2.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 33c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ( mi_idx1 ⨝ it1 ) ⨝ ( ml ⨝ lt ) ) ⨝ ( mi_idx2 ⨝ it2 ) ) ⨝ ( t1 ⨝ kt1 ) ) ⨝ ( t2 ⨝ kt2 ) ) ⨝ ( mc1 ⨝ cn1 ) ) ⨝ ( mc2 ⨝ cn2 ) ) )
+Logical Operator Tree:		π( FJ( mi_idx1 it1 FJ( ml lt ) FJ( mi_idx2 it2 ) FJ( t1 kt1 ) FJ( t2 kt2 ) FJ( mc1 cn1 ) FJ( mc2 cn2 ) ) )
+Free Join Plan:	[ COVER( mi_idx1.info_type_id mi_idx1.movie_id ) ( it1.id ) ( ml.movie_id ) ( t1.id ) ( mc1.movie_id ) ][ COVER( ml.linked_movie_id ) COVER( mi_idx2.movie_id ) COVER( t2.id ) COVER( mc2.movie_id ) ]
+Num Nodes:	2
+Num Atoms:	5 4 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ml.link_type_id ) COVER( lt.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mi_idx2.info_type_id ) COVER( it2.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( t1.kind_id ) COVER( kt1.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( t2.kind_id ) COVER( kt2.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc1.company_id ) COVER( cn1.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc2.company_id ) COVER( cn2.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 3b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ k ) )
+Logical Operator Tree:		π( FJ( mk t mi k ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( k.id ) ]
+Num Nodes:	1
+Num Atoms:	4 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+
+Query: 4a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( mk ⨝ t ) ⨝ mi_idx ) ⨝ k ) ⨝ it ) )
+Logical Operator Tree:		π( FJ( mk t mi_idx k it ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi_idx.movie_id ) ( k.id ) ][ COVER( mi_idx.info_type_id ) COVER( it.id ) ]
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+
+Query: 4b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( mk ⨝ t ) ⨝ mi_idx ) ⨝ k ) ⨝ it ) )
+Logical Operator Tree:		π( FJ( mk t mi_idx k it ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi_idx.movie_id ) ( k.id ) ][ COVER( mi_idx.info_type_id ) COVER( it.id ) ]
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+
+Query: 4c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( mk ⨝ t ) ⨝ mi_idx ) ⨝ k ) ⨝ it ) )
+Logical Operator Tree:		π( FJ( mk t mi_idx k it ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi_idx.movie_id ) ( k.id ) ][ COVER( mi_idx.info_type_id ) COVER( it.id ) ]
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+
+Query: 5b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( mi ⨝ t ) ⨝ mc ) ⨝ it ) ⨝ ct ) )
+Logical Operator Tree:		π( FJ( mi t mc it ct ) )
+Free Join Plan:	[ COVER( mi.info_type_id mi.movie_id ) ( t.id ) ( mc.movie_id ) ( it.id ) ][ COVER( mc.company_type_id ) COVER( ct.id ) ]
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 1
+
+
+Query: 6a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( mk ⨝ t ) ⨝ k ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t k FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( k.id ) ( ci.movie_id ) ]
+Num Nodes:	1
+Num Atoms:	4 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 6c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( mk ⨝ t ) ⨝ k ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t k FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( k.id ) ( ci.movie_id ) ]
+Num Nodes:	1
+Num Atoms:	4 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 6e
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( mk ⨝ t ) ⨝ k ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t k FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( k.id ) ( ci.movie_id ) ]
+Num Nodes:	1
+Num Atoms:	4 
+Num Attributes:	2 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 7a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( t ⨝ ml ) ⨝ lt ) ⨝ ci ) ⨝ ( ( n ⨝ pi ) ⨝ it ) ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( t ml lt ci FJ( n pi it ) an ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.linked_movie_id ) COVER( ci.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( ci.person_id ) ( n.id pi.person_id ) COVER( an.person_id ) ]
+Num Nodes:	3
+Num Atoms:	3 2 3 
+Num Attributes:	1 1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+
+Free Join Plan:	[ COVER( n.id ) COVER( pi.person_id ) ][ COVER( pi.info_type_id ) COVER( it.id ) ]
+Num Nodes:	2
+Num Atoms:	2 2 
+Num Attributes:	1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 2
+
+
+Query: 7b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( t ⨝ ml ) ⨝ lt ) ⨝ ci ) ⨝ ( ( n ⨝ pi ) ⨝ it ) ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( t ml lt ci FJ( n pi it ) an ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.linked_movie_id ) COVER( ci.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( ci.person_id ) ( n.id pi.person_id ) COVER( an.person_id ) ]
+Num Nodes:	3
+Num Atoms:	3 2 3 
+Num Attributes:	1 1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+
+Free Join Plan:	[ COVER( n.id ) COVER( pi.person_id ) ][ COVER( pi.info_type_id ) COVER( it.id ) ]
+Num Nodes:	2
+Num Atoms:	2 2 
+Num Attributes:	1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 2
+
+
+Query: 7c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( t ⨝ ml ) ⨝ lt ) ⨝ ci ) ⨝ ( ( n ⨝ pi ) ⨝ it ) ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( t ml lt ci FJ( n pi it ) an ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.linked_movie_id ) COVER( ci.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( ci.person_id ) ( n.id pi.person_id ) COVER( an.person_id ) ]
+Num Nodes:	3
+Num Atoms:	3 2 3 
+Num Attributes:	1 1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 2
+Trie Height: 2
+
+Free Join Plan:	[ COVER( n.id ) COVER( pi.person_id ) ][ COVER( pi.info_type_id ) COVER( it.id ) ]
+Num Nodes:	2
+Num Atoms:	2 2 
+Num Attributes:	1 1 
+Trie Height:
+Trie Height: 1
+Trie Height: 2
+
+
+Query: 8a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ci ⨝ n1 ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ an1 ) )
+Logical Operator Tree:		π( FJ( ci n1 FJ( mc cn ) rt t an1 ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( an1.person_id ) ]
+Num Nodes:	1
+Num Atoms:	6 
+Num Attributes:	3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 8b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t an ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.role_id ) ( n.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( an.person_id ) ]
+Num Nodes:	1
+Num Atoms:	6 
+Num Attributes:	3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 8c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ci ⨝ n1 ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ a1 ) )
+Logical Operator Tree:		π( FJ( ci n1 FJ( mc cn ) rt t a1 ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( a1.person_id ) ]
+Num Nodes:	1
+Num Atoms:	6 
+Num Attributes:	3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 8d
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ci ⨝ n1 ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ an1 ) )
+Logical Operator Tree:		π( FJ( ci n1 FJ( mc cn ) rt t an1 ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( an1.person_id ) ]
+Num Nodes:	1
+Num Atoms:	6 
+Num Attributes:	3 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 9a
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ]
+Num Nodes:	1
+Num Atoms:	7 
+Num Attributes:	4 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 9b
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ]
+Num Nodes:	1
+Num Atoms:	7 
+Num Attributes:	4 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 9c
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ]
+Num Nodes:	1
+Num Atoms:	7 
+Num Attributes:	4 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+
+Query: 9d
+Using: 12 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ]
+Num Nodes:	1
+Num Atoms:	7 
+Num Attributes:	4 
+Trie Height:
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+Trie Height:
+Trie Height: 1
+
+

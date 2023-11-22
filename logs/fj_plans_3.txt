@@ -1,0 +1,653 @@
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/5b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( mi ⨝ t ) ⨝ mc ) ⨝ it ) ⨝ ct ) )
+Logical Operator Tree:		π( FJ( mi t mc it ct ) )
+Free Join Plan:	[ COVER( mi.info_type_id mi.movie_id ) ( t.id ) ( mc.movie_id ) ( it.id ) ][ COVER( mc.company_type_id ) COVER( ct.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/19c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mi ⨝ mc ) ⨝ it ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mi mc it cn FJ( ci n ) rt t chn an ) )
+Free Join Plan:	[ COVER( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ( it.id ) ( ci.movie_id ) ( t.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ci.person_role_id ci.role_id ) ( rt.id ) ( chn.id ) ( an.person_id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/10b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( mc ⨝ t ) ⨝ ct ) ⨝ cn ) ⨝ ( ci ⨝ rt ) ) ⨝ chn ) )
+Logical Operator Tree:		π( FJ( mc t ct cn FJ( ci rt ) chn ) )
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ( ct.id ) ( cn.id ) ( ci.movie_id ) ][ COVER( ci.person_role_id ) COVER( chn.id ) ]
+Free Join Plan:	[ COVER( ci.role_id ) COVER( rt.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/8d.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ci ⨝ n1 ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ an1 ) )
+Logical Operator Tree:		π( FJ( ci n1 FJ( mc cn ) rt t an1 ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( an1.person_id ) ]
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/12a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( t ⨝ mi_idx ) ⨝ mi ) ⨝ mc ) ⨝ it2 ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t mi_idx mi mc it2 it1 ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mi.movie_id ) COVER( mc.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it2.id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/13b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( t ⨝ miidx ) ⨝ mi ) ⨝ mc ) ⨝ kt ) ⨝ it2 ) ⨝ it ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t miidx mi mc kt it2 it ct cn ) )
+Free Join Plan:	[ COVER( t.id t.kind_id ) ( miidx.movie_id ) ( mi.movie_id ) ( mc.movie_id ) ( kt.id ) ][ COVER( miidx.info_type_id ) COVER( it.id ) ][ COVER( mi.info_type_id ) COVER( it2.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/4b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( mk ⨝ t ) ⨝ mi_idx ) ⨝ k ) ⨝ it ) )
+Logical Operator Tree:		π( FJ( mk t mi_idx k it ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi_idx.movie_id ) ( k.id ) ][ COVER( mi_idx.info_type_id ) COVER( it.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/24a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ k ) ⨝ it ) ⨝ cn ) ⨝ ( ( ( ci ⨝ chn ) ⨝ rt ) ⨝ ( n ⨝ an ) ) ) )
+Logical Operator Tree:		π( FJ( mk t mi mc k it cn FJ( ci chn rt FJ( n an ) ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mi.info_type_id ) COVER( it.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Free Join Plan:	[ COVER( ci.person_id ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) ( n.id an.person_id ) ]
+Free Join Plan:	[ COVER( n.id ) COVER( an.person_id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/1d.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( t ⨝ mi_idx ) ⨝ mc ) ⨝ it ) ⨝ ct ) )
+Logical Operator Tree:		π( FJ( t mi_idx mc it ct ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mc.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it.id ) ][ COVER( mc.company_type_id ) COVER( ct.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/16d.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) an ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ) COVER( an.person_id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/7b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( t ⨝ ml ) ⨝ lt ) ⨝ ci ) ⨝ ( ( n ⨝ pi ) ⨝ it ) ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( t ml lt ci FJ( n pi it ) an ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.linked_movie_id ) COVER( ci.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( ci.person_id ) ( n.id pi.person_id ) COVER( an.person_id ) ]
+Free Join Plan:	[ COVER( n.id ) COVER( pi.person_id ) ][ COVER( pi.info_type_id ) COVER( it.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN SCAN ) SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/6e.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( mk ⨝ t ) ⨝ k ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t k FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( k.id ) ( ci.movie_id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/19b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mi ⨝ mc ) ⨝ it ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mi mc it cn FJ( ci n ) rt t chn an ) )
+Free Join Plan:	[ COVER( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ( it.id ) ( ci.movie_id ) ( t.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ci.person_role_id ci.role_id ) ( rt.id ) ( chn.id ) ( an.person_id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/23a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ kt ) ⨝ k ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) ⨝ ( cc ⨝ cct1 ) ) )
+Logical Operator Tree:		π( FJ( mk t mi mc kt k it1 ct cn FJ( cc cct1 ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( cc.movie_id ) ][ COVER( t.kind_id ) COVER( kt.id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Free Join Plan:	[ COVER( cc.status_id ) COVER( cct1.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/2c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/9a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ]
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/4c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( mk ⨝ t ) ⨝ mi_idx ) ⨝ k ) ⨝ it ) )
+Logical Operator Tree:		π( FJ( mk t mi_idx k it ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi_idx.movie_id ) ( k.id ) ][ COVER( mi_idx.info_type_id ) COVER( it.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/1a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( t ⨝ mi_idx ) ⨝ mc ) ⨝ it ) ⨝ ct ) )
+Logical Operator Tree:		π( FJ( t mi_idx mc it ct ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mc.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it.id ) ][ COVER( mc.company_type_id ) COVER( ct.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/26b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( cc ⨝ cct1 ) ⨝ cct2 ) ⨝ ( mi_idx ⨝ it2 ) ) ⨝ ( t ⨝ kt ) ) ⨝ ( mk ⨝ k ) ) ⨝ ( ( ci ⨝ n ) ⨝ chn ) ) )
+Logical Operator Tree:		π( FJ( cc cct1 cct2 FJ( mi_idx it2 ) FJ( t kt ) FJ( mk k ) FJ( ci n chn ) ) )
+Free Join Plan:	[ COVER( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( mi_idx.movie_id ) ( t.id ) ( mk.movie_id ) ( ci.movie_id ) ]
+Free Join Plan:	[ COVER( mi_idx.info_type_id ) COVER( it2.id ) ]
+Free Join Plan:	[ COVER( t.kind_id ) COVER( kt.id ) ]
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Free Join Plan:	[ COVER( ci.person_id ci.person_role_id ) ( n.id ) ( chn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/27b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( cc ⨝ cct1 ) ⨝ cct2 ) ⨝ ( ml ⨝ lt ) ) ⨝ t ) ⨝ ( ( mc ⨝ ct ) ⨝ cn ) ) ⨝ ( mk ⨝ k ) ) ⨝ mi ) )
+Logical Operator Tree:		π( FJ( cc cct1 cct2 FJ( ml lt ) t FJ( mc ct cn ) FJ( mk k ) mi ) )
+Free Join Plan:	[ COVER( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( ml.movie_id ) ( t.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ]
+Free Join Plan:	[ COVER( ml.link_type_id ) COVER( lt.id ) ]
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN FREEJOIN( SCAN SCAN SCAN ) FREEJOIN( SCAN SCAN ) SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/2b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/10c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( mc ⨝ t ) ⨝ ct ) ⨝ cn ) ⨝ ( ci ⨝ rt ) ) ⨝ chn ) )
+Logical Operator Tree:		π( FJ( mc t ct cn FJ( ci rt ) chn ) )
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ( ct.id ) ( cn.id ) ( ci.movie_id ) ][ COVER( ci.person_role_id ) COVER( chn.id ) ]
+Free Join Plan:	[ COVER( ci.role_id ) COVER( rt.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/4a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( mk ⨝ t ) ⨝ mi_idx ) ⨝ k ) ⨝ it ) )
+Logical Operator Tree:		π( FJ( mk t mi_idx k it ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi_idx.movie_id ) ( k.id ) ][ COVER( mi_idx.info_type_id ) COVER( it.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/24b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ k ) ⨝ it ) ⨝ cn ) ⨝ ( ( ( ci ⨝ chn ) ⨝ rt ) ⨝ ( n ⨝ an ) ) ) )
+Logical Operator Tree:		π( FJ( mk t mi mc k it cn FJ( ci chn rt FJ( n an ) ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mi.info_type_id ) COVER( it.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Free Join Plan:	[ COVER( ci.person_id ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) ( n.id an.person_id ) ]
+Free Join Plan:	[ COVER( n.id ) COVER( an.person_id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/9b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ]
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/2d.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/33a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( mi_idx1 ⨝ it1 ) ⨝ ( ml ⨝ lt ) ) ⨝ ( mi_idx2 ⨝ it2 ) ) ⨝ ( t1 ⨝ kt1 ) ) ⨝ ( t2 ⨝ kt2 ) ) ⨝ ( mc1 ⨝ cn1 ) ) ⨝ ( mc2 ⨝ cn2 ) ) )
+Logical Operator Tree:		π( FJ( mi_idx1 it1 FJ( ml lt ) FJ( mi_idx2 it2 ) FJ( t1 kt1 ) FJ( t2 kt2 ) FJ( mc1 cn1 ) FJ( mc2 cn2 ) ) )
+Free Join Plan:	[ COVER( mi_idx1.info_type_id mi_idx1.movie_id ) ( it1.id ) ( ml.movie_id ) ( t1.id ) ( mc1.movie_id ) ][ COVER( ml.linked_movie_id ) COVER( mi_idx2.movie_id ) COVER( t2.id ) COVER( mc2.movie_id ) ]
+Free Join Plan:	[ COVER( ml.link_type_id ) COVER( lt.id ) ]
+Free Join Plan:	[ COVER( mi_idx2.info_type_id ) COVER( it2.id ) ]
+Free Join Plan:	[ COVER( t1.kind_id ) COVER( kt1.id ) ]
+Free Join Plan:	[ COVER( t2.kind_id ) COVER( kt2.id ) ]
+Free Join Plan:	[ COVER( mc1.company_id ) COVER( cn1.id ) ]
+Free Join Plan:	[ COVER( mc2.company_id ) COVER( cn2.id ) ]
+PROJ( FREEJOIN( SCAN SCAN FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/16c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) an ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ) COVER( an.person_id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/8b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t an ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.role_id ) ( n.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( an.person_id ) ]
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/10a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( mc ⨝ t ) ⨝ ct ) ⨝ cn ) ⨝ ( ci ⨝ rt ) ) ⨝ chn ) )
+Logical Operator Tree:		π( FJ( mc t ct cn FJ( ci rt ) chn ) )
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ( ct.id ) ( cn.id ) ( ci.movie_id ) ][ COVER( ci.person_role_id ) COVER( chn.id ) ]
+Free Join Plan:	[ COVER( ci.role_id ) COVER( rt.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/11b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( t ⨝ ml ) ⨝ mk ) ⨝ mc ) ⨝ lt ) ⨝ k ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t ml mk mc lt k ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.movie_id ) COVER( mk.movie_id ) COVER( mc.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( mk.keyword_id ) COVER( k.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/15b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ k ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) ⨝ at ) )
+Logical Operator Tree:		π( FJ( mk t mi mc k it1 ct cn at ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( at.movie_id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/15d.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ k ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) ⨝ at ) )
+Logical Operator Tree:		π( FJ( mk t mi mc k it1 ct cn at ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( at.movie_id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/11c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( t ⨝ ml ) ⨝ mk ) ⨝ mc ) ⨝ lt ) ⨝ k ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t ml mk mc lt k ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.movie_id ) COVER( mk.movie_id ) COVER( mc.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( mk.keyword_id ) COVER( k.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/22b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( t ⨝ mi_idx ) ⨝ kt ) ⨝ it2 ) ⨝ ( ( mc ⨝ cn ) ⨝ ct ) ) ⨝ ( mk ⨝ k ) ) ⨝ ( mi ⨝ it1 ) ) )
+Logical Operator Tree:		π( FJ( t mi_idx kt it2 FJ( mc cn ct ) FJ( mk k ) FJ( mi it1 ) ) )
+Free Join Plan:	[ COVER( t.id t.kind_id ) ( mi_idx.movie_id ) ( kt.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it2.id ) ]
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id ) ( cn.id ) ( ct.id ) ]
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Free Join Plan:	[ COVER( mi.info_type_id ) COVER( it1.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/28b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( cc ⨝ cct1 ) ⨝ cct2 ) ⨝ ( mi_idx ⨝ it2 ) ) ⨝ ( t ⨝ kt ) ) ⨝ ( ( mc ⨝ cn ) ⨝ ct ) ) ⨝ ( mk ⨝ k ) ) ⨝ ( mi ⨝ it1 ) ) )
+Logical Operator Tree:		π( FJ( cc cct1 cct2 FJ( mi_idx it2 ) FJ( t kt ) FJ( mc cn ct ) FJ( mk k ) FJ( mi it1 ) ) )
+Free Join Plan:	[ COVER( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( mi_idx.movie_id ) ( t.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ]
+Free Join Plan:	[ COVER( mi_idx.info_type_id ) COVER( it2.id ) ]
+Free Join Plan:	[ COVER( t.kind_id ) COVER( kt.id ) ]
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id ) ( cn.id ) ( ct.id ) ]
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Free Join Plan:	[ COVER( mi.info_type_id ) COVER( it1.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/32b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( t1 ⨝ ml ) ⨝ t2 ) ⨝ mk ) ⨝ lt ) ⨝ k ) )
+Logical Operator Tree:		π( FJ( t1 ml t2 mk lt k ) )
+Free Join Plan:	[ COVER( t1.id ) COVER( ml.movie_id ) COVER( mk.movie_id ) ][ COVER( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ( lt.id ) ][ COVER( mk.keyword_id ) COVER( k.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/13d.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( t ⨝ miidx ) ⨝ mi ) ⨝ mc ) ⨝ kt ) ⨝ it2 ) ⨝ it ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t miidx mi mc kt it2 it ct cn ) )
+Free Join Plan:	[ COVER( t.id t.kind_id ) ( miidx.movie_id ) ( mi.movie_id ) ( mc.movie_id ) ( kt.id ) ][ COVER( miidx.info_type_id ) COVER( it.id ) ][ COVER( mi.info_type_id ) COVER( it2.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/6a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( mk ⨝ t ) ⨝ k ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t k FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( k.id ) ( ci.movie_id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/3b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ k ) )
+Logical Operator Tree:		π( FJ( mk t mi k ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( k.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/6c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( mk ⨝ t ) ⨝ k ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t k FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( k.id ) ( ci.movie_id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/11a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( t ⨝ ml ) ⨝ mk ) ⨝ mc ) ⨝ lt ) ⨝ k ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t ml mk mc lt k ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.movie_id ) COVER( mk.movie_id ) COVER( mc.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( mk.keyword_id ) COVER( k.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/9c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ]
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/29b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( cc ⨝ cct1 ) ⨝ cct2 ) ⨝ t ) ⨝ ( mc ⨝ cn ) ) ⨝ ( mk ⨝ k ) ) ⨝ ( mi ⨝ it ) ) ⨝ ( ( ( ( pi ⨝ an ) ⨝ it3 ) ⨝ n ) ⨝ ( ( ci ⨝ chn ) ⨝ rt ) ) ) )
+Logical Operator Tree:		π( FJ( cc cct1 cct2 t FJ( mc cn ) FJ( mk k ) FJ( mi it ) FJ( pi an it3 n FJ( ci chn rt ) ) ) )
+Free Join Plan:	[ COVER( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( t.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ( ci.movie_id ) ]
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Free Join Plan:	[ COVER( mi.info_type_id ) COVER( it.id ) ]
+Free Join Plan:	[ COVER( pi.info_type_id pi.person_id ) ( an.person_id ) ( it3.id ) ( n.id ) ( ci.person_id ) ]
+Free Join Plan:	[ COVER( ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN SCAN ) ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/15c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ k ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) ⨝ at ) )
+Logical Operator Tree:		π( FJ( mk t mi mc k it1 ct cn at ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( at.movie_id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/29a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( cc ⨝ cct1 ) ⨝ cct2 ) ⨝ t ) ⨝ ( mc ⨝ cn ) ) ⨝ ( mk ⨝ k ) ) ⨝ ( mi ⨝ it ) ) ⨝ ( ( ( ( pi ⨝ an ) ⨝ it3 ) ⨝ n ) ⨝ ( ( ci ⨝ chn ) ⨝ rt ) ) ) )
+Logical Operator Tree:		π( FJ( cc cct1 cct2 t FJ( mc cn ) FJ( mk k ) FJ( mi it ) FJ( pi an it3 n FJ( ci chn rt ) ) ) )
+Free Join Plan:	[ COVER( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( t.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ( ci.movie_id ) ]
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Free Join Plan:	[ COVER( mi.info_type_id ) COVER( it.id ) ]
+Free Join Plan:	[ COVER( pi.info_type_id pi.person_id ) ( an.person_id ) ( it3.id ) ( n.id ) ( ci.person_id ) ]
+Free Join Plan:	[ COVER( ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN SCAN ) ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/17a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/22a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( t ⨝ mi_idx ) ⨝ kt ) ⨝ it2 ) ⨝ ( ( mc ⨝ cn ) ⨝ ct ) ) ⨝ ( mk ⨝ k ) ) ⨝ ( mi ⨝ it1 ) ) )
+Logical Operator Tree:		π( FJ( t mi_idx kt it2 FJ( mc cn ct ) FJ( mk k ) FJ( mi it1 ) ) )
+Free Join Plan:	[ COVER( t.id t.kind_id ) ( mi_idx.movie_id ) ( kt.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it2.id ) ]
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id ) ( cn.id ) ( ct.id ) ]
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Free Join Plan:	[ COVER( mi.info_type_id ) COVER( it1.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/17c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/17e.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/33c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( mi_idx1 ⨝ it1 ) ⨝ ( ml ⨝ lt ) ) ⨝ ( mi_idx2 ⨝ it2 ) ) ⨝ ( t1 ⨝ kt1 ) ) ⨝ ( t2 ⨝ kt2 ) ) ⨝ ( mc1 ⨝ cn1 ) ) ⨝ ( mc2 ⨝ cn2 ) ) )
+Logical Operator Tree:		π( FJ( mi_idx1 it1 FJ( ml lt ) FJ( mi_idx2 it2 ) FJ( t1 kt1 ) FJ( t2 kt2 ) FJ( mc1 cn1 ) FJ( mc2 cn2 ) ) )
+Free Join Plan:	[ COVER( mi_idx1.info_type_id mi_idx1.movie_id ) ( it1.id ) ( ml.movie_id ) ( t1.id ) ( mc1.movie_id ) ][ COVER( ml.linked_movie_id ) COVER( mi_idx2.movie_id ) COVER( t2.id ) COVER( mc2.movie_id ) ]
+Free Join Plan:	[ COVER( ml.link_type_id ) COVER( lt.id ) ]
+Free Join Plan:	[ COVER( mi_idx2.info_type_id ) COVER( it2.id ) ]
+Free Join Plan:	[ COVER( t1.kind_id ) COVER( kt1.id ) ]
+Free Join Plan:	[ COVER( t2.kind_id ) COVER( kt2.id ) ]
+Free Join Plan:	[ COVER( mc1.company_id ) COVER( cn1.id ) ]
+Free Join Plan:	[ COVER( mc2.company_id ) COVER( cn2.id ) ]
+PROJ( FREEJOIN( SCAN SCAN FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/17d.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/12b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( t ⨝ mi_idx ) ⨝ mi ) ⨝ mc ) ⨝ it2 ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t mi_idx mi mc it2 it1 ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mi.movie_id ) COVER( mc.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it2.id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/17b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/15a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ k ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) ⨝ at ) )
+Logical Operator Tree:		π( FJ( mk t mi mc k it1 ct cn at ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( at.movie_id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/16a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) an ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ) COVER( an.person_id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/8a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ci ⨝ n1 ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ an1 ) )
+Logical Operator Tree:		π( FJ( ci n1 FJ( mc cn ) rt t an1 ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( an1.person_id ) ]
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/11d.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( t ⨝ ml ) ⨝ mk ) ⨝ mc ) ⨝ lt ) ⨝ k ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t ml mk mc lt k ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.movie_id ) COVER( mk.movie_id ) COVER( mc.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( mk.keyword_id ) COVER( k.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/29c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( cc ⨝ cct1 ) ⨝ cct2 ) ⨝ t ) ⨝ ( mc ⨝ cn ) ) ⨝ ( mk ⨝ k ) ) ⨝ ( mi ⨝ it ) ) ⨝ ( ( ( ( pi ⨝ an ) ⨝ it3 ) ⨝ n ) ⨝ ( ( ci ⨝ chn ) ⨝ rt ) ) ) )
+Logical Operator Tree:		π( FJ( cc cct1 cct2 t FJ( mc cn ) FJ( mk k ) FJ( mi it ) FJ( pi an it3 n FJ( ci chn rt ) ) ) )
+Free Join Plan:	[ COVER( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( t.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ( ci.movie_id ) ]
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+Free Join Plan:	[ COVER( mi.info_type_id ) COVER( it.id ) ]
+Free Join Plan:	[ COVER( pi.info_type_id pi.person_id ) ( an.person_id ) ( it3.id ) ( n.id ) ( ci.person_id ) ]
+Free Join Plan:	[ COVER( ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN SCAN ) ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/27a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( cc ⨝ cct1 ) ⨝ cct2 ) ⨝ ( ml ⨝ lt ) ) ⨝ t ) ⨝ ( ( mc ⨝ ct ) ⨝ cn ) ) ⨝ ( mk ⨝ k ) ) ⨝ mi ) )
+Logical Operator Tree:		π( FJ( cc cct1 cct2 FJ( ml lt ) t FJ( mc ct cn ) FJ( mk k ) mi ) )
+Free Join Plan:	[ COVER( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( ml.movie_id ) ( t.id ) ( mc.movie_id ) ( mk.movie_id ) ( mi.movie_id ) ]
+Free Join Plan:	[ COVER( ml.link_type_id ) COVER( lt.id ) ]
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Free Join Plan:	[ COVER( mk.keyword_id ) COVER( k.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN FREEJOIN( SCAN SCAN SCAN ) FREEJOIN( SCAN SCAN ) SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/7c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( t ⨝ ml ) ⨝ lt ) ⨝ ci ) ⨝ ( ( n ⨝ pi ) ⨝ it ) ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( t ml lt ci FJ( n pi it ) an ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.linked_movie_id ) COVER( ci.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( ci.person_id ) ( n.id pi.person_id ) COVER( an.person_id ) ]
+Free Join Plan:	[ COVER( n.id ) COVER( pi.person_id ) ][ COVER( pi.info_type_id ) COVER( it.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN SCAN ) SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/16b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) an ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ) COVER( an.person_id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/33b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( mi_idx1 ⨝ it1 ) ⨝ ( ml ⨝ lt ) ) ⨝ ( mi_idx2 ⨝ it2 ) ) ⨝ ( t1 ⨝ kt1 ) ) ⨝ ( t2 ⨝ kt2 ) ) ⨝ ( mc1 ⨝ cn1 ) ) ⨝ ( mc2 ⨝ cn2 ) ) )
+Logical Operator Tree:		π( FJ( mi_idx1 it1 FJ( ml lt ) FJ( mi_idx2 it2 ) FJ( t1 kt1 ) FJ( t2 kt2 ) FJ( mc1 cn1 ) FJ( mc2 cn2 ) ) )
+Free Join Plan:	[ COVER( mi_idx1.info_type_id mi_idx1.movie_id ) ( it1.id ) ( ml.movie_id ) ( t1.id ) ( mc1.movie_id ) ][ COVER( ml.linked_movie_id ) COVER( mi_idx2.movie_id ) COVER( t2.id ) COVER( mc2.movie_id ) ]
+Free Join Plan:	[ COVER( ml.link_type_id ) COVER( lt.id ) ]
+Free Join Plan:	[ COVER( mi_idx2.info_type_id ) COVER( it2.id ) ]
+Free Join Plan:	[ COVER( t1.kind_id ) COVER( kt1.id ) ]
+Free Join Plan:	[ COVER( t2.kind_id ) COVER( kt2.id ) ]
+Free Join Plan:	[ COVER( mc1.company_id ) COVER( cn1.id ) ]
+Free Join Plan:	[ COVER( mc2.company_id ) COVER( cn2.id ) ]
+PROJ( FREEJOIN( SCAN SCAN FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/7a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( t ⨝ ml ) ⨝ lt ) ⨝ ci ) ⨝ ( ( n ⨝ pi ) ⨝ it ) ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( t ml lt ci FJ( n pi it ) an ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.linked_movie_id ) COVER( ci.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( ci.person_id ) ( n.id pi.person_id ) COVER( an.person_id ) ]
+Free Join Plan:	[ COVER( n.id ) COVER( pi.person_id ) ][ COVER( pi.info_type_id ) COVER( it.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN SCAN ) SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/9d.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ]
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/23c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ kt ) ⨝ k ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) ⨝ ( cc ⨝ cct1 ) ) )
+Logical Operator Tree:		π( FJ( mk t mi mc kt k it1 ct cn FJ( cc cct1 ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( cc.movie_id ) ][ COVER( t.kind_id ) COVER( kt.id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Free Join Plan:	[ COVER( cc.status_id ) COVER( cct1.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/32a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( t1 ⨝ ml ) ⨝ t2 ) ⨝ mk ) ⨝ lt ) ⨝ k ) )
+Logical Operator Tree:		π( FJ( t1 ml t2 mk lt k ) )
+Free Join Plan:	[ COVER( t1.id ) COVER( ml.movie_id ) COVER( mk.movie_id ) ][ COVER( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ( lt.id ) ][ COVER( mk.keyword_id ) COVER( k.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/8c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ci ⨝ n1 ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ a1 ) )
+Logical Operator Tree:		π( FJ( ci n1 FJ( mc cn ) rt t a1 ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( a1.person_id ) ]
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/23b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ kt ) ⨝ k ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) ⨝ ( cc ⨝ cct1 ) ) )
+Logical Operator Tree:		π( FJ( mk t mi mc kt k it1 ct cn FJ( cc cct1 ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( cc.movie_id ) ][ COVER( t.kind_id ) COVER( kt.id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Free Join Plan:	[ COVER( cc.status_id ) COVER( cct1.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/2a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/19a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mi ⨝ mc ) ⨝ it ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mi mc it cn FJ( ci n ) rt t chn an ) )
+Free Join Plan:	[ COVER( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ( it.id ) ( ci.movie_id ) ( t.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ci.person_role_id ci.role_id ) ( rt.id ) ( chn.id ) ( an.person_id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/1b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( t ⨝ mi_idx ) ⨝ mc ) ⨝ it ) ⨝ ct ) )
+Logical Operator Tree:		π( FJ( t mi_idx mc it ct ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mc.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it.id ) ][ COVER( mc.company_type_id ) COVER( ct.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/12c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( t ⨝ mi_idx ) ⨝ mi ) ⨝ mc ) ⨝ it2 ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t mi_idx mi mc it2 it1 ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mi.movie_id ) COVER( mc.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it2.id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/1c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( t ⨝ mi_idx ) ⨝ mc ) ⨝ it ) ⨝ ct ) )
+Logical Operator Tree:		π( FJ( t mi_idx mc it ct ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mc.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it.id ) ][ COVER( mc.company_type_id ) COVER( ct.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/17f.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( mk ⨝ t ) ⨝ mc ) ⨝ k ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( mk t mc k cn FJ( ci n ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/21b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( t ⨝ ml ) ⨝ mk ) ⨝ mi ) ⨝ mc ) ⨝ lt ) ⨝ k ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t ml mk mi mc lt k ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( ml.movie_id ) COVER( mk.movie_id ) COVER( mi.movie_id ) COVER( mc.movie_id ) ][ COVER( ml.link_type_id ) COVER( lt.id ) ][ COVER( mk.keyword_id ) COVER( k.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/13c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( t ⨝ miidx ) ⨝ mi ) ⨝ mc ) ⨝ kt ) ⨝ it2 ) ⨝ it ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t miidx mi mc kt it2 it ct cn ) )
+Free Join Plan:	[ COVER( t.id t.kind_id ) ( miidx.movie_id ) ( mi.movie_id ) ( mc.movie_id ) ( kt.id ) ][ COVER( miidx.info_type_id ) COVER( it.id ) ][ COVER( mi.info_type_id ) COVER( it2.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/13a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( t ⨝ miidx ) ⨝ mi ) ⨝ mc ) ⨝ kt ) ⨝ it2 ) ⨝ it ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t miidx mi mc kt it2 it ct cn ) )
+Free Join Plan:	[ COVER( t.id t.kind_id ) ( miidx.movie_id ) ( mi.movie_id ) ( mc.movie_id ) ( kt.id ) ][ COVER( miidx.info_type_id ) COVER( it.id ) ][ COVER( mi.info_type_id ) COVER( it2.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/19d.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mi ⨝ mc ) ⨝ it ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mi mc it cn FJ( ci n ) rt t chn an ) )
+Free Join Plan:	[ COVER( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ( it.id ) ( ci.movie_id ) ( t.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ci.person_role_id ci.role_id ) ( rt.id ) ( chn.id ) ( an.person_id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) SCAN SCAN SCAN SCAN ))
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/18a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/json
+Logical Operator Tree:		π( ( ( ( ( ( t ⨝ mi_idx ) ⨝ mi ) ⨝ it2 ) ⨝ it1 ) ⨝ ( ci ⨝ n ) ) )
+Logical Operator Tree:		π( FJ( t mi_idx mi it2 it1 FJ( ci n ) ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mi.movie_id ) COVER( ci.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it2.id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ]
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+PROJ( FREEJOIN( SCAN SCAN SCAN SCAN SCAN FREEJOIN( SCAN SCAN ) ))
+

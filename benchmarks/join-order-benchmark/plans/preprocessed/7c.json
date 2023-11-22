@@ -1,0 +1,391 @@
+{
+  "name": "projection",
+  "attributes": [
+    {
+      "binding": "n",
+      "attribute": "name",
+      "table": "name",
+      "table_attribute_idx": 1
+    },
+    {
+      "binding": "pi",
+      "attribute": "info",
+      "table": "person_info",
+      "table_attribute_idx": 3
+    }
+  ],
+  "children": [
+    {
+      "name": "hashjoin",
+      "conditions": [
+        {
+          "left": {
+            "binding": "pi",
+            "attribute": "person_id",
+            "table": "person_info",
+            "table_attribute_idx": 1,
+            "fj_attribute_idx": 2
+          },
+          "right": {
+            "binding": "an",
+            "attribute": "person_id",
+            "table": "aka_name",
+            "table_attribute_idx": 1,
+            "fj_attribute_idx": 2
+          }
+        },
+        {
+          "left": {
+            "binding": "n",
+            "attribute": "id",
+            "table": "name",
+            "table_attribute_idx": 0,
+            "fj_attribute_idx": 2
+          },
+          "right": {
+            "binding": "an",
+            "attribute": "person_id",
+            "table": "aka_name",
+            "table_attribute_idx": 1,
+            "fj_attribute_idx": 2
+          }
+        },
+        {
+          "left": {
+            "binding": "ci",
+            "attribute": "person_id",
+            "table": "cast_info",
+            "table_attribute_idx": 1,
+            "fj_attribute_idx": 2
+          },
+          "right": {
+            "binding": "an",
+            "attribute": "person_id",
+            "table": "aka_name",
+            "table_attribute_idx": 1,
+            "fj_attribute_idx": 2
+          }
+        }
+      ],
+      "children": [
+        {
+          "name": "hashjoin",
+          "conditions": [
+            {
+              "left": {
+                "binding": "ci",
+                "attribute": "person_id",
+                "table": "cast_info",
+                "table_attribute_idx": 1,
+                "fj_attribute_idx": 2
+              },
+              "right": {
+                "binding": "pi",
+                "attribute": "person_id",
+                "table": "person_info",
+                "table_attribute_idx": 1,
+                "fj_attribute_idx": 2
+              }
+            },
+            {
+              "left": {
+                "binding": "ci",
+                "attribute": "person_id",
+                "table": "cast_info",
+                "table_attribute_idx": 1,
+                "fj_attribute_idx": 2
+              },
+              "right": {
+                "binding": "n",
+                "attribute": "id",
+                "table": "name",
+                "table_attribute_idx": 0,
+                "fj_attribute_idx": 2
+              }
+            }
+          ],
+          "children": [
+            {
+              "name": "hashjoin",
+              "conditions": [
+                {
+                  "left": {
+                    "binding": "ci",
+                    "attribute": "movie_id",
+                    "table": "cast_info",
+                    "table_attribute_idx": 2,
+                    "fj_attribute_idx": 0
+                  },
+                  "right": {
+                    "binding": "t",
+                    "attribute": "id",
+                    "table": "title",
+                    "table_attribute_idx": 0,
+                    "fj_attribute_idx": 0
+                  }
+                },
+                {
+                  "left": {
+                    "binding": "ci",
+                    "attribute": "movie_id",
+                    "table": "cast_info",
+                    "table_attribute_idx": 2,
+                    "fj_attribute_idx": 0
+                  },
+                  "right": {
+                    "binding": "ml",
+                    "attribute": "linked_movie_id",
+                    "table": "movie_link",
+                    "table_attribute_idx": 2,
+                    "fj_attribute_idx": 0
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "name": "scan",
+                  "table": "cast_info",
+                  "binding": "ci",
+                  "required_attributes": [
+                    {
+                      "binding": "ci",
+                      "attribute": "person_id",
+                      "table": "cast_info",
+                      "table_attribute_idx": 1,
+                      "fj_attribute_idx": 2
+                    },
+                    {
+                      "binding": "ci",
+                      "attribute": "movie_id",
+                      "table": "cast_info",
+                      "table_attribute_idx": 2,
+                      "fj_attribute_idx": 0
+                    }
+                  ]
+                },
+                {
+                  "name": "hashjoin",
+                  "conditions": [
+                    {
+                      "left": {
+                        "binding": "ml",
+                        "attribute": "link_type_id",
+                        "table": "movie_link",
+                        "table_attribute_idx": 3,
+                        "fj_attribute_idx": 1
+                      },
+                      "right": {
+                        "binding": "lt",
+                        "attribute": "id",
+                        "table": "link_type",
+                        "table_attribute_idx": 0,
+                        "fj_attribute_idx": 1
+                      }
+                    }
+                  ],
+                  "children": [
+                    {
+                      "name": "hashjoin",
+                      "conditions": [
+                        {
+                          "left": {
+                            "binding": "t",
+                            "attribute": "id",
+                            "table": "title",
+                            "table_attribute_idx": 0,
+                            "fj_attribute_idx": 0
+                          },
+                          "right": {
+                            "binding": "ml",
+                            "attribute": "linked_movie_id",
+                            "table": "movie_link",
+                            "table_attribute_idx": 2,
+                            "fj_attribute_idx": 0
+                          }
+                        }
+                      ],
+                      "children": [
+                        {
+                          "name": "scan",
+                          "table": "title",
+                          "binding": "t",
+                          "required_attributes": [
+                            {
+                              "binding": "t",
+                              "attribute": "id",
+                              "table": "title",
+                              "table_attribute_idx": 0,
+                              "fj_attribute_idx": 0
+                            }
+                          ]
+                        },
+                        {
+                          "name": "scan",
+                          "table": "movie_link",
+                          "binding": "ml",
+                          "required_attributes": [
+                            {
+                              "binding": "ml",
+                              "attribute": "linked_movie_id",
+                              "table": "movie_link",
+                              "table_attribute_idx": 2,
+                              "fj_attribute_idx": 0
+                            },
+                            {
+                              "binding": "ml",
+                              "attribute": "link_type_id",
+                              "table": "movie_link",
+                              "table_attribute_idx": 3,
+                              "fj_attribute_idx": 1
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "scan",
+                      "table": "link_type",
+                      "binding": "lt",
+                      "required_attributes": [
+                        {
+                          "binding": "lt",
+                          "attribute": "id",
+                          "table": "link_type",
+                          "table_attribute_idx": 0,
+                          "fj_attribute_idx": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "hashjoin",
+              "conditions": [
+                {
+                  "left": {
+                    "binding": "pi",
+                    "attribute": "info_type_id",
+                    "table": "person_info",
+                    "table_attribute_idx": 2,
+                    "fj_attribute_idx": 3
+                  },
+                  "right": {
+                    "binding": "it",
+                    "attribute": "id",
+                    "table": "info_type",
+                    "table_attribute_idx": 0,
+                    "fj_attribute_idx": 3
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "name": "hashjoin",
+                  "conditions": [
+                    {
+                      "left": {
+                        "binding": "n",
+                        "attribute": "id",
+                        "table": "name",
+                        "table_attribute_idx": 0,
+                        "fj_attribute_idx": 2
+                      },
+                      "right": {
+                        "binding": "pi",
+                        "attribute": "person_id",
+                        "table": "person_info",
+                        "table_attribute_idx": 1,
+                        "fj_attribute_idx": 2
+                      }
+                    }
+                  ],
+                  "children": [
+                    {
+                      "name": "scan",
+                      "table": "name",
+                      "binding": "n",
+                      "required_attributes": [
+                        {
+                          "binding": "n",
+                          "attribute": "name",
+                          "table": "name",
+                          "table_attribute_idx": 1,
+                          "fj_attribute_idx": -1
+                        },
+                        {
+                          "binding": "n",
+                          "attribute": "id",
+                          "table": "name",
+                          "table_attribute_idx": 0,
+                          "fj_attribute_idx": 2
+                        }
+                      ]
+                    },
+                    {
+                      "name": "scan",
+                      "table": "person_info",
+                      "binding": "pi",
+                      "required_attributes": [
+                        {
+                          "binding": "pi",
+                          "attribute": "info",
+                          "table": "person_info",
+                          "table_attribute_idx": 3,
+                          "fj_attribute_idx": -1
+                        },
+                        {
+                          "binding": "pi",
+                          "attribute": "person_id",
+                          "table": "person_info",
+                          "table_attribute_idx": 1,
+                          "fj_attribute_idx": 2
+                        },
+                        {
+                          "binding": "pi",
+                          "attribute": "info_type_id",
+                          "table": "person_info",
+                          "table_attribute_idx": 2,
+                          "fj_attribute_idx": 3
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "scan",
+                  "table": "info_type",
+                  "binding": "it",
+                  "required_attributes": [
+                    {
+                      "binding": "it",
+                      "attribute": "id",
+                      "table": "info_type",
+                      "table_attribute_idx": 0,
+                      "fj_attribute_idx": 3
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "scan",
+          "table": "aka_name",
+          "binding": "an",
+          "required_attributes": [
+            {
+              "binding": "an",
+              "attribute": "person_id",
+              "table": "aka_name",
+              "table_attribute_idx": 1,
+              "fj_attribute_idx": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

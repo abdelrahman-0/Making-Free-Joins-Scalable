@@ -1,0 +1,322 @@
+{
+  "name": "projection",
+  "attributes": [
+    {
+      "binding": "a1",
+      "attribute": "name",
+      "table": "aka_name",
+      "table_attribute_idx": 2
+    },
+    {
+      "binding": "t",
+      "attribute": "title",
+      "table": "title",
+      "table_attribute_idx": 1
+    }
+  ],
+  "children": [
+    {
+      "name": "hashjoin",
+      "conditions": [
+        {
+          "left": {
+            "binding": "n1",
+            "attribute": "id",
+            "table": "name",
+            "table_attribute_idx": 0,
+            "fj_attribute_idx": 0
+          },
+          "right": {
+            "binding": "a1",
+            "attribute": "person_id",
+            "table": "aka_name",
+            "table_attribute_idx": 1,
+            "fj_attribute_idx": 0
+          }
+        },
+        {
+          "left": {
+            "binding": "ci",
+            "attribute": "person_id",
+            "table": "cast_info",
+            "table_attribute_idx": 1,
+            "fj_attribute_idx": 0
+          },
+          "right": {
+            "binding": "a1",
+            "attribute": "person_id",
+            "table": "aka_name",
+            "table_attribute_idx": 1,
+            "fj_attribute_idx": 0
+          }
+        }
+      ],
+      "children": [
+        {
+          "name": "hashjoin",
+          "conditions": [
+            {
+              "left": {
+                "binding": "ci",
+                "attribute": "movie_id",
+                "table": "cast_info",
+                "table_attribute_idx": 2,
+                "fj_attribute_idx": 2
+              },
+              "right": {
+                "binding": "t",
+                "attribute": "id",
+                "table": "title",
+                "table_attribute_idx": 0,
+                "fj_attribute_idx": 2
+              }
+            },
+            {
+              "left": {
+                "binding": "mc",
+                "attribute": "movie_id",
+                "table": "movie_companies",
+                "table_attribute_idx": 1,
+                "fj_attribute_idx": 2
+              },
+              "right": {
+                "binding": "t",
+                "attribute": "id",
+                "table": "title",
+                "table_attribute_idx": 0,
+                "fj_attribute_idx": 2
+              }
+            }
+          ],
+          "children": [
+            {
+              "name": "hashjoin",
+              "conditions": [
+                {
+                  "left": {
+                    "binding": "ci",
+                    "attribute": "role_id",
+                    "table": "cast_info",
+                    "table_attribute_idx": 6,
+                    "fj_attribute_idx": 3
+                  },
+                  "right": {
+                    "binding": "rt",
+                    "attribute": "id",
+                    "table": "role_type",
+                    "table_attribute_idx": 0,
+                    "fj_attribute_idx": 3
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "name": "hashjoin",
+                  "conditions": [
+                    {
+                      "left": {
+                        "binding": "ci",
+                        "attribute": "movie_id",
+                        "table": "cast_info",
+                        "table_attribute_idx": 2,
+                        "fj_attribute_idx": 2
+                      },
+                      "right": {
+                        "binding": "mc",
+                        "attribute": "movie_id",
+                        "table": "movie_companies",
+                        "table_attribute_idx": 1,
+                        "fj_attribute_idx": 2
+                      }
+                    }
+                  ],
+                  "children": [
+                    {
+                      "name": "hashjoin",
+                      "conditions": [
+                        {
+                          "left": {
+                            "binding": "ci",
+                            "attribute": "person_id",
+                            "table": "cast_info",
+                            "table_attribute_idx": 1,
+                            "fj_attribute_idx": 0
+                          },
+                          "right": {
+                            "binding": "n1",
+                            "attribute": "id",
+                            "table": "name",
+                            "table_attribute_idx": 0,
+                            "fj_attribute_idx": 0
+                          }
+                        }
+                      ],
+                      "children": [
+                        {
+                          "name": "scan",
+                          "table": "cast_info",
+                          "binding": "ci",
+                          "required_attributes": [
+                            {
+                              "binding": "ci",
+                              "attribute": "person_id",
+                              "table": "cast_info",
+                              "table_attribute_idx": 1,
+                              "fj_attribute_idx": 0
+                            },
+                            {
+                              "binding": "ci",
+                              "attribute": "movie_id",
+                              "table": "cast_info",
+                              "table_attribute_idx": 2,
+                              "fj_attribute_idx": 2
+                            },
+                            {
+                              "binding": "ci",
+                              "attribute": "role_id",
+                              "table": "cast_info",
+                              "table_attribute_idx": 6,
+                              "fj_attribute_idx": 3
+                            }
+                          ]
+                        },
+                        {
+                          "name": "scan",
+                          "table": "name",
+                          "binding": "n1",
+                          "required_attributes": [
+                            {
+                              "binding": "n1",
+                              "attribute": "id",
+                              "table": "name",
+                              "table_attribute_idx": 0,
+                              "fj_attribute_idx": 0
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "hashjoin",
+                      "conditions": [
+                        {
+                          "left": {
+                            "binding": "mc",
+                            "attribute": "company_id",
+                            "table": "movie_companies",
+                            "table_attribute_idx": 2,
+                            "fj_attribute_idx": 1
+                          },
+                          "right": {
+                            "binding": "cn",
+                            "attribute": "id",
+                            "table": "company_name",
+                            "table_attribute_idx": 0,
+                            "fj_attribute_idx": 1
+                          }
+                        }
+                      ],
+                      "children": [
+                        {
+                          "name": "scan",
+                          "table": "movie_companies",
+                          "binding": "mc",
+                          "required_attributes": [
+                            {
+                              "binding": "mc",
+                              "attribute": "movie_id",
+                              "table": "movie_companies",
+                              "table_attribute_idx": 1,
+                              "fj_attribute_idx": 2
+                            },
+                            {
+                              "binding": "mc",
+                              "attribute": "company_id",
+                              "table": "movie_companies",
+                              "table_attribute_idx": 2,
+                              "fj_attribute_idx": 1
+                            }
+                          ]
+                        },
+                        {
+                          "name": "scan",
+                          "table": "company_name",
+                          "binding": "cn",
+                          "required_attributes": [
+                            {
+                              "binding": "cn",
+                              "attribute": "id",
+                              "table": "company_name",
+                              "table_attribute_idx": 0,
+                              "fj_attribute_idx": 1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "scan",
+                  "table": "role_type",
+                  "binding": "rt",
+                  "required_attributes": [
+                    {
+                      "binding": "rt",
+                      "attribute": "id",
+                      "table": "role_type",
+                      "table_attribute_idx": 0,
+                      "fj_attribute_idx": 3
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "scan",
+              "table": "title",
+              "binding": "t",
+              "required_attributes": [
+                {
+                  "binding": "t",
+                  "attribute": "title",
+                  "table": "title",
+                  "table_attribute_idx": 1,
+                  "fj_attribute_idx": -1
+                },
+                {
+                  "binding": "t",
+                  "attribute": "id",
+                  "table": "title",
+                  "table_attribute_idx": 0,
+                  "fj_attribute_idx": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "scan",
+          "table": "aka_name",
+          "binding": "a1",
+          "required_attributes": [
+            {
+              "binding": "a1",
+              "attribute": "name",
+              "table": "aka_name",
+              "table_attribute_idx": 2,
+              "fj_attribute_idx": -1
+            },
+            {
+              "binding": "a1",
+              "attribute": "person_id",
+              "table": "aka_name",
+              "table_attribute_idx": 1,
+              "fj_attribute_idx": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

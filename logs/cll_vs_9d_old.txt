@@ -1,0 +1,1208 @@
+Query: 9d-1
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,          cycles,         kcycles,    instructions,     L1-misses,    LLC-misses, branch-misses,      task-clock, scale,      IPC,     CPUs,      GHz
+chunked list building, 0.001377, 30695976.000000, 13150192.000000, 33366527.000000, 461715.000000, 304551.000000,          -nan, 10107550.000000,     1, 1.087000, 7.341122, 3.036935
+trie building, 0.005640, 29939255.454799, 9491589.000000, 65341398.000000, 1026776.000000, 159541.000000, 199587.986253, 5546503.000000,     1, 2.182466, 0.983352, 5.397862
+trie intersection, 0.014645, 77326869.424523, 8638858.759784, 158526648.689921, 870484.814607, 151380.000000,  51411.888229, 14508791.000000,     1, 2.050085, 0.990685, 5.329656
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.003205, 16398881.000000, 630376.000000, 4880376.000000, 68403.000000, 24221.000000,          -nan, 3117803.000000,     1, 0.297604, 0.972934, 5.259755
+trie building, 0.102109, 457226845.177825, 80320123.709727, 703166307.509211, 9554436.115512, 2326028.518826, 977164.385839, 81646652.000000,     1, 1.537894, 0.799602, 5.600069
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.005404, 22918040.819560, 902010.000000, 9314323.000000, 125747.000000, 38014.000000,   2847.361447, 4805023.000000,     1, 0.406419, 0.889176, 4.769601
+trie building, 0.094180, 385651359.415888, 60869789.322306, 698836633.016508, 10348111.752060, 2075497.437791, 1641696.149716, 69256779.000000,     1, 1.812094, 0.735367, 5.568428
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000007, 43161.000000, 24909.000000, 31620.000000, 505.000000, 1319.000000,          -nan, 13170.000000,     1, 0.732606, 1.791593, 3.277221
+trie building, 0.000007, 41606.000000, 22195.000000, 36053.000000, 371.000000, 761.000000,          -nan, 12691.000000,     1, 0.866534, 1.779694, 3.278386
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.003977, 10240975.600825, 2999747.000000, 21450199.000000, 224892.000000, 22875.000000,   5391.745549, 2199402.000000,     1, 2.094546, 0.553044, 4.656255
+trie building, 0.250964, 1215136603.080363, 252163493.973498, 2266879504.465846, 23905733.932118, 6602127.046631, 2608580.005094, 217823244.000000,     1, 1.865535, 0.867948, 5.578544
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.012425, 49032159.920908, 14985278.987420, 106066116.000000, 1061894.000000, 75060.000000,  17651.895204, 9460959.000000,     1, 2.163195, 0.761468, 5.182578
+trie building, 0.362581, 1834928147.365222, 260363128.778920, 2377481370.596054, 33488050.639469, 7446218.372667, 6195060.324351, 325522662.000000,     1, 1.295681, 0.897794, 5.636868
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.004264, 20438900.000000, 674790.000000, 5914341.000000, 84522.000000, 29689.000000,          -nan, 3859775.000000,     1, 0.289367, 0.905121, 5.295360
+trie building, 0.093886, 378244733.915354, 53307578.494670, 604143886.580366, 9529567.353025, 1681236.579704, 1628220.028818, 67249982.000000,     1, 1.597230, 0.716296, 5.624459
+trie intersection, 0.034790, 188023843.308182, 18680009.538354, 192779950.421635, 2513764.969964, 582438.390581, 139929.485881, 34685702.000000,     1, 1.025295, 0.996990, 5.420788
+
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ nano ../includes/execution_engine/chunked_list_builder.h
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ make main && ./main 9d
+Consolidate compiler generated dependencies of target src_lib
+[  5%] Building CXX object src/CMakeFiles/src_lib.dir/query_optimizer/optimizer.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/chunked_list_builder.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_builder.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_intersector.cpp.o
+[ 26%] Linking CXX static library libsrc_lib.a
+[ 78%] Built target src_lib
+[ 89%] Built target duckdb_src
+[ 94%] Linking CXX executable main
+[100%] Built target main
+Query: 9d-2
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,          cycles,         kcycles,    instructions,     L1-misses,    LLC-misses, branch-misses,      task-clock, scale,      IPC,     CPUs,      GHz
+chunked list building, 0.001525, 47666971.000000, 16591827.000000, 40511262.000000, 520476.000000, 350479.000000,          -nan, 13847381.000000,     1, 0.849881, 9.082537, 3.442309
+trie building, 0.002949, 15805926.892823, 3688587.000000, 32635166.000000, 520712.000000, 94501.000000, 116351.262838, 2904925.000000,     1, 2.064742, 0.985105, 5.441079
+trie intersection, 0.014555, 76503055.276563, 8358535.524023, 150596407.350837, 876735.000000, 152470.000000,  51629.183481, 14397248.000000,     1, 1.968502, 0.989130, 5.313728
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.002930, 14815126.000000, 633910.000000, 4626170.000000, 65875.000000, 23568.000000,          -nan, 2888325.000000,     1, 0.312260, 0.985805, 5.129314
+trie building, 0.075229, 308287498.824347, 39183657.418900, 357401778.268630, 5215368.729943, 1208739.234528, 832349.655798, 55946185.000000,     1, 1.159313, 0.743680, 5.510429
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.005184, 17703725.673377, 798876.000000, 8736021.000000, 119793.000000, 39114.000000,   2116.203237, 4496035.000000,     1, 0.493457, 0.867370, 3.937631
+trie building, 0.067022, 229634333.868719, 23640434.508144, 353253154.527467, 5321441.215828, 1106062.617944, 931408.237643, 41998199.000000,     1, 1.538329, 0.626632, 5.467719
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000007, 42857.000000, 23922.000000, 31646.000000, 495.000000, 1310.000000,          -nan, 13100.000000,     1, 0.738409, 1.774827, 3.271527
+trie building, 0.000008, 44073.000000, 23555.000000, 37371.000000, 434.000000, 832.000000,          -nan, 13321.000000,     1, 0.847934, 1.711991, 3.308535
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.003970, 13166600.931856, 660574.000000, 5326545.000000, 77195.000000, 25024.000000,   2082.779266, 2886622.000000,     1, 0.404550, 0.727179, 4.561249
+trie building, 0.158174, 688460983.924554, 126462436.999480, 1152524754.629751, 12066782.322932, 3709301.140249, 1345568.631924, 128052957.000000,     1, 1.674060, 0.809569, 5.376377
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.011945, 40151202.184144, 12593433.000000, 90331702.000000, 921078.000000, 64815.000000,  13383.051868, 7884970.000000,     1, 2.249788, 0.660103, 5.092119
+trie building, 0.244891, 1130780536.713872, 137422448.023870, 1227454489.707073, 17736679.155968, 3981847.856613, 3218132.208058, 206299188.000000,     1, 1.085493, 0.842411, 5.481265
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.004138, 16559184.988619, 766139.000000, 5928396.000000, 84056.000000, 28522.000000,   2063.054212, 3346090.000000,     1, 0.358013, 0.808611, 4.948816
+trie building, 0.063564, 228775333.866638, 27147204.422048, 287032929.970060, 3757139.686560, 1026892.577766, 889740.979305, 41716606.000000,     1, 1.254650, 0.656297, 5.484035
+trie intersection, 0.033444, 180417861.251513, 11788027.921469, 163079552.292197, 1791593.438996, 563164.664011, 130674.101415, 33418136.000000,     1, 0.903899, 0.999219, 5.398801
+
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ nano ../includes/execution_engine/chunked_list_builder.h
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ make main && ./main 9d
+Consolidate compiler generated dependencies of target src_lib
+[  5%] Building CXX object src/CMakeFiles/src_lib.dir/query_optimizer/optimizer.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/chunked_list_builder.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_builder.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_intersector.cpp.o
+[ 26%] Linking CXX static library libsrc_lib.a
+[ 78%] Built target src_lib
+[ 89%] Built target duckdb_src
+[ 94%] Linking CXX executable main
+[100%] Built target main
+Query: 9d-3
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,          cycles,         kcycles,    instructions,     L1-misses,    LLC-misses, branch-misses,      task-clock, scale,      IPC,     CPUs,      GHz
+chunked list building, 0.001552, 38416530.000000, 13979802.000000, 34465028.000000, 498011.000000, 358317.000000,          -nan, 10517419.000000,     1, 0.897141, 6.775570, 3.652658
+trie building, 0.002796, 13888947.611419, 3357654.000000, 17802585.000000, 266154.000000, 56888.000000,  38335.280561, 2585408.000000,     1, 1.281781, 0.924806, 5.372053
+trie intersection, 0.014585, 77795620.283369, 8077744.514071, 144582227.064208, 888800.000000, 186749.000000,  59242.499504, 14548672.000000,     1, 1.858488, 0.997491, 5.347266
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.003067, 10611477.000000, 2942991.000000, 21282842.000000, 228952.000000, 31765.000000,          -nan, 2091153.000000,     1, 2.005644, 0.681897, 5.074462
+trie building, 0.053128, 166437655.157102, 30032743.286353, 181978263.340232, 2483027.616094, 616359.573390, 425299.733112, 31201886.000000,     1, 1.093372, 0.587300, 5.334218
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.005654, 28028061.637499, 1099871.000000, 9556331.000000, 137316.000000, 39333.000000,   2981.109380, 5249417.000000,     1, 0.340956, 0.928482, 5.339271
+trie building, 0.041748, 222474769.935513, 13896989.522782, 178062339.563733, 2829674.121882, 699265.686164, 473930.414643, 40682933.000000,     1, 0.800371, 0.974487, 5.468504
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000004, 39773.000000, 17500.000000, 31755.000000, 534.000000, 549.000000,          -nan, 8010.000000,     1, 0.798406, 1.880282, 4.965418
+trie building, 0.000005, 43002.000000, 21126.000000, 40356.000000, 449.000000, 483.000000,          -nan, 8780.000000,     1, 0.938468, 1.937762, 4.897722
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.004203, 21386798.003705, 1230033.000000, 8409759.000000, 118373.000000, 28767.000000,   6220.155271, 3933147.000000,     1, 0.393222, 0.935699, 5.437579
+trie building, 0.113258, 407426648.495724, 103987795.489158, 594766796.006471, 6702344.682433, 1990079.664917, 740302.281295, 76979648.000000,     1, 1.459813, 0.679686, 5.292654
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.012726, 36660355.520249, 10977184.000000, 80923929.000000, 846228.000000, 63489.000000,  13595.640987, 7294615.000000,     1, 2.207396, 0.573197, 5.025674
+trie building, 0.173366, 760341870.359823, 93615362.323071, 594391728.149952, 8820186.935645, 2614747.715901, 1272839.410606, 139446253.000000,     1, 0.781743, 0.804348, 5.452580
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.003842, 17535040.000000, 681305.000000, 7437228.000000, 105463.000000, 33951.000000,          -nan, 3321558.000000,     1, 0.424135, 0.864573, 5.279161
+trie building, 0.036430, 142914026.580212, 17196089.618916, 139453354.193135, 1533763.539086, 690013.376735, 426094.774257, 26157425.000000,     1, 0.975785, 0.718021, 5.463612
+trie intersection, 0.031977, 172710153.807666, 19250972.067589, 163979830.648953, 2431877.224111, 502288.442498, 122094.540921, 31846509.000000,     1, 0.949451, 0.995928, 5.423205
+
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ nano ../includes/execution_engine/chunked_list_builder.h
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ make main && ./main 9d
+Consolidate compiler generated dependencies of target src_lib
+[  5%] Building CXX object src/CMakeFiles/src_lib.dir/query_optimizer/optimizer.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/chunked_list_builder.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_builder.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_intersector.cpp.o
+[ 26%] Linking CXX static library libsrc_lib.a
+[ 78%] Built target src_lib
+[ 89%] Built target duckdb_src
+[ 94%] Linking CXX executable main
+[100%] Built target main
+Query: 9d-4
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,          cycles,         kcycles,    instructions,     L1-misses,    LLC-misses, branch-misses,      task-clock, scale,      IPC,     CPUs,      GHz
+chunked list building, 0.001533, 52752632.000000, 18751006.000000, 42045141.000000, 588093.000000, 343757.000000,          -nan, 13872090.000000,     1, 0.797025, 9.050134, 3.802789
+trie building, 0.002223, 9265623.706413, 2258020.000000, 10103296.000000, 138078.000000, 30346.000000,  17917.808916, 1794192.000000,     1, 1.090406, 0.807133, 5.164232
+trie intersection, 0.015875, 84613475.194098, 2244997.660251, 65195646.811764, 737140.972642, 333304.000000,  21949.992735, 15844632.000000,     1, 0.770511, 0.998061, 5.340198
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.004132, 17771875.590856, 733181.000000, 6345722.000000, 96432.000000, 28777.000000,  13727.488767, 3339492.000000,     1, 0.357065, 0.808105, 5.321730
+trie building, 0.037623, 113243911.891528, 17485346.725196, 94613722.910189, 1384850.150370, 346251.000000, 203966.668177, 21363708.000000,     1, 0.835486, 0.567835, 5.300761
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.005422, 13279489.000000, 3440227.000000, 29105375.000000, 305410.000000, 33345.000000,          -nan, 2561528.000000,     1, 2.191754, 0.472426, 5.184206
+trie building, 0.030927, 100410350.201019, 9780999.527544, 87158512.347143, 961244.265239, 335310.000000, 242728.822907, 18713728.000000,     1, 0.868023, 0.605099, 5.365598
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000007, 39304.000000, 23037.000000, 44287.000000, 799.000000, 826.000000,          -nan, 14000.000000,     1, 1.126781, 1.904762, 2.807429
+trie building, 0.000008, 39303.000000, 16847.000000, 46220.000000, 485.000000, 544.000000,          -nan, 13870.000000,     1, 1.175992, 1.841965, 2.833670
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.004262, 15784977.194755, 1131240.000000, 7837236.000000, 111622.000000, 31719.000000,   1731.957154, 3728701.000000,     1, 0.496500, 0.874909, 4.233372
+trie building, 0.105891, 258830640.621712, 71800771.537095, 301569491.490370, 3802451.674833, 965132.976623, 415880.262295, 49582054.000000,     1, 1.165123, 0.468235, 5.220248
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.010585, 40555760.701456, 10955345.764488, 92734922.000000, 944728.000000, 71145.000000,  13732.872671, 7845041.000000,     1, 2.286603, 0.741144, 5.169605
+trie building, 0.124284, 525177983.170141, 90994447.762271, 301639085.691357, 3954075.467974, 1518619.208099, 751885.440020, 98304973.000000,     1, 0.574356, 0.790969, 5.342334
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.003788, 15442575.000000, 835303.000000, 6392173.000000, 94476.000000, 28756.000000,          -nan, 2847015.000000,     1, 0.413932, 0.751543, 5.424128
+trie building, 0.027056, 98185632.964588, 16984832.906105, 74741528.885239, 1030918.701806, 296517.000000, 210173.058362, 18266996.000000,     1, 0.761227, 0.675165, 5.375029
+trie intersection, 0.029738, 158295250.883837, 11727802.107159, 143007665.097474, 2050705.057429, 473145.249185, 167890.553541, 29542260.000000,     1, 0.903424, 0.993407, 5.358265
+
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ nano ../includes/execution_engine/chunked_list_builder.h
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ make main && ./main 9d
+Consolidate compiler generated dependencies of target src_lib
+[  5%] Building CXX object src/CMakeFiles/src_lib.dir/query_optimizer/optimizer.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/chunked_list_builder.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_builder.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_intersector.cpp.o
+[ 26%] Linking CXX static library libsrc_lib.a
+[ 78%] Built target src_lib
+[ 89%] Built target duckdb_src
+[ 94%] Linking CXX executable main
+[100%] Built target main
+Query: 9d-5
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,          cycles,         kcycles,    instructions,     L1-misses,    LLC-misses, branch-misses,      task-clock, scale,      IPC,     CPUs,      GHz
+chunked list building, 0.001895, 66212972.000000, 24647107.000000, 45465531.000000, 818875.000000, 421143.000000,          -nan, 17220563.000000,     1, 0.686656, 9.087709, 3.844995
+trie building, 0.002366, 8039034.000000, 3299630.000000, 5841812.000000, 90708.000000, 21456.000000,          -nan, 1509625.000000,     1, 0.726681, 0.638067, 5.325186
+trie intersection, 0.014357, 75637581.047863, 5182804.436817, 143061814.404140, 1032090.000000, 153136.000000,  47925.180834, 14270376.000000,     1, 1.891412, 0.993967, 5.300322
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.004764, 15391075.963314, 1198573.327835, 8350161.000000, 123421.000000, 42460.000000,   4334.189443, 3102544.000000,     1, 0.542533, 0.651201, 4.960792
+trie building, 0.031622, 77595169.838784, 21293016.317250, 46311149.824680, 801904.133144, 189948.081932, 103795.359776, 14601403.000000,     1, 0.596830, 0.461745, 5.314227
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.006292, 16975342.543760, 1301087.000000, 9195102.000000, 138455.000000, 37830.000000,   5758.579279, 3161147.000000,     1, 0.541674, 0.502443, 5.369995
+trie building, 0.019831, 77628620.140449, 4178158.513609, 42413445.000000, 619076.000000, 185493.000000, 109776.894289, 14432520.000000,     1, 0.546364, 0.727773, 5.378729
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000005, 34965.000000, 16139.000000, 32227.000000, 652.000000, 523.000000,          -nan, 11110.000000,     1, 0.921693, 2.068901, 3.147165
+trie building, 0.000009, 48020.000000, 19903.000000, 60678.000000, 737.000000, 611.000000,          -nan, 14641.000000,     1, 1.263599, 1.626597, 3.279831
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.004343, 16398699.695772, 2632205.000000, 19938274.000000, 256251.000000, 40576.000000,   3477.206770, 4058002.000000,     1, 1.215845, 0.934283, 4.041077
+trie building, 0.109111, 136563021.998573, 46503310.658312, 154319633.603057, 1943444.525542, 475920.953310, 213913.650318, 26856463.000000,     1, 1.130025, 0.246138, 5.084922
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.009846, 41096875.566996, 10127655.000000, 84732568.000000, 956468.000000, 94546.000000,  16100.041922, 7924398.000000,     1, 2.061776, 0.804805, 5.186120
+trie building, 0.093941, 427180087.256369, 88259675.087321, 159367995.322536, 2497661.467794, 842592.108880, 387444.301933, 82252437.000000,     1, 0.373070, 0.875571, 5.193525
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.004137, 20775927.161667, 2397488.000000, 19103200.000000, 248841.000000, 45979.000000,   5849.859017, 3905725.000000,     1, 0.919487, 0.944016, 5.319352
+trie building, 0.016704, 55372804.778588, 4563517.975685, 35240391.961514, 474183.000000, 142641.000000, 109339.909720, 10386744.000000,     1, 0.636421, 0.621825, 5.331103
+trie intersection, 0.029191, 155138746.922190, 4154470.050968, 132821373.081824, 2021002.416818, 472852.474545, 133964.052157, 29095487.000000,     1, 0.856146, 0.996721, 5.332055
+
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ nano ../includes/execution_engine/chunked_list_builder.h
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ make main && ./main 9d
+Consolidate compiler generated dependencies of target src_lib
+[  5%] Building CXX object src/CMakeFiles/src_lib.dir/query_optimizer/optimizer.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/chunked_list_builder.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_builder.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_intersector.cpp.o
+[ 26%] Linking CXX static library libsrc_lib.a
+[ 78%] Built target src_lib
+[ 89%] Built target duckdb_src
+[ 94%] Linking CXX executable main
+[100%] Built target main
+Query: 9d-6
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,           cycles,          kcycles,    instructions,      L1-misses,    LLC-misses, branch-misses,      task-clock, scale,      IPC,      CPUs,      GHz
+chunked list building, 0.003198, 169626993.000000, 106247616.000000, 75446981.000000, 1247248.000000, 471799.000000,          -nan, 35459392.000000,     1, 0.444782, 11.086375, 4.783697
+trie building, 0.002333, 8115413.694237, 2648922.000000, 6057893.000000, 89916.000000, 21975.000000,  17144.653739, 1523542.000000,     1, 0.746468, 0.652991, 5.326675
+trie intersection, 0.014558, 76530847.008882, 3835728.537325, 111601173.319350, 1016229.469170, 216909.000000,  57651.166982, 14412659.000000,     1, 1.458251, 0.990012, 5.309974
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.006276, 26359844.600753, 1508751.000000, 12433122.000000, 194171.000000, 45073.000000,   1423.509253, 4987399.000000,     1, 0.471669, 0.794629, 5.285289
+trie building, 0.031674, 77037765.363247, 32893540.295796, 49268966.000000, 703804.000000, 185284.000000, 114225.510514, 14286776.000000,     1, 0.639543, 0.451059, 5.392243
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.007442, 29940208.600841, 3294900.185787, 15756566.000000, 278384.000000, 49875.000000,   3253.881275, 5762831.000000,     1, 0.526268, 0.774379, 5.195399
+trie building, 0.023120, 67711279.511349, 9488867.133344, 44475824.531032, 665081.785818, 188345.000000, 125752.028297, 12867460.000000,     1, 0.656845, 0.556563, 5.262210
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000006, 51527.000000, 27181.000000, 42966.000000, 841.000000, 460.000000,          -nan, 10861.000000,     1, 0.833854, 1.710394, 4.744222
+trie building, 0.000009, 65367.000000, 22709.000000, 80441.000000, 601.000000, 684.000000,          -nan, 12811.000000,     1, 1.230606, 1.412303, 5.102412
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.005922, 28487375.064267, 6204376.000000, 39811225.000000, 505376.000000, 54437.000000,   3881.468982, 5479174.000000,     1, 1.397504, 0.925242, 5.199210
+trie building, 0.106540, 324324589.768476, 113974009.182029, 382374511.495646, 4574849.715552, 1164208.190402, 537898.337763, 62072240.000000,     1, 1.178987, 0.582620, 5.224954
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.011385, 53711226.921643, 11156014.170661, 103026881.873413, 1310005.000000, 166328.000000,  13424.479824, 10229607.000000,     1, 1.918163, 0.898523, 5.250566
+trie building, 0.096418, 439337029.181992, 109530602.518323, 160406405.966998, 2659807.058406, 846975.798443, 399558.214790, 82953824.000000,     1, 0.365110, 0.860357, 5.296164
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.004582, 20309045.276356, 3039380.000000, 24651279.000000, 344838.000000, 53461.000000,   2717.415631, 3995219.000000,     1, 1.213808, 0.871963, 5.083337
+trie building, 0.016921, 56784909.060079, 4489844.145276, 34870201.000000, 478618.000000, 151908.000000, 103033.402913, 10635386.000000,     1, 0.614075, 0.628535, 5.339243
+trie intersection, 0.029619, 156615774.722824, 3724202.677833, 131856975.537919, 2723281.394155, 509366.865785, 130160.485753, 29590681.000000,     1, 0.841914, 0.999030, 5.292740
+
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ nano ../includes/execution_engine/chunked_list_builder.h
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ make main && ./main 9d
+Consolidate compiler generated dependencies of target src_lib
+[  5%] Building CXX object src/CMakeFiles/src_lib.dir/query_optimizer/optimizer.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/chunked_list_builder.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_builder.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_intersector.cpp.o
+[ 26%] Linking CXX static library libsrc_lib.a
+[ 78%] Built target src_lib
+[ 89%] Built target duckdb_src
+[ 94%] Linking CXX executable main
+[100%] Built target main
+Query: 9d-7
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,           cycles,          kcycles,     instructions,      L1-misses,    LLC-misses, branch-misses,      task-clock, scale,      IPC,      CPUs,      GHz
+chunked list building, 0.004429, 271467584.905481, 197370497.000000, 125165414.000000, 1639750.000000, 597754.000000, 184409.839364, 56128079.000000,     1, 0.461069, 12.671737, 4.836574
+trie building, 0.002518, 8976732.000000, 3718396.000000, 6642234.000000, 95952.000000, 24100.000000,          -nan, 1685171.000000,     1, 0.739939, 0.669359, 5.326897
+trie intersection, 0.018206, 96904908.161423, 3790023.373882, 131997843.138277, 1331964.913745, 255667.862445,  52306.040043, 18099858.000000,     1, 1.362138, 0.994180, 5.353904
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.009795, 28247845.127955, 8103422.388622, 32549253.000000, 526072.000000, 64428.000000,   6266.115393, 5311144.000000,     1, 1.152274, 0.542245, 5.318599
+trie building, 0.033787, 138163625.109218, 55512186.653396, 73724346.069436, 1136706.294479, 344350.810262, 192043.610229, 25563264.000000,     1, 0.533602, 0.756594, 5.404772
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.009564, 22961720.102566, 7678647.000000, 45611058.000000, 666666.000000, 67885.000000,  23344.501861, 4566683.000000,     1, 1.986396, 0.477463, 5.028096
+trie building, 0.023721, 85805876.042175, 5498967.228357, 38031492.987377, 561122.000000, 209851.000000, 134068.124212, 15757919.000000,     1, 0.443227, 0.664310, 5.445254
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000008, 59294.000000, 34475.000000, 50041.000000, 1131.000000, 770.000000,          -nan, 11610.000000,     1, 0.843947, 1.484655, 5.107149
+trie building, 0.000011, 74059.000000, 21853.000000, 126738.000000, 783.000000, 588.000000,          -nan, 14230.000000,     1, 1.711311, 1.338538, 5.204427
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.008219, 34625077.143819, 7509660.265065, 36561101.000000, 585730.000000, 67747.000000,   6861.224335, 6617236.000000,     1, 1.055914, 0.805090, 5.232559
+trie building, 0.106435, 429165430.298005, 133753621.167496, 456139224.341542, 5437566.439702, 1337602.011704, 630560.318806, 82274605.000000,     1, 1.062852, 0.773001, 5.216256
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.015040, 41880812.176023, 9370364.000000, 76721939.000000, 1121233.000000, 127275.000000,  18534.218683, 8031523.000000,     1, 1.831911, 0.534020, 5.214554
+trie building, 0.091879, 422069730.747784, 98690767.894877, 158239322.016103, 2621417.728484, 815749.890524, 411968.917546, 79312745.000000,     1, 0.374913, 0.863229, 5.321588
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.007423, 35212941.072058, 8359974.414768, 45380098.000000, 697669.000000, 94158.000000,   7435.704416, 6715597.000000,     1, 1.288734, 0.904748, 5.243457
+trie building, 0.017036, 77373502.263862, 5839658.059605, 45567272.549682, 535857.000000, 191036.000000, 122324.828527, 14442198.000000,     1, 0.588926, 0.847738, 5.357460
+trie intersection, 0.031604, 167684240.750982, 10351870.147256, 145807460.731130, 3854709.408128, 517589.708802, 169433.548804, 31522848.000000,     1, 0.869536, 0.997447, 5.319451
+
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ nano ../includes/execution_engine/chunked_list_builder.h
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ make main && ./main 9d
+Consolidate compiler generated dependencies of target src_lib
+[  5%] Building CXX object src/CMakeFiles/src_lib.dir/query_optimizer/optimizer.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/chunked_list_builder.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_builder.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_intersector.cpp.o
+[ 26%] Linking CXX static library libsrc_lib.a
+[ 78%] Built target src_lib
+[ 89%] Built target duckdb_src
+[ 94%] Linking CXX executable main
+[100%] Built target main
+Query: 9d-8
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,           cycles,          kcycles,     instructions,      L1-misses,    LLC-misses, branch-misses,       task-clock, scale,      IPC,      CPUs,      GHz
+chunked list building, 0.007073, 639313451.679831, 547815064.000000, 201377230.000000, 2217674.000000, 695056.000000, 284802.796194, 127259380.000000,     1, 0.314990, 17.991853, 5.023704
+trie building, 0.002709, 7824955.000000, 3382574.000000, 7972486.000000, 148908.000000, 32316.000000,          -nan, 1485646.000000,     1, 1.018854, 0.548490, 5.267039
+trie intersection, 0.018961, 101045128.239812, 1252378.862012, 40104875.644261, 1732861.466923, 904236.290780,  13380.778188, 18971805.000000,     1, 0.396901, 1.000577, 5.326068
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.016694, 55210433.646277, 10481472.000000, 61417849.000000, 1193230.000000, 135834.000000,  14081.794291, 10473978.000000,     1, 1.112432, 0.627397, 5.271200
+trie building, 0.036250, 126779891.455800, 39834969.210333, 77928979.940037, 1372414.873858, 356718.818006, 150763.655157, 23963986.000000,     1, 0.614679, 0.661078, 5.290434
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.015521, 61057692.486565, 17431118.898264, 97824226.845324, 1544719.000000, 155455.000000,  13211.791266, 11516214.000000,     1, 1.602161, 0.741962, 5.301889
+trie building, 0.018359, 84729497.026344, 5081045.799180, 53164208.223301, 682888.137223, 250619.000000, 147215.200187, 15721144.000000,     1, 0.627458, 0.856306, 5.389525
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000008, 44583.000000, 24184.000000, 49305.000000, 1401.000000, 569.000000,          -nan, 13640.000000,     1, 1.105915, 1.735148, 3.268548
+trie building, 0.000041, 162680.000000, 19779.000000, 144379.000000, 1915.000000, 1458.000000,          -nan, 47291.000000,     1, 0.887503, 1.157334, 3.439978
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.014612, 68033541.285180, 17071427.582006, 125594981.008887, 1952904.000000, 170058.000000,  19432.164457, 13149018.000000,     1, 1.846074, 0.899897, 5.174040
+trie building, 0.104806, 450352935.064932, 162932145.332793, 544479878.283728, 6575436.553471, 1453855.493784, 780554.351771, 86391496.000000,     1, 1.209007, 0.824300, 5.212931
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.016204, 77823300.477766, 13586286.550698, 132938162.819385, 2591835.978163, 254062.000000,  15142.992811, 14716985.000000,     1, 1.708205, 0.908222, 5.287992
+trie building, 0.099216, 425150376.251117, 79035318.333583, 154857185.362931, 2827259.090469, 801241.360290, 455942.901648, 82229238.000000,     1, 0.364241, 0.828787, 5.170307
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.012694, 55413740.590951, 14300188.506507, 95603733.000000, 1582402.000000, 150434.000000,  14139.979788, 10894190.000000,     1, 1.725271, 0.858240, 5.086541
+trie building, 0.015850, 60710210.639822, 5368309.157407, 36972302.740390, 475169.000000, 151617.000000, 114716.020476, 11346975.000000,     1, 0.608996, 0.715881, 5.350343
+trie intersection, 0.035529, 188083671.045146, 4143256.678198, 194679493.691972, 5431791.096357, 526865.795776, 150946.525266, 35464257.000000,     1, 1.035069, 0.998185, 5.303471
+
+Query: 9d-9
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,            cycles,           kcycles,     instructions,      L1-misses,    LLC-misses, branch-misses,       task-clock, scale,      IPC,      CPUs,      GHz
+chunked list building, 0.008608, 1035359543.318162, 1013960358.766758, 293871630.000000, 2525054.000000, 724640.000000, 163663.702250, 197474741.000000,     1, 0.283835, 22.941367, 5.242997
+trie building, 0.002311, 6863348.000000, 2801796.000000, 5835855.000000, 96725.000000, 26747.000000,          -nan, 1312323.000000,     1, 0.850293, 0.567910, 5.229923
+trie intersection, 0.021166, 113284905.206753, 1453859.625441, 46431362.677353, 2043707.181866, 765699.757269,  17073.011478, 21153399.000000,     1, 0.409864, 0.999396, 5.355400
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.033484, 146382228.189719, 38860073.692514, 223502137.642816, 3958856.766773, 320938.454543,  50542.375741, 27528751.000000,     1, 1.526839, 0.822152, 5.317431
+trie building, 0.033048, 154220690.682277, 47276913.689191, 81877727.156199, 1351585.872370, 416238.224658, 154166.484330, 28721871.000000,     1, 0.530913, 0.869091, 5.369451
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.030373, 121255885.750340, 32192217.206489, 201367861.313923, 3454111.426290, 319342.198119,  33157.386397, 22908830.000000,     1, 1.660685, 0.754250, 5.292976
+trie building, 0.018320, 96220301.858324, 4694198.606311, 52202093.169730, 732811.143320, 245630.000000, 139655.795175, 17772996.000000,     1, 0.542527, 0.970118, 5.413848
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000008, 60462.000000, 30261.000000, 66144.000000, 2205.000000, 490.000000,          -nan, 11940.000000,     1, 1.093976, 1.472256, 5.063819
+trie building, 0.000037, 217133.000000, 22111.000000, 163347.000000, 2164.000000, 1568.000000,          -nan, 41081.000000,     1, 0.752290, 1.112944, 5.285485
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.022734, 105020545.937067, 22826037.307343, 176028524.675195, 3509016.285990, 290457.000000,  30416.180983, 20297242.000000,     1, 1.676134, 0.892795, 5.174129
+trie building, 0.103151, 460250544.017232, 164876183.148325, 556136600.812460, 6691452.046045, 1405278.033316, 803714.150214, 89065330.000000,     1, 1.208334, 0.863446, 5.167561
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.027045, 124409111.548547, 29554566.621289, 209336010.028140, 4474564.729371, 320131.381391,  27447.717739, 23685313.000000,     1, 1.682642, 0.875781, 5.252585
+trie building, 0.094091, 442903572.677492, 71673612.380786, 156203469.426352, 2599723.057511, 832950.766112, 407992.132726, 83721681.000000,     1, 0.352681, 0.889798, 5.290190
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.024041, 108339774.923594, 28860986.755199, 196201995.540414, 3395594.188096, 265791.744144,  36766.676631, 20962597.000000,     1, 1.810988, 0.871952, 5.168242
+trie building, 0.016625, 77374915.811970, 5278473.572118, 39935560.293280, 661602.445151, 188865.000000, 123437.707124, 14421507.000000,     1, 0.516131, 0.867466, 5.365245
+trie intersection, 0.040695, 215901225.067933, 4126221.891644, 171675210.440992, 9583988.769549, 544987.827369, 129152.092440, 40626011.000000,     1, 0.795156, 0.998296, 5.314359
+
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ nano ../includes/execution_engine/chunked_list_builder.h
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ make main && ./main 9d
+[  5%] Building CXX object src/CMakeFiles/src_lib.dir/query_optimizer/optimizer.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/chunked_list_builder.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_builder.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_intersector.cpp.o
+[ 26%] Linking CXX static library libsrc_lib.a
+[ 78%] Built target src_lib
+[ 89%] Built target duckdb_src
+[ 94%] Linking CXX executable main
+[100%] Built target main
+Query: 9d-10
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,            cycles,           kcycles,     instructions,      L1-misses,    LLC-misses, branch-misses,       task-clock, scale,      IPC,      CPUs,      GHz
+chunked list building, 0.012884, 1457243239.666996, 1418973683.136308, 414332422.798106, 3871036.000000, 872529.000000, 284537.199982, 283231134.000000,     1, 0.284326, 21.982422, 5.145067
+trie building, 0.002152, 6654099.000000, 2765090.000000, 4145029.000000, 86039.000000, 21164.000000,          -nan, 1263589.000000,     1, 0.622929, 0.587075, 5.266031
+trie intersection, 0.025725, 136001030.105239, 1369809.887475, 46223935.181639, 5716227.184561, 872270.106910,  12225.332490, 25727246.000000,     1, 0.339879, 1.000081, 5.286265
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.037453, 173726903.807822, 34499901.268134, 233801834.335768, 4290798.665043, 382217.241222,  65436.855737, 33019252.000000,     1, 1.345801, 0.881607, 5.261382
+trie building, 0.029234, 110053611.687120, 25170164.732247, 68994311.145104, 1474255.584663, 294646.870819, 210347.965722, 22150130.000000,     1, 0.626915, 0.757688, 4.968531
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.036429, 175741945.601781, 48071076.328421, 265229061.392367, 4846061.886135, 481231.245642,  71097.962927, 33005605.000000,     1, 1.509196, 0.906030, 5.324609
+trie building, 0.018171, 96199887.949495, 4575540.710259, 45024684.654279, 732060.872065, 230727.516239, 146153.548376, 17790728.000000,     1, 0.468033, 0.979060, 5.407305
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000017, 109297.000000, 69209.000000, 121008.000000, 4238.000000, 1182.000000,          -nan, 20821.000000,     1, 1.107148, 1.223254, 5.249364
+trie building, 0.000040, 234965.000000, 27923.000000, 179085.000000, 2766.000000, 1724.000000,          -nan, 44552.000000,     1, 0.762177, 1.102472, 5.273950
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.030847, 150738411.211359, 32845421.503115, 191629011.093202, 3677199.170038, 380003.668612,  65761.106263, 28210839.000000,     1, 1.271269, 0.914539, 5.343280
+trie building, 0.103050, 469197083.382388, 170179932.875471, 567680303.391830, 7328935.942174, 1329954.340817, 814399.479520, 90118598.000000,     1, 1.209897, 0.874516, 5.206440
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.049393, 238661719.126465, 63378956.553034, 409573197.075570, 8627556.872192, 586885.495231,  54715.111394, 45073023.000000,     1, 1.716124, 0.912546, 5.295001
+trie building, 0.096644, 452067945.153017, 57162906.434118, 172137497.957987, 2895766.686526, 879185.929995, 410692.953372, 86235164.000000,     1, 0.380778, 0.892296, 5.242269
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.034279, 147999020.414493, 22560382.109830, 198303795.479453, 3883300.870010, 401959.267744,  44492.977679, 28271633.000000,     1, 1.339899, 0.824751, 5.234895
+trie building, 0.016312, 77412653.080264, 4493266.298277, 47365754.514804, 549063.233318, 192576.000000, 115050.949048, 14424550.000000,     1, 0.611861, 0.884287, 5.366729
+trie intersection, 0.052561, 277957612.566687, 5257376.598463, 194986793.559585, 30089325.788354, 698362.617725, 122280.442916, 52474752.000000,     1, 0.701498, 0.998365, 5.296978
+
+Query: 9d-11
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,            cycles,           kcycles,     instructions,      L1-misses,     LLC-misses, branch-misses,       task-clock, scale,      IPC,      CPUs,      GHz
+chunked list building, 0.029303, 1894402643.695710, 1819903780.856523, 604073069.763420, 8346459.000000, 1616652.000000, 504109.594519, 381992478.000000,     1, 0.318873, 13.035981, 4.959267
+trie building, 0.002129, 8148584.000000, 2650802.000000, 4125193.000000, 86788.000000, 26748.000000,          -nan, 1524263.000000,     1, 0.506247, 0.715913, 5.345917
+trie intersection, 0.045857, 241978084.738757, 3271672.419974, 136018732.279747, 48470140.082623, 174665.904293,  39476.023493, 45861436.000000,     1, 0.562112, 1.000105, 5.276287
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.060303, 286904952.143997, 53039581.145546, 260257452.678260, 4846457.709524, 597116.016467, 143223.179374, 52293709.000000,     1, 0.907121, 0.867180, 5.486414
+trie building, 0.032150, 112738252.803845, 27656135.091764, 61571458.882929, 1385440.460959, 308536.442606, 133118.623053, 21614668.000000,     1, 0.546145, 0.672312, 5.215822
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.046305, 215071270.741829, 62576607.427763, 266916344.644941, 5145754.677344, 763290.898946, 110433.704332, 40512425.000000,     1, 1.241060, 0.874913, 5.308773
+trie building, 0.018042, 94055250.168904, 5443478.443930, 42893032.234281, 695835.482933, 231224.702980, 145515.162611, 17400607.000000,     1, 0.456041, 0.964445, 5.405286
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000028, 172233.000000, 110947.000000, 201657.000000, 7659.000000, 1232.000000,          -nan, 31641.000000,     1, 1.170838, 1.143472, 5.443349
+trie building, 0.000044, 258281.000000, 28902.000000, 193974.000000, 3844.000000, 2036.000000,          -nan, 48751.000000,     1, 0.751019, 1.100921, 5.297963
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.039696, 196175544.534397, 42974108.244383, 199062878.706766, 3856754.178367, 522564.574754, 107704.474381, 36016530.000000,     1, 1.014718, 0.907310, 5.446820
+trie building, 0.105355, 476461474.652007, 174500201.142337, 571172524.559568, 6789743.468367, 1321351.401921, 834986.165052, 92009902.000000,     1, 1.198780, 0.873334, 5.178372
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.089272, 429157941.682394, 82130204.819864, 644410341.795145, 14643630.902965, 1722889.314587,  70610.651160, 81568636.000000,     1, 1.501569, 0.913713, 5.261311
+trie building, 0.093010, 459838325.158043, 99423133.898459, 160768544.727326, 2541653.257144, 961928.680647, 389819.885665, 87098001.000000,     1, 0.349620, 0.936437, 5.279551
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.039759, 194605025.499562, 40315067.141317, 201835269.446808, 3642486.671549, 526714.193201, 104855.509842, 35903305.000000,     1, 1.037153, 0.903023, 5.420254
+trie building, 0.018360, 77481441.997540, 4297471.850886, 38916550.000000, 525678.000000, 196331.000000, 112714.013493, 14651895.000000,     1, 0.502269, 0.798036, 5.288152
+trie intersection, 0.090063, 475734584.524540, 8003492.168411, 172166337.067176, 86403828.088998, 1519945.204346, 120089.266537, 89340800.000000,     1, 0.361896, 0.991976, 5.324942
+
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ nano ../includes/execution_engine/chunked_list_builder.h
+company-price-function@zen4-students:~/making-free-joins-scalable/cmake-build-release$ make main && ./main 9d
+Consolidate compiler generated dependencies of target src_lib
+[  5%] Building CXX object src/CMakeFiles/src_lib.dir/query_optimizer/optimizer.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/chunked_list_builder.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_builder.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/src_lib.dir/execution_engine/ght_intersector.cpp.o
+[ 26%] Linking CXX static library libsrc_lib.a
+[ 78%] Built target src_lib
+[ 89%] Built target duckdb_src
+[ 94%] Linking CXX executable main
+[100%] Built target main
+Query: 9d-12
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,            cycles,           kcycles,      instructions,      L1-misses,     LLC-misses, branch-misses,       task-clock, scale,      IPC,      CPUs,      GHz
+chunked list building, 0.033106, 4451010034.927635, 4300583971.654187, 1157311869.535331, 9129045.652156, 1805449.024133, 465368.320647, 821718897.000000,     1, 0.260011, 24.820762, 5.416706
+trie building, 0.001372, 6983498.000000, 1563968.000000, 3745855.000000, 79140.000000, 24942.000000,          -nan, 1287950.000000,     1, 0.536387, 0.938870, 5.422181
+trie intersection, 0.079473, 423031475.753972, 1859314.571611, 79558473.798904, 51784176.808428, 1119815.531797,  25128.358229, 79432496.000000,     1, 0.188068, 0.999495, 5.325673
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.081303, 334845774.497714, 74073625.501650, 268772516.746635, 5576813.705005, 1174032.080258, 254517.506741, 62910874.000000,     1, 0.802676, 0.773788, 5.322542
+trie building, 0.028027, 105472806.798913, 23130255.630545, 67237255.225873, 1427288.604711, 290379.474123, 141812.142995, 21026920.000000,     1, 0.637484, 0.750251, 5.016084
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.060515, 289120597.038537, 57898320.756706, 283818866.722503, 5751684.519319, 1376652.181609, 130388.251379, 53588627.000000,     1, 0.981663, 0.885549, 5.395186
+trie building, 0.018378, 97421626.925900, 4573686.631394, 43061921.022632, 704609.480844, 222875.937760, 141734.670894, 18026385.000000,     1, 0.442016, 0.980849, 5.404391
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000045, 264596.000000, 168396.000000, 365799.000000, 14334.000000, 1452.000000,          -nan, 48561.000000,     1, 1.382481, 1.090989, 5.448735
+trie building, 0.000055, 312022.000000, 33034.000000, 227568.000000, 5963.000000, 2481.000000,          -nan, 58932.000000,     1, 0.729333, 1.081301, 5.294611
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.058100, 233558540.694239, 63485890.819355, 230527007.737510, 4422784.511179, 927475.624968, 148191.028295, 43183311.000000,     1, 0.987020, 0.743263, 5.408537
+trie building, 0.101182, 464858643.378014, 165651705.107325, 558106771.546201, 6583529.822185, 1290317.242877, 781168.771330, 89585056.000000,     1, 1.200595, 0.885381, 5.189020
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.133752, 647172020.549829, 121854874.066240, 788585105.198407, 16645265.942216, 3887741.375386, 263291.200271, 123057411.000000,     1, 1.218509, 0.920040, 5.259106
+trie building, 0.095051, 467504126.678834, 74128987.443509, 156275793.450450, 2685803.590705, 917453.907345, 378454.114706, 87738327.000000,     1, 0.334277, 0.923064, 5.328391
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.051572, 228848997.565500, 54842786.168754, 250370414.284395, 4886081.651817, 1009283.151894, 110298.491934, 44392143.000000,     1, 1.094042, 0.860775, 5.155169
+trie building, 0.021412, 67908505.693357, 4315025.598443, 40255866.000000, 539129.000000, 204040.000000, 123043.240482, 12563671.000000,     1, 0.592796, 0.586763, 5.405148
+trie intersection, 0.240464, 1276543512.070648, 13680575.484373, 169515814.342778, 169103269.780369, 3520416.251649, 120978.244352, 239082138.000000,     1, 0.132793, 0.994254, 5.339351
+
+Query: 9d-12-2
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,            cycles,           kcycles,      instructions,      L1-misses,     LLC-misses, branch-misses,       task-clock, scale,      IPC,      CPUs,      GHz
+chunked list building, 0.032846, 3968703781.352349, 3795683911.369426, 1035162888.569265, 8789828.373009, 1661888.574346, 537848.822486, 779554739.000000,     1, 0.260831, 23.733438, 5.090988
+trie building, 0.001693, 8712685.000000, 1792890.000000, 5287137.000000, 87841.000000, 26759.000000,          -nan, 1593568.000000,     1, 0.606832, 0.941040, 5.467407
+trie intersection, 0.080166, 428816337.837457, 3494049.817007, 144977222.205426, 100329645.059329, 139642.771656,  49184.604798, 80116076.000000,     1, 0.338087, 0.999380, 5.352438
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.081694, 351113942.160258, 92479580.260831, 301425841.203595, 6145562.065734, 1201006.887942, 261168.586971, 66566488.000000,     1, 0.858484, 0.814826, 5.274635
+trie building, 0.037846, 129680675.357263, 31190516.485740, 69942714.504403, 1096542.135607, 327531.558864, 215415.813338, 24234812.000000,     1, 0.539346, 0.640347, 5.351008
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.066788, 295792452.416006, 78914140.837359, 318609452.586946, 5367738.296425, 1306698.187389, 210430.335755, 56778677.000000,     1, 1.077139, 0.850127, 5.209569
+trie building, 0.018093, 92310060.097464, 4323332.017334, 42304141.078506, 710715.125241, 216745.292186, 142297.964056, 17077138.000000,     1, 0.458283, 0.943859, 5.405476
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000032, 195633.000000, 127940.000000, 255523.000000, 9819.000000, 1304.000000,          -nan, 35911.000000,     1, 1.306134, 1.129596, 5.447718
+trie building, 0.000058, 330638.000000, 38670.000000, 236020.000000, 5977.000000, 2567.000000,          -nan, 62012.000000,     1, 0.713832, 1.075813, 5.331839
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.052796, 241843145.557205, 52774786.847903, 246276791.146464, 4699200.939221, 905818.935561, 120119.216125, 46345178.000000,     1, 1.018333, 0.877817, 5.218302
+trie building, 0.102267, 468216199.623167, 166754189.995537, 566411833.946316, 6595758.417424, 1283604.615815, 811293.079459, 90278497.000000,     1, 1.209723, 0.882770, 5.186354
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.130946, 636124569.959211, 99108852.501076, 740547022.509864, 15417341.842381, 3592148.309022, 264968.930704, 120722401.000000,     1, 1.164154, 0.921926, 5.269317
+trie building, 0.092625, 466911921.875246, 77068658.056255, 158099665.632996, 2665015.871975, 876014.620043, 366613.426172, 87483332.000000,     1, 0.338607, 0.944493, 5.337153
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.060071, 220701143.446541, 49592966.024115, 219015814.401047, 4130407.516963, 894076.229324, 179101.439193, 41791333.000000,     1, 0.992364, 0.695695, 5.281027
+trie building, 0.018483, 83703041.178396, 4166083.375243, 40961352.319320, 557468.773329, 182226.000000, 120537.015371, 15549062.000000,     1, 0.489365, 0.841258, 5.383157
+trie intersection, 0.233810, 1245911319.488673, 11160719.357484, 153016695.747836, 154398280.896605, 3463760.029812, 113841.867800, 232663851.000000,     1, 0.122815, 0.995096, 5.354985
+
+Query: 9d-12-3
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,           cycles,          kcycles,     instructions,      L1-misses,    LLC-misses, branch-misses,       task-clock, scale,      IPC,      CPUs,      GHz
+chunked list building, 0.007522, 669990834.549757, 620225093.000000, 213288407.000000, 2418249.000000, 739602.000000, 125709.712733, 136094270.000000,     1, 0.318345, 18.092486, 4.922991
+trie building, 0.001601, 7203457.000000, 1959600.000000, 4277436.000000, 84041.000000, 24543.000000,          -nan, 1334841.000000,     1, 0.593803, 0.833896, 5.396491
+trie intersection, 0.082731, 442570123.920079, 4144098.865642, 158173940.533373, 104777083.175932, 147779.475472,  42537.537252, 82694292.000000,     1, 0.357399, 0.999555, 5.351882
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.029875, 141668280.081235, 27665253.873555, 174485245.823439, 4221961.806206, 1003785.543261,  71775.243642, 26490479.000000,     1, 1.231647, 0.886704, 5.347894
+trie building, 0.033763, 144009634.115613, 39725669.212971, 78530181.072451, 1082074.666030, 406360.143523, 219419.522723, 26573952.000000,     1, 0.545312, 0.787067, 5.419203
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.031536, 83036516.553059, 22937332.989452, 125916605.993404, 2540216.194465, 733809.000000,  47708.904056, 15875525.000000,     1, 1.516400, 0.503407, 5.230474
+trie building, 0.019547, 92236367.877964, 4625286.534177, 51278256.575201, 702984.715903, 260768.033623, 156903.046016, 17085958.000000,     1, 0.555944, 0.874106, 5.398373
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000043, 150070.000000, 93916.000000, 255150.000000, 9487.000000, 849.000000,          -nan, 49612.000000,     1, 1.700207, 1.155891, 3.024873
+trie building, 0.000074, 246163.000000, 30458.000000, 234835.000000, 6051.000000, 2129.000000,          -nan, 81643.000000,     1, 0.953982, 1.107579, 3.015115
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.021861, 90824715.195280, 21612735.722524, 138499536.765126, 3035900.567539, 621575.877183,  65087.698950, 17293962.000000,     1, 1.524910, 0.791079, 5.251817
+trie building, 0.102748, 465345184.362121, 165632319.191524, 555649743.198109, 6553854.245166, 1312892.573294, 798685.661759, 89425138.000000,     1, 1.194059, 0.870335, 5.203740
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.028001, 133085865.010990, 24779519.963118, 193161992.288923, 4642058.992649, 1258176.937500,  39599.295866, 25256161.000000,     1, 1.451409, 0.901980, 5.269442
+trie building, 0.092430, 461053366.091214, 96431648.257474, 155888906.974743, 2463440.606593, 1005311.903971, 369842.175013, 86295123.000000,     1, 0.338115, 0.933631, 5.342751
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.021440, 104887409.049172, 17132637.225971, 129363729.214140, 2946441.759642, 736325.924311,  50388.305643, 19929618.000000,     1, 1.233358, 0.929566, 5.262891
+trie building, 0.018317, 84602960.983008, 3482597.534489, 45925724.928187, 523001.320608, 204642.000000, 118367.014847, 15721412.000000,     1, 0.542838, 0.858303, 5.381384
+trie intersection, 0.236537, 1262232457.980230, 13388902.038629, 168421416.087099, 164565924.694742, 3675905.768189, 133783.916285, 235552765.000000,     1, 0.133431, 0.995841, 5.358598
+
+Query: 9d-5-2
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,          cycles,         kcycles,    instructions,     L1-misses,    LLC-misses, branch-misses,      task-clock, scale,      IPC,     CPUs,      GHz
+chunked list building, 0.001515, 50979172.000000, 18347180.000000, 39538520.000000, 611519.000000, 353747.000000,          -nan, 12929125.000000,     1, 0.775582, 8.535293, 3.942972
+trie building, 0.001378, 6627700.000000, 1988208.000000, 4664762.000000, 80544.000000, 19309.000000,          -nan, 1218887.000000,     1, 0.703828, 0.884482, 5.437502
+trie intersection, 0.014690, 77896118.041032, 4715383.056176, 128115820.566015, 1045049.023476, 170796.000000,  43358.603182, 14627715.000000,     1, 1.644701, 0.995748, 5.325242
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.004018, 18684325.937172, 838829.000000, 6806036.000000, 115609.000000, 32733.000000,  19890.978991, 3516802.000000,     1, 0.364264, 0.875319, 5.312874
+trie building, 0.032262, 74724529.335199, 23214037.803396, 48418363.839285, 729301.558932, 186382.000000, 102457.338875, 14188071.000000,     1, 0.647958, 0.439777, 5.266715
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.005489, 26548077.001939, 1040533.000000, 8418837.000000, 143244.000000, 38837.000000,   3168.642451, 5137045.000000,     1, 0.317117, 0.935837, 5.167967
+trie building, 0.024013, 69511129.130896, 11251685.812820, 45577499.130371, 692669.240003, 188551.000000, 126910.247854, 13186609.000000,     1, 0.655686, 0.549144, 5.271342
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000005, 32220.000000, 15909.000000, 29182.000000, 426.000000, 321.000000,          -nan, 18170.000000,     1, 0.905711, 3.833333, 1.773253
+trie building, 0.000023, 98996.000000, 38870.000000, 69540.000000, 1336.000000, 1512.000000,          -nan, 29241.000000,     1, 0.702453, 1.297236, 3.385520
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.003631, 15212819.000000, 4062969.000000, 27899111.000000, 332097.000000, 27639.000000,          -nan, 3016870.000000,     1, 1.833921, 0.830885, 5.042584
+trie building, 0.110646, 138686711.358993, 48746533.727064, 156321423.865101, 1889704.543697, 479451.508052, 208380.487236, 26408346.000000,     1, 1.127155, 0.238673, 5.251624
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.010491, 33531059.264476, 8625511.000000, 65920773.000000, 753893.000000, 57393.000000,  16580.919520, 6443917.000000,     1, 1.965962, 0.614225, 5.203521
+trie building, 0.092889, 443700015.894163, 89044608.112020, 155253126.106156, 2594196.070917, 759881.509747, 372154.540779, 83509571.000000,     1, 0.349906, 0.899028, 5.313164
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.003229, 16682473.000000, 824734.000000, 7217514.000000, 117422.000000, 30807.000000,          -nan, 3108114.000000,     1, 0.432641, 0.962507, 5.367394
+trie building, 0.017202, 57816051.123682, 5212640.484472, 35681471.621371, 502382.386592, 147478.000000, 115558.429995, 10803980.000000,     1, 0.617155, 0.628057, 5.351366
+trie intersection, 0.029350, 156770845.616516, 13854994.217872, 140850672.184489, 2961180.300890, 469523.273064, 127414.276401, 29289033.000000,     1, 0.898449, 0.997918, 5.352544
+Query: 9d-5-4
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,          cycles,         kcycles,    instructions,     L1-misses,    LLC-misses, branch-misses,      task-clock, scale,      IPC,     CPUs,      GHz
+chunked list building, 0.001522, 33401733.000000, 14912871.000000, 35546241.000000, 538972.000000, 347287.000000,          -nan, 13199717.000000,     1, 1.064203, 8.674123, 2.530489
+trie building, 0.001361, 6289434.000000, 2284664.000000, 4373289.000000, 80136.000000, 18661.000000,          -nan, 1169166.000000,     1, 0.695339, 0.859006, 5.379419
+trie intersection, 0.014514, 76755170.782254, 3781410.469989, 103337874.560014, 882104.973645, 236691.000000,  54818.304256, 14453409.000000,     1, 1.346331, 0.995808, 5.310524
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.004196, 18887442.367741, 954733.000000, 7067449.000000, 114710.000000, 33286.000000,  13734.030273, 3698450.000000,     1, 0.374188, 0.881519, 5.106854
+trie building, 0.031613, 74888577.444389, 14280409.145150, 47479369.106647, 836580.255230, 196673.000000, 106783.797983, 14151543.000000,     1, 0.634000, 0.447648, 5.291902
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.006345, 31143221.182658, 1322546.000000, 10330513.000000, 168166.000000, 48155.000000,   6161.328201, 6075260.000000,     1, 0.331710, 0.957461, 5.126237
+trie building, 0.021019, 96253971.322678, 17679733.715815, 51367872.259001, 705064.312713, 211725.000000, 125795.693961, 17713493.000000,     1, 0.533670, 0.842740, 5.433935
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000003, 35652.000000, 14070.000000, 29161.000000, 335.000000, 420.000000,          -nan, 7270.000000,     1, 0.817934, 2.106636, 4.903989
+trie building, 0.000008, 58869.000000, 24172.000000, 60807.000000, 795.000000, 687.000000,          -nan, 11550.000000,     1, 1.032921, 1.475096, 5.096883
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.003830, 18285987.881286, 833366.000000, 6202048.000000, 107069.000000, 29599.000000,   3513.159682, 3547627.000000,     1, 0.339169, 0.926215, 5.154428
+trie building, 0.108022, 141172602.603922, 49627314.156153, 155765338.367211, 1905295.620146, 479622.137919, 225394.552566, 27053867.000000,     1, 1.103368, 0.250447, 5.218204
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.010926, 49005354.360265, 12268449.563767, 101726885.000000, 1098054.000000, 73810.000000,  42953.867242, 9557125.000000,     1, 2.075832, 0.874693, 5.127625
+trie building, 0.091426, 449706719.996065, 113266086.550825, 152788071.103687, 2463172.655773, 854864.157407, 417667.188808, 84182284.000000,     1, 0.339750, 0.920767, 5.342059
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.003317, 17245876.820379, 979257.000000, 6031688.000000, 102413.000000, 28890.000000,   3737.242020, 3237838.000000,     1, 0.349747, 0.976128, 5.326356
+trie building, 0.017146, 57950517.581436, 3994209.871211, 34744226.000000, 481930.000000, 154918.000000, 109130.435326, 10826610.000000,     1, 0.599550, 0.631428, 5.352600
+trie intersection, 0.029532, 157499608.883709, 4802721.714882, 135431640.141293, 2154801.751832, 464212.486368, 134123.388499, 29489548.000000,     1, 0.859886, 0.998577, 5.340862
+
+Query: 9d-12-4
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,           cycles,         kcycles,    instructions,      L1-misses,    LLC-misses, branch-misses,      task-clock, scale,      IPC,     CPUs,      GHz
+chunked list building, 0.004873, 122308397.221732, 80840340.000000, 78754502.000000, 1947037.000000, 704073.000000, 207772.212492, 26710055.000000,     1, 0.643901, 5.480788, 4.579114
+trie building, 0.001526, 7253418.000000, 1629749.000000, 4689049.000000, 87920.000000, 27909.000000,          -nan, 1333677.000000,     1, 0.646461, 0.874247, 5.438662
+trie intersection, 0.079873, 426790066.059930, 4244973.482561, 148409377.592247, 100284691.314946, 197203.095858,  51738.750490, 79834828.000000,     1, 0.347734, 0.999525, 5.345913
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.010387, 43090393.481038, 5015760.000000, 30164528.000000, 857443.000000, 325193.000000,   7775.373334, 8135323.000000,     1, 0.700029, 0.783232, 5.296703
+trie building, 0.035587, 125442538.943172, 31830280.687419, 75154786.999793, 1481857.549921, 366209.635527, 218335.149091, 24066952.000000,     1, 0.599117, 0.676289, 5.212232
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.012925, 50029449.108040, 14161527.000000, 77571978.000000, 1688790.000000, 495141.000000,  42313.315399, 9518620.000000,     1, 1.550526, 0.736422, 5.255956
+trie building, 0.021216, 95211013.270987, 5609917.483773, 55335827.763474, 709107.998643, 269686.849537, 168962.117362, 17808144.000000,     1, 0.581191, 0.839362, 5.346487
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000032, 194196.000000, 128321.000000, 255904.000000, 9765.000000, 1246.000000,          -nan, 36311.000000,     1, 1.317761, 1.124841, 5.348131
+trie building, 0.000064, 369615.000000, 39602.000000, 267755.000000, 6340.000000, 2241.000000,          -nan, 68832.000000,     1, 0.724416, 1.073454, 5.369813
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.010487, 41239489.122903, 10744775.000000, 63104702.000000, 1480957.000000, 377209.000000,  47192.473861, 7809780.000000,     1, 1.530201, 0.744745, 5.280493
+trie building, 0.107421, 487256870.209163, 177519422.782462, 573795533.828782, 6835157.473450, 1329920.418560, 836735.208291, 93558320.000000,     1, 1.177604, 0.870948, 5.208055
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.016135, 73034868.244008, 16770895.884910, 110746205.646680, 2591728.000000, 721183.000000,  44022.075623, 13841908.000000,     1, 1.516347, 0.857900, 5.276358
+trie building, 0.092570, 466903856.086643, 77285536.620828, 156199206.369984, 2615647.801824, 910684.812009, 391979.898006, 87410113.000000,     1, 0.334543, 0.944255, 5.341531
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.008874, 43609967.478425, 5193934.510268, 34949803.000000, 873903.000000, 321012.000000,  12594.532461, 8246746.000000,     1, 0.801418, 0.929305, 5.288142
+trie building, 0.018456, 81994242.259109, 3623097.053211, 37708398.610990, 586593.808346, 206003.000000, 116425.611326, 15297265.000000,     1, 0.459891, 0.828830, 5.360059
+trie intersection, 0.246029, 1310495493.685609, 12364354.439446, 171326618.166833, 173015207.689645, 3465444.255741, 129998.327141, 244797680.000000,     1, 0.130734, 0.994995, 5.353382
+
+Query: 9d-2-2
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,          cycles,         kcycles,    instructions,     L1-misses,    LLC-misses, branch-misses,      task-clock, scale,      IPC,     CPUs,      GHz
+chunked list building, 0.001585, 38459082.000000, 14040567.000000, 34443072.000000, 512822.000000, 345477.000000,          -nan, 10168295.000000,     1, 0.895577, 6.414126, 3.782255
+trie building, 0.003498, 18551147.633840, 4990169.000000, 33175610.000000, 530123.000000, 100887.000000,  97955.109569, 3413903.000000,     1, 1.788332, 0.976054, 5.434000
+trie intersection, 0.016816, 90446362.044246, 4375427.381629, 66408028.405845, 689494.866919, 281324.000000,  17935.839063, 16795391.000000,     1, 0.734226, 0.998795, 5.385189
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.003417, 16889268.000000, 819571.000000, 6229515.000000, 86689.000000, 29239.000000,          -nan, 3274078.000000,     1, 0.368845, 0.958310, 5.158481
+trie building, 0.072462, 305155790.906118, 33994340.838550, 356236869.719621, 4617628.039691, 1304634.351909, 888251.458404, 56039222.000000,     1, 1.167393, 0.773364, 5.445397
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.005992, 28328565.107776, 1305577.000000, 9926859.000000, 134718.000000, 43714.000000,   6268.985412, 5203277.000000,     1, 0.350419, 0.868412, 5.444370
+trie building, 0.069564, 269265560.901216, 28399033.820403, 342306151.325462, 3879726.098172, 1139553.165584, 1034436.177359, 49228958.000000,     1, 1.271259, 0.707677, 5.469658
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000004, 30740.000000, 14142.000000, 28765.000000, 236.000000, 515.000000,          -nan, 10800.000000,     1, 0.935751, 2.442886, 2.846296
+trie building, 0.000006, 35242.000000, 17900.000000, 37267.000000, 380.000000, 735.000000,          -nan, 12281.000000,     1, 1.057460, 2.046492, 2.869636
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.004387, 18689893.220715, 1027655.650351, 6966050.000000, 99303.000000, 31637.000000,   4707.082511, 3717741.000000,     1, 0.372717, 0.847472, 5.027218
+trie building, 0.160380, 701612315.759996, 146541469.103672, 1150181193.727079, 12381288.969229, 3741229.686216, 1453545.495653, 130808913.000000,     1, 1.639340, 0.815617, 5.363643
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.014221, 61246461.955362, 19077048.666803, 125924797.682885, 1189408.000000, 86206.000000,  54255.855958, 11819331.000000,     1, 2.056034, 0.831090, 5.181889
+trie building, 0.243358, 1165239845.765642, 128052418.769850, 1201736834.077754, 16572196.612479, 3998403.657934, 2705102.306353, 214671355.000000,     1, 1.031321, 0.882123, 5.428017
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.004507, 16206624.657795, 1089932.000000, 8472012.000000, 114724.000000, 35758.000000,   4436.630340, 4096021.000000,     1, 0.522750, 0.908901, 3.956675
+trie building, 0.064358, 234218640.904472, 29421120.412674, 287141268.801125, 3298549.025792, 990790.152696, 929853.770017, 43298787.000000,     1, 1.225954, 0.672778, 5.409358
+trie intersection, 0.032393, 174900296.094349, 4678746.100518, 152142141.353170, 1606202.709633, 524408.879009, 121748.226512, 32310402.000000,     1, 0.869879, 0.997449, 5.413127
+
+Query: 9d-7-2
+Using: 32 threads
+-----------
+Logical Operator Tree:		π( ( ( ( ( ( ( ci ⨝ n ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( ci n FJ( mc cn ) rt t chn an ) )
+Free Join Plan:	[ ( mc.company_id ) ( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2
+Num Attributes:	1
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2609129
+Num Tuples: 84843
+Trie Height: 1
+                 name, time sec,          cycles,         kcycles,    instructions,     L1-misses,    LLC-misses, branch-misses,      task-clock, scale,      IPC,      CPUs,      GHz
+chunked list building, 0.001803, 69974424.411437, 23165915.000000, 49524466.000000, 780864.000000, 418453.022457, 134658.471162, 18404583.000000,     1, 0.707751, 10.207155, 3.802011
+trie building, 0.001674, 7185379.000000, 3203977.000000, 4612755.000000, 88314.000000,       -nan,          -nan, 1348773.000000,     1, 0.641964, 0.805723, 5.327345
+trie intersection, 0.019129, 102538109.530967, 3099251.227269, 92260443.582015, 942276.713588, 315681.982455,  25824.759631, 19108519.000000,     1, 0.899767, 0.998950, 5.366094
+Free Join Plan:	[ ( t.id ) ( mc.movie_id ) ( ci.movie_id ) ][ ( n.id ) ( ci.person_id ) ( an.person_id ) ][ ( rt.id ) ( ci.role_id ) ][ ( ci.person_role_id ) ( chn.id ) ]
+Num Nodes:	4
+Num Atoms:	3 3 2 2
+Num Attributes:	1 1 1 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 1
+Trie Height: 4
+Trie Height: 1
+Trie Height: 1
+
+Num Tuples: 2528312
+Num Tuples: 961555
+Trie Height: 1
+chunked list building, 0.005554, 25572829.786854, 1727568.000000, 11379766.000000, 229980.000000, 48165.555367,  14261.339693, 4748179.000000,     1, 0.444994, 0.854975, 5.385818
+trie building, 0.037184, 102483600.488906, 31599081.093345, 71228196.270594, 1118727.132927, 282414.812696, 217846.429874, 19818480.000000,     1, 0.695020, 0.532986, 5.171113
+Num Tuples: 1153798
+Trie Height: 1
+chunked list building, 0.007382, 36747284.260103, 3635269.000000, 17220826.000000, 318004.000000, 72488.857217,  11862.706806, 6805051.000000,     1, 0.468629, 0.921815, 5.400001
+trie building, 0.021711, 92164169.679359, 5192604.936505, 57975976.744272, 694104.000000, 282549.181191, 143804.409367, 17190685.000000,     1, 0.629051, 0.791804, 5.361285
+Num Tuples: 1
+Trie Height: 1
+chunked list building, 0.000007, 37770.000000, 20001.000000, 37251.000000, 732.000000,       -nan,          -nan, 12961.000000,     1, 0.986259, 1.870274, 2.914127
+trie building, 0.000041, 145718.000000, 20533.000000, 103299.000000, 2270.000000,       -nan,          -nan, 47942.000000,     1, 0.708897, 1.160233, 3.039464
+Num Tuples: 867477
+Trie Height: 4
+chunked list building, 0.004809, 22268340.000000, 1312611.000000, 9346170.000000, 185445.000000, 45365.078042,          -nan, 4150174.000000,     1, 0.419707, 0.863087, 5.365640
+trie building, 0.127712, 470469564.956312, 181966060.262676, 548954069.374036, 6972355.127831, 1630755.101244, 792894.055005, 92569642.000000,     1, 1.166822, 0.724831, 5.082331
+Num Tuples: 3140339
+Trie Height: 1
+chunked list building, 0.013478, 61690239.632592, 19231029.061496, 123423328.000000, 1818916.000000, 94649.791670,  52937.950949, 12041265.000000,     1, 2.000695, 0.893433, 5.123236
+trie building, 0.107290, 396996791.333143, 49790768.446917, 145777052.853274, 2298649.383671, 731076.567134, 519515.658201, 80470335.000000,     1, 0.367200, 0.750025, 4.933455
+Num Tuples: 901343
+Trie Height: 1
+chunked list building, 0.004578, 21993969.000000, 1348091.000000, 9611966.000000, 187142.000000, 53759.025987,          -nan, 4119315.000000,     1, 0.437027, 0.899858, 5.339230
+trie building, 0.016919, 73522346.066591, 4636007.509652, 42183955.659022, 535817.000000, 188283.220837, 113619.485587, 13830512.000000,     1, 0.573757, 0.817444, 5.315953
+trie intersection, 0.032219, 168973545.976339, 5820974.592854, 137766151.580737, 3492545.660896, 526677.840888, 166545.864099, 32167490.000000,     1, 0.815312, 0.998410, 5.252929
+

@@ -1,0 +1,96 @@
+../benchmarks/join-order-benchmark/data/preprocessed/original/person_info.csv
+Total Rows: 2963664
+Number of Threads: 1
+hashtable: 1540
+ght-1: 1783
+ght-2: 1873
+hashtrie: 2203
+
+../benchmarks/join-order-benchmark/data/preprocessed/original/person_info.csv
+Total Rows: 2963664
+Number of Threads: 2
+hashtable: 815
+ght-1: 1069
+ght-2: 1073
+hashtrie: 1292
+
+../benchmarks/join-order-benchmark/data/preprocessed/original/person_info.csv
+Total Rows: 2963664
+Number of Threads: 3
+hashtable: 686
+ght-1: 848
+ght-2: 902
+hashtrie: 1075
+
+../benchmarks/join-order-benchmark/data/preprocessed/original/person_info.csv
+Total Rows: 2963664
+Number of Threads: 4
+hashtable: 513
+ght-1: 659
+ght-2: 669
+hashtrie: 829
+
+../benchmarks/join-order-benchmark/data/preprocessed/original/person_info.csv
+Total Rows: 2963664
+Number of Threads: 5
+hashtable: 497
+ght-1: 657
+ght-2: 675
+hashtrie: 826
+
+../benchmarks/join-order-benchmark/data/preprocessed/original/person_info.csv
+Total Rows: 2963664
+Number of Threads: 6
+hashtable: 515
+ght-1: 650
+ght-2: 656
+hashtrie: 839
+
+../benchmarks/join-order-benchmark/data/preprocessed/original/person_info.csv
+Total Rows: 2963664
+Number of Threads: 7
+hashtable: 539
+ght-1: 656
+ght-2: 651
+hashtrie: 792
+
+../benchmarks/join-order-benchmark/data/preprocessed/original/person_info.csv
+Total Rows: 2963664
+Number of Threads: 8
+hashtable: 410
+ght-1: 542
+ght-2: 552
+hashtrie: 727
+
+../benchmarks/join-order-benchmark/data/preprocessed/original/person_info.csv
+Total Rows: 2963664
+Number of Threads: 9
+hashtable: 405
+ght-1: 535
+ght-2: 549
+hashtrie: 756
+
+../benchmarks/join-order-benchmark/data/preprocessed/original/person_info.csv
+Total Rows: 2963664
+Number of Threads: 10
+hashtable: 406
+ght-1: 548
+ght-2: 551
+hashtrie: 743
+
+../benchmarks/join-order-benchmark/data/preprocessed/original/person_info.csv
+Total Rows: 2963664
+Number of Threads: 11
+hashtable: 403
+ght-1: 556
+ght-2: 549
+hashtrie: 731
+
+../benchmarks/join-order-benchmark/data/preprocessed/original/person_info.csv
+Total Rows: 2963664
+Number of Threads: 12
+hashtable: 404
+ght-1: 550
+ght-2: 556
+hashtrie: 756
+

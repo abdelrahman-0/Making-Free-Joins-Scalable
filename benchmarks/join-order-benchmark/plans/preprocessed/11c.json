@@ -1,0 +1,395 @@
+{
+  "name": "projection",
+  "attributes": [
+    {
+      "binding": "cn",
+      "attribute": "name",
+      "table": "company_name",
+      "table_attribute_idx": 1
+    },
+    {
+      "binding": "mc",
+      "attribute": "note",
+      "table": "movie_companies",
+      "table_attribute_idx": 4
+    },
+    {
+      "binding": "t",
+      "attribute": "title",
+      "table": "title",
+      "table_attribute_idx": 1
+    }
+  ],
+  "children": [
+    {
+      "name": "hashjoin",
+      "conditions": [
+        {
+          "left": {
+            "binding": "mc",
+            "attribute": "company_id",
+            "table": "movie_companies",
+            "table_attribute_idx": 2,
+            "fj_attribute_idx": 4
+          },
+          "right": {
+            "binding": "cn",
+            "attribute": "id",
+            "table": "company_name",
+            "table_attribute_idx": 0,
+            "fj_attribute_idx": 4
+          }
+        }
+      ],
+      "children": [
+        {
+          "name": "hashjoin",
+          "conditions": [
+            {
+              "left": {
+                "binding": "mc",
+                "attribute": "company_type_id",
+                "table": "movie_companies",
+                "table_attribute_idx": 3,
+                "fj_attribute_idx": 3
+              },
+              "right": {
+                "binding": "ct",
+                "attribute": "id",
+                "table": "company_type",
+                "table_attribute_idx": 0,
+                "fj_attribute_idx": 3
+              }
+            }
+          ],
+          "children": [
+            {
+              "name": "hashjoin",
+              "conditions": [
+                {
+                  "left": {
+                    "binding": "mk",
+                    "attribute": "keyword_id",
+                    "table": "movie_keyword",
+                    "table_attribute_idx": 2,
+                    "fj_attribute_idx": 2
+                  },
+                  "right": {
+                    "binding": "k",
+                    "attribute": "id",
+                    "table": "keyword",
+                    "table_attribute_idx": 0,
+                    "fj_attribute_idx": 2
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "name": "hashjoin",
+                  "conditions": [
+                    {
+                      "left": {
+                        "binding": "ml",
+                        "attribute": "link_type_id",
+                        "table": "movie_link",
+                        "table_attribute_idx": 3,
+                        "fj_attribute_idx": 1
+                      },
+                      "right": {
+                        "binding": "lt",
+                        "attribute": "id",
+                        "table": "link_type",
+                        "table_attribute_idx": 0,
+                        "fj_attribute_idx": 1
+                      }
+                    }
+                  ],
+                  "children": [
+                    {
+                      "name": "hashjoin",
+                      "conditions": [
+                        {
+                          "left": {
+                            "binding": "t",
+                            "attribute": "id",
+                            "table": "title",
+                            "table_attribute_idx": 0,
+                            "fj_attribute_idx": 0
+                          },
+                          "right": {
+                            "binding": "mc",
+                            "attribute": "movie_id",
+                            "table": "movie_companies",
+                            "table_attribute_idx": 1,
+                            "fj_attribute_idx": 0
+                          }
+                        },
+                        {
+                          "left": {
+                            "binding": "ml",
+                            "attribute": "movie_id",
+                            "table": "movie_link",
+                            "table_attribute_idx": 1,
+                            "fj_attribute_idx": 0
+                          },
+                          "right": {
+                            "binding": "mc",
+                            "attribute": "movie_id",
+                            "table": "movie_companies",
+                            "table_attribute_idx": 1,
+                            "fj_attribute_idx": 0
+                          }
+                        },
+                        {
+                          "left": {
+                            "binding": "mk",
+                            "attribute": "movie_id",
+                            "table": "movie_keyword",
+                            "table_attribute_idx": 1,
+                            "fj_attribute_idx": 0
+                          },
+                          "right": {
+                            "binding": "mc",
+                            "attribute": "movie_id",
+                            "table": "movie_companies",
+                            "table_attribute_idx": 1,
+                            "fj_attribute_idx": 0
+                          }
+                        }
+                      ],
+                      "children": [
+                        {
+                          "name": "hashjoin",
+                          "conditions": [
+                            {
+                              "left": {
+                                "binding": "mk",
+                                "attribute": "movie_id",
+                                "table": "movie_keyword",
+                                "table_attribute_idx": 1,
+                                "fj_attribute_idx": 0
+                              },
+                              "right": {
+                                "binding": "t",
+                                "attribute": "id",
+                                "table": "title",
+                                "table_attribute_idx": 0,
+                                "fj_attribute_idx": 0
+                              }
+                            },
+                            {
+                              "left": {
+                                "binding": "mk",
+                                "attribute": "movie_id",
+                                "table": "movie_keyword",
+                                "table_attribute_idx": 1,
+                                "fj_attribute_idx": 0
+                              },
+                              "right": {
+                                "binding": "ml",
+                                "attribute": "movie_id",
+                                "table": "movie_link",
+                                "table_attribute_idx": 1,
+                                "fj_attribute_idx": 0
+                              }
+                            }
+                          ],
+                          "children": [
+                            {
+                              "name": "scan",
+                              "table": "movie_keyword",
+                              "binding": "mk",
+                              "required_attributes": [
+                                {
+                                  "binding": "mk",
+                                  "attribute": "keyword_id",
+                                  "table": "movie_keyword",
+                                  "table_attribute_idx": 2,
+                                  "fj_attribute_idx": 2
+                                },
+                                {
+                                  "binding": "mk",
+                                  "attribute": "movie_id",
+                                  "table": "movie_keyword",
+                                  "table_attribute_idx": 1,
+                                  "fj_attribute_idx": 0
+                                }
+                              ]
+                            },
+                            {
+                              "name": "hashjoin",
+                              "conditions": [
+                                {
+                                  "left": {
+                                    "binding": "t",
+                                    "attribute": "id",
+                                    "table": "title",
+                                    "table_attribute_idx": 0,
+                                    "fj_attribute_idx": 0
+                                  },
+                                  "right": {
+                                    "binding": "ml",
+                                    "attribute": "movie_id",
+                                    "table": "movie_link",
+                                    "table_attribute_idx": 1,
+                                    "fj_attribute_idx": 0
+                                  }
+                                }
+                              ],
+                              "children": [
+                                {
+                                  "name": "scan",
+                                  "table": "title",
+                                  "binding": "t",
+                                  "required_attributes": [
+                                    {
+                                      "binding": "t",
+                                      "attribute": "title",
+                                      "table": "title",
+                                      "table_attribute_idx": 1,
+                                      "fj_attribute_idx": -1
+                                    },
+                                    {
+                                      "binding": "t",
+                                      "attribute": "id",
+                                      "table": "title",
+                                      "table_attribute_idx": 0,
+                                      "fj_attribute_idx": 0
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "scan",
+                                  "table": "movie_link",
+                                  "binding": "ml",
+                                  "required_attributes": [
+                                    {
+                                      "binding": "ml",
+                                      "attribute": "link_type_id",
+                                      "table": "movie_link",
+                                      "table_attribute_idx": 3,
+                                      "fj_attribute_idx": 1
+                                    },
+                                    {
+                                      "binding": "ml",
+                                      "attribute": "movie_id",
+                                      "table": "movie_link",
+                                      "table_attribute_idx": 1,
+                                      "fj_attribute_idx": 0
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "scan",
+                          "table": "movie_companies",
+                          "binding": "mc",
+                          "required_attributes": [
+                            {
+                              "binding": "mc",
+                              "attribute": "note",
+                              "table": "movie_companies",
+                              "table_attribute_idx": 4,
+                              "fj_attribute_idx": -1
+                            },
+                            {
+                              "binding": "mc",
+                              "attribute": "company_id",
+                              "table": "movie_companies",
+                              "table_attribute_idx": 2,
+                              "fj_attribute_idx": 4
+                            },
+                            {
+                              "binding": "mc",
+                              "attribute": "company_type_id",
+                              "table": "movie_companies",
+                              "table_attribute_idx": 3,
+                              "fj_attribute_idx": 3
+                            },
+                            {
+                              "binding": "mc",
+                              "attribute": "movie_id",
+                              "table": "movie_companies",
+                              "table_attribute_idx": 1,
+                              "fj_attribute_idx": 0
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "scan",
+                      "table": "link_type",
+                      "binding": "lt",
+                      "required_attributes": [
+                        {
+                          "binding": "lt",
+                          "attribute": "id",
+                          "table": "link_type",
+                          "table_attribute_idx": 0,
+                          "fj_attribute_idx": 1
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "scan",
+                  "table": "keyword",
+                  "binding": "k",
+                  "required_attributes": [
+                    {
+                      "binding": "k",
+                      "attribute": "id",
+                      "table": "keyword",
+                      "table_attribute_idx": 0,
+                      "fj_attribute_idx": 2
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "scan",
+              "table": "company_type",
+              "binding": "ct",
+              "required_attributes": [
+                {
+                  "binding": "ct",
+                  "attribute": "id",
+                  "table": "company_type",
+                  "table_attribute_idx": 0,
+                  "fj_attribute_idx": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "scan",
+          "table": "company_name",
+          "binding": "cn",
+          "required_attributes": [
+            {
+              "binding": "cn",
+              "attribute": "name",
+              "table": "company_name",
+              "table_attribute_idx": 1,
+              "fj_attribute_idx": -1
+            },
+            {
+              "binding": "cn",
+              "attribute": "id",
+              "table": "company_name",
+              "table_attribute_idx": 0,
+              "fj_attribute_idx": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

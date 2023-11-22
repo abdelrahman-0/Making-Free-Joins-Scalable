@@ -1,0 +1,271 @@
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/5b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/5b
+Logical Operator Tree:		π( ( ( ( ( mi ⨝ t ) ⨝ mc ) ⨝ it ) ⨝ ct ) )
+Logical Operator Tree:		π( FJ( mi t mc it ct ) )
+Free Join Plan:	[ COVER( mi.info_type_id mi.movie_id ) ( t.id ) ( mc.movie_id ) ( it.id ) ][ COVER( mc.company_type_id ) COVER( ct.id ) ]
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+               name, time sec,       cycles,      kcycles, instructions,  L1-misses, LLC-misses, branch-misses,  task-clock, scale,  IPC, CPUs,  GHz 
+materializing input,     0.08, 330926320.86, 123697622.01, 705724897.24, 7007884.19, 1377379.48,      85432.42, 76719335.00,     1, 2.13, 1.00, 4.31 
+materializing input,     0.11, 459186170.20, 135266858.36, 899776336.31, 10564237.69, 1602022.29,    1171418.99, 105885659.00,     1, 1.96, 1.00, 4.34 
+chunked list building,     0.01, 198545868.82,    -nan,         -nan,      -nan,       -nan,          -nan, 47542271.00,     1, -nan, 6.39, 4.18 
+trie building,     0.13, 533384188.10, 24791251.08, 393010087.89, 7168085.74, 3491253.67,    1465564.50, 127399504.00,     1, 0.74, 0.98, 4.19 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,  159820.00,     1, -nan, 1.02, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   52729.00,     1, -nan, 1.05, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan, 1122505.00,     1, -nan, 0.52, -nan 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   18826.00,     1, -nan, 1.15, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,  162225.00,     1, -nan, 1.02, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   82525.00,     1, -nan, 1.05, -nan 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    8375.00,     1, -nan, 1.39, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    4819.00,     1, -nan, 1.89, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   10490.00,     1, -nan, 1.52, -nan 
+trie intersection,     0.01, 46222651.71, 233946.75,  27739276.12,      -nan,       -nan,          -nan, 11858858.00,     1, 0.60, 1.00, 3.90 
+total,     0.34, 3474138765.85, 451812350.38, 3048703377.66, 42515454.70, 19336366.56,    6189512.53, 871330226.00,     1, 0.88, 2.59, 3.99 
+
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/19c.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/19c
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( mi ⨝ mc ) ⨝ it ) ⨝ cn ) ⨝ ( ci ⨝ n ) ) ⨝ rt ) ⨝ t ) ⨝ chn ) ⨝ an ) )
+Logical Operator Tree:		π( FJ( mi mc it cn FJ( ci n ) rt t chn an ) )
+Free Join Plan:	[ COVER( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ( it.id ) ( ci.movie_id ) ( t.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ][ COVER( ci.person_id ci.person_role_id ci.role_id ) ( rt.id ) ( chn.id ) ( an.person_id ) ]
+Num Nodes:	3
+Num Atoms:	5 2 4 
+Num Attributes:	2 1 3 
+Free Join Plan:	[ COVER( ci.person_id ) COVER( n.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+               name, time sec,       cycles,     kcycles, instructions,  L1-misses, LLC-misses, branch-misses,  task-clock, scale,  IPC, CPUs,  GHz 
+materializing input,     0.05, 235066221.85, 24624275.34, 537648959.91, 4659233.88,  800287.69,      27580.55, 54762922.00,     1, 2.29, 1.00, 4.29 
+materializing input,     0.36, 1552985151.15, 415219994.05, 3370989464.24, 35615959.53, 4450148.40,    1055548.52, 358117258.00,     1, 2.17, 1.00, 4.34 
+chunked list building,     0.01, 49512720.62, 5672150.23,  65417670.16,      -nan,       -nan,          -nan, 13027266.00,     1, 1.32, 0.92, 3.80 
+trie building,     1.83, 5192685986.17, 1428120348.50, 3674477714.32, 89627035.44, 27581744.93,   11105883.21, 1389920920.00,     1, 0.71, 0.76, 3.74 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   18866.00,     1, -nan, 1.15, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   12343.00,     1, -nan, 1.24, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   14577.00,     1, -nan, 1.20, -nan 
+materializing input,     0.01, 56989066.23, 16211717.91, 164153882.55,      -nan,       -nan,          -nan, 13148646.00,     1, 2.88, 1.00, 4.33 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,  770554.00,     1, -nan, 0.91, -nan 
+trie building,     0.02, 88809100.09, 9421852.43, 102582783.43, 1754494.54,  573481.20,     226298.97, 20891035.00,     1, 1.16, 0.98, 4.25 
+materializing input,     0.17, 734421342.93, 183287643.77, 1769853269.77, 14137191.99, 1242025.92,     261278.36, 169397306.00,     1, 2.41, 1.00, 4.34 
+materializing input,     0.01,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan, 14061769.00,     1, -nan, 1.00, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,  735860.00,     1, -nan, 1.01, -nan 
+trie building,     0.01,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan, 8986302.00,     1, -nan, 1.00, -nan 
+trie intersection,     0.01,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan, 6385614.00,     1, -nan, 1.00, -nan 
+materializing input,     0.20, 866047531.94, 262078284.68, 1948641742.74, 18580346.33, 1922408.99,    1113415.92, 201146173.00,     1, 2.25, 1.00, 4.31 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,  278823.00,     1, -nan, 0.89, -nan 
+trie building,     0.01, 20574566.69, 7298501.30,         -nan,      -nan,       -nan,          -nan, 5424928.00,     1, -nan, 0.70, 3.79 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   17173.00,     1, -nan, 1.17, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    5901.00,     1, -nan, 1.65, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    7865.00,     1, -nan, 1.44, -nan 
+materializing input,     0.36, 1557710745.86, 401049513.14, 3272070469.93, 37032035.36, 3352984.60,    4763496.84, 359237839.00,     1, 2.10, 1.00, 4.34 
+chunked list building,     0.01, 54572017.35, 2049703.74,  29062823.57,      -nan,       -nan,          -nan, 12655820.00,     1, 0.53, 0.99, 4.31 
+trie building,     0.54, 1994349052.93, 37059464.23, 1359626845.32, 22609126.80, 9147176.22,    3872491.90, 472673761.00,     1, 0.68, 0.88, 4.22 
+materializing input,     0.51, 2227983521.48, 670760783.29, 4752611060.40, 56844912.83, 5334305.08,    4046059.42, 513733992.00,     1, 2.13, 1.00, 4.34 
+chunked list building,     0.02, 45427852.44, 7646288.01,  79871292.99, 999902.61,       -nan,          -nan, 13160278.00,     1, 1.76, 0.82, 3.45 
+trie building,     1.29, 5399375850.11, 208339378.13, 3483073575.86, 62499411.47, 26996902.03,    8785039.60, 1275536945.00,     1, 0.65, 0.99, 4.23 
+materializing input,     0.15, 660148420.67, 167899459.83, 1358660849.56, 17469980.03, 1462429.72,    1694180.55, 152236737.00,     1, 2.06, 1.00, 4.34 
+chunked list building,     0.01, 16659698.92,    -nan,         -nan,      -nan,       -nan,          -nan, 4428716.00,     1, -nan, 0.83, 3.76 
+trie building,     0.24, 833840982.66, 82784795.35, 766290985.93, 12263549.64, 3703749.70,    2162536.59, 199970742.00,     1, 0.92, 0.85, 4.17 
+trie intersection,     0.01, 48205014.91, 250321.42,  34852197.86,      -nan,       -nan,          -nan, 12713551.00,     1, 0.72, 1.00, 3.79 
+total,     5.64, 20979197754.08, 3964874057.71, 25036935886.52, 372860574.09, 85298397.91,   38221655.55, 5076747666.00,     1, 1.19, 0.90, 4.13 
+
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/10b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/10b
+Logical Operator Tree:		π( ( ( ( ( ( mc ⨝ t ) ⨝ ct ) ⨝ cn ) ⨝ ( ci ⨝ rt ) ) ⨝ chn ) )
+Logical Operator Tree:		π( FJ( mc t ct cn FJ( ci rt ) chn ) )
+Free Join Plan:	[ COVER( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ( ct.id ) ( cn.id ) ( ci.movie_id ) ][ COVER( ci.person_role_id ) COVER( chn.id ) ]
+Num Nodes:	2
+Num Atoms:	5 2 
+Num Attributes:	3 1 
+Free Join Plan:	[ COVER( ci.role_id ) COVER( rt.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+               name, time sec,        cycles,     kcycles,  instructions,   L1-misses, LLC-misses, branch-misses,   task-clock, scale,  IPC, CPUs,  GHz 
+materializing input,     0.32, 1385223889.53, 68524841.34, 3654167226.60, 27628915.25, 2704170.09,     697576.14, 319895994.00,     1, 2.64, 1.00, 4.33 
+materializing input,     0.08, 361639088.38, 47437612.44, 836275663.88, 7437902.22,  867807.53,    1029805.68, 83398350.00,     1, 2.31, 1.00, 4.34 
+chunked list building,     0.00, 17602482.79,    -nan,         -nan,      -nan,       -nan,          -nan, 4062808.00,     1, -nan, 1.00, 4.33 
+trie building,     0.13, 507277290.64, 13393803.11, 390071185.20, 7773268.86, 3132180.25,    1478254.67, 121315135.00,     1, 0.77, 0.97, 4.18 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   19276.00,     1, -nan, 1.15, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   19246.00,     1, -nan, 1.15, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   30097.00,     1, -nan, 1.09, -nan 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,  161012.00,     1, -nan, 1.02, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,  263093.00,     1, -nan, 1.01, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,  335299.00,     1, -nan, 1.01, -nan 
+materializing input,     0.16, 688838288.20, 40984054.75, 1955858110.62, 11948740.89,  939107.02,      15199.53, 158844839.00,     1, 2.84, 1.00, 4.34 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   14467.00,     1, -nan, 1.20, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   15539.00,     1, -nan, 1.17, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   18665.00,     1, -nan, 1.14, -nan 
+trie intersection,     0.01,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan, 7599691.00,     1, -nan, 1.00, -nan 
+materializing input,     0.17, 712176288.50, 68496703.03, 1795338654.69, 13606464.28, 1627384.72,      89231.39, 166914883.00,     1, 2.52, 1.00, 4.27 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   17262.00,     1, -nan, 1.21, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   98184.00,     1, -nan, 1.06, -nan 
+materializing input,     0.66, 2857540928.53, 246447818.83, 7149934323.35, 55413596.44, 6514739.72,    8355404.98, 658901274.00,     1, 2.50, 1.00, 4.34 
+chunked list building,     0.03, 112835838.98, 2074751.07,  62635431.79, 782286.65,  504070.12,      10867.46, 26593125.00,     1, 0.56, 0.99, 4.24 
+trie building,     1.26, 5285226430.75, 381906439.38, 3543392139.87, 64186115.87, 26507192.30,   10625560.73, 1251908044.00,     1, 0.67, 0.99, 4.22 
+trie intersection,     0.05, 169583404.26, 729299.25, 143860437.17, 1489534.14,  739234.17,     254834.39, 47360672.00,     1, 0.85, 1.00, 3.58 
+total,     2.70, 11442628058.07, 726713805.12, 17543670628.20, 179012043.84, 41626770.28,   22626805.74, 2683019713.00,     1, 1.53, 1.00, 4.26 
+
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/8d.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/8d
+Logical Operator Tree:		π( ( ( ( ( ( ci ⨝ n1 ) ⨝ ( mc ⨝ cn ) ) ⨝ rt ) ⨝ t ) ⨝ an1 ) )
+Logical Operator Tree:		π( FJ( ci n1 FJ( mc cn ) rt t an1 ) )
+Free Join Plan:	[ COVER( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) ( mc.movie_id ) ( rt.id ) ( t.id ) ( an1.person_id ) ]
+Num Nodes:	1
+Num Atoms:	6 
+Num Attributes:	3 
+Free Join Plan:	[ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+               name, time sec,         cycles,        kcycles,   instructions,    L1-misses,   LLC-misses, branch-misses,    task-clock, scale,  IPC, CPUs,  GHz 
+materializing input,     7.27, 30894285312.12, 10382866419.10, 63175658870.24, 674217094.89, 109047210.42,   22506466.79, 7152875108.00,     1, 2.04, 0.98, 4.32 
+materializing input,     4.74, 5143175952.52, 2461620147.65, 8599957590.25, 122812669.37, 36889749.66,   12614049.65, 1268802618.00,     1, 1.67, 0.27, 4.05 
+chunked list building,     0.04, 60317037.52, 13782187.55, 103477472.77,      -nan,       -nan,          -nan, 17687081.00,     1, 1.72, 0.48, 3.41 
+trie building,     2.27, 7600826250.58, 962879290.48, 5570026402.95, 111738629.19, 39733768.39,   14334626.19, 1809097691.00,     1, 0.73, 0.80, 4.20 
+materializing input,     0.48, 1892570848.86, 774748656.44, 3516568857.50, 38327030.52, 6742692.79,    1659804.89, 441653487.00,     1, 1.86, 0.91, 4.29 
+materializing input,     0.03,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan, 16820301.00,     1, -nan, 0.48, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,  629970.00,     1, -nan, 0.71, -nan 
+trie building,     0.02,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan, 15914904.00,     1, -nan, 0.91, -nan 
+trie intersection,     0.05, 184704477.06, 13360945.70, 220198224.06, 2167102.45, 1014580.81,     173679.27, 52175858.00,     1, 1.19, 0.99, 3.54 
+materializing input,     0.67, 2538955793.73, 904190170.58, 4313714395.21, 59076028.34, 11566522.52,    3078734.92, 604950720.00,     1, 1.70, 0.91, 4.20 
+chunked list building,     0.01, 23476397.68,    -nan,         -nan,      -nan,       -nan,          -nan, 6207079.00,     1, -nan, 1.00, 3.78 
+trie building,     0.28, 1076552089.14, 144251401.34, 805596290.79, 14681500.14, 4960607.49,    2503267.78, 259678374.00,     1, 0.75, 0.94, 4.15 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   22001.00,     1, -nan, 1.14, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   11281.00,     1, -nan, 1.27, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   19316.00,     1, -nan, 1.21, -nan 
+materializing input,     3.92, 4609026231.54, 2155182291.51, 7853082605.53, 98029517.00, 28468553.66,   12238307.01, 1117428089.00,     1, 1.70, 0.29, 4.12 
+chunked list building,     0.02, 84082864.75, 7997034.60,  50865452.96, 720198.96,  498243.71,      18360.89, 21362416.00,     1, 0.60, 0.90, 3.94 
+trie building,     1.50, 4266556607.28, 560786990.20, 2952389794.36, 53517207.40, 20235379.86,    9159002.15, 1014644518.00,     1, 0.69, 0.68, 4.20 
+materializing input,     0.44, 1272207248.34, 416905774.17, 2380463545.40, 26019390.18, 4465057.94,    3529262.30, 301720111.00,     1, 1.87, 0.69, 4.22 
+chunked list building,     0.01,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan, 2371527.00,     1, -nan, 0.25, -nan 
+trie building,     0.27, 929524551.29, 117979754.13, 742698624.87, 14918747.56, 4433669.92,    2040022.14, 223411838.00,     1, 0.80, 0.83, 4.16 
+trie intersection,     1.12, 4110586713.14, 16835311.82, 3305376263.93, 23551824.59, 15060092.19,    4505595.07, 1117675556.00,     1, 0.80, 1.00, 3.68 
+total,    22.63, 62796968848.07, 17686859907.66, 100938781597.72, 1182123552.61, 265183987.04,   86225985.95, 14937573370.00,     1, 1.61, 0.66, 4.20 
+
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/12a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/12a
+Logical Operator Tree:		π( ( ( ( ( ( ( ( t ⨝ mi_idx ) ⨝ mi ) ⨝ mc ) ⨝ it2 ) ⨝ it1 ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t mi_idx mi mc it2 it1 ct cn ) )
+Free Join Plan:	[ COVER( t.id ) COVER( mi_idx.movie_id ) COVER( mi.movie_id ) COVER( mc.movie_id ) ][ COVER( mi_idx.info_type_id ) COVER( it2.id ) ][ COVER( mi.info_type_id ) COVER( it1.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	4 2 2 3 
+Num Attributes:	1 1 1 2 
+               name, time sec,       cycles,     kcycles, instructions,  L1-misses, LLC-misses, branch-misses,   task-clock, scale,  IPC, CPUs,  GHz 
+materializing input,     0.18, 464431551.22, 38539421.58, 872365334.54, 8777152.05, 2386852.94,    1397055.18, 109234883.00,     1, 1.88, 0.61, 4.25 
+materializing input,     0.02, 43168054.74, 1168926.15, 119966625.90,      -nan,       -nan,          -nan, 10009058.00,     1, 2.78, 0.48, 4.31 
+chunked list building,     0.00, 2578375.90,    -nan,         -nan,      -nan,       -nan,          -nan,  609302.00,     1, -nan, 1.01, 4.23 
+trie building,     0.07, 171753604.83, 13423712.48, 138514124.34, 2356823.20, 1061017.37,     528787.67, 43154422.00,     1, 0.81, 0.64, 3.98 
+materializing input,     0.05, 137209327.55, 25057651.19, 359384708.25, 2057071.48,  406948.93,      34135.51, 32387604.00,     1, 2.62, 0.65, 4.24 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan, 2197902.00,     1, -nan, 1.00, -nan 
+trie building,     0.45, 1045469101.86, 78544656.12, 695653947.62, 12751196.76, 5778467.46,    1934786.93, 262376721.00,     1, 0.67, 0.58, 3.98 
+materializing input,     2.43, 2526587841.17, 867726322.34, 5202457532.33, 53547990.30, 13922784.21,    3512942.08, 616213442.00,     1, 2.06, 0.25, 4.10 
+chunked list building,     0.01, 54973973.37, 2140905.13,  57437445.22,      -nan,       -nan,          -nan, 14454616.00,     1, 1.04, 0.97, 3.80 
+trie building,     4.29, 4262910155.11, 895070256.73, 3426270667.42, 65389243.22, 31376784.42,    9144065.15, 1073580298.00,     1, 0.80, 0.25, 3.97 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   23975.00,     1, -nan, 1.11, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   11472.00,     1, -nan, 1.26, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   13465.00,     1, -nan, 1.21, -nan 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    7925.00,     1, -nan, 1.42, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    3777.00,     1, -nan, 2.53, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    8677.00,     1, -nan, 1.38, -nan 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    8566.00,     1, -nan, 1.37, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    6142.00,     1, -nan, 2.30, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   23524.00,     1, -nan, 1.23, -nan 
+materializing input,     0.02, 69056002.00, 150247.55, 222546815.05, 1053620.85,       -nan,          -nan, 15923731.00,     1, 3.22, 1.00, 4.34 
+chunked list building,     0.00, 5124671.16,    -nan,         -nan,      -nan,       -nan,          -nan, 1245104.00,     1, -nan, 1.01, 4.12 
+trie building,     0.02, 97179678.03, 8619144.45,  86377661.32, 1822536.29,  729110.22,          -nan, 22711710.00,     1, 0.89, 1.00, 4.28 
+trie intersection,     0.01, 33606940.28, 132496.93,         -nan,      -nan,       -nan,          -nan, 7772865.00,     1, -nan, 1.00, 4.32 
+total,     7.55, 8879327196.48, 2070204686.58, 11288320316.42, 151599936.08, 59316026.11,   18468167.19, 2214267324.00,     1, 1.27, 0.29, 4.01 
+
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/13b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/13b
+Logical Operator Tree:		π( ( ( ( ( ( ( ( ( t ⨝ miidx ) ⨝ mi ) ⨝ mc ) ⨝ kt ) ⨝ it2 ) ⨝ it ) ⨝ ct ) ⨝ cn ) )
+Logical Operator Tree:		π( FJ( t miidx mi mc kt it2 it ct cn ) )
+Free Join Plan:	[ COVER( t.id t.kind_id ) ( miidx.movie_id ) ( mi.movie_id ) ( mc.movie_id ) ( kt.id ) ][ COVER( miidx.info_type_id ) COVER( it.id ) ][ COVER( mi.info_type_id ) COVER( it2.id ) ][ COVER( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ]
+Num Nodes:	4
+Num Atoms:	5 2 2 3 
+Num Attributes:	2 1 1 2 
+               name, time sec,     cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock, scale,  IPC, CPUs,  GHz 
+materializing input,     0.00, 7446149.95,    -nan,         -nan,      -nan,       -nan,          -nan, 1721831.00,     1, -nan, 0.65, 4.32 
+materializing input,     0.53, 1082186870.00, 205655303.50, 2599222716.33, 19345619.48, 5076241.55,     663250.96, 257044744.00,     1, 2.40, 0.49, 4.21 
+chunked list building,     0.01, 45297205.65, 1460569.07,  21727642.57,      -nan,       -nan,          -nan, 10628030.00,     1, 0.48, 0.91, 4.26 
+trie building,     1.29, 1142217917.92, 240527551.35, 871740186.07, 15620323.85, 10796866.04,    2863314.30, 293089513.00,     1, 0.76, 0.23, 3.90 
+materializing input,    16.60, 14255694700.01, 5887969824.30, 25715326157.74, 326171003.74, 110634928.87,   22889259.34, 3609309418.00,     1, 1.80, 0.22, 3.95 
+chunked list building,     0.12, 237233254.08, 46334968.03, 373487630.63, 4366291.07, 2313709.77,     118888.90, 68005719.00,     1, 1.57, 0.57, 3.49 
+trie building,    10.94, 11863077326.30, 3483724904.50, 7872165776.21, 172481629.35, 101230825.79,   22290837.07, 3041289918.00,     1, 0.66, 0.28, 3.90 
+materializing input,     5.50, 3754356250.27, 2067736779.67, 6767691115.86, 84992979.08, 28304615.10,    5533289.61, 996561429.00,     1, 1.80, 0.18, 3.77 
+chunked list building,     0.02, 47320599.57, 12610874.01,  39468276.50,      -nan,       -nan,          -nan, 12880272.00,     1, 0.83, 0.55, 3.67 
+trie building,     3.79, 3763858073.12, 1431243881.71, 3166741490.90, 63696540.39, 35346276.90,    9303427.56, 960761752.00,     1, 0.84, 0.25, 3.92 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,  639348.00,     1, -nan, 0.17, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   47199.00,     1, -nan, 0.25, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   14727.00,     1, -nan, 1.20, -nan 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   55384.00,     1, -nan, 0.19, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    4919.00,     1, -nan, 1.96, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    7404.00,     1, -nan, 1.47, -nan 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   81644.00,     1, -nan, 0.18, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    4719.00,     1, -nan, 1.96, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    7514.00,     1, -nan, 1.46, -nan 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   54011.00,     1, -nan, 0.17, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    5139.00,     1, -nan, 1.83, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    7224.00,     1, -nan, 1.49, -nan 
+materializing input,     0.05, 88092180.08, 11309972.70, 249903584.65, 1266265.18,  104717.31,          -nan, 20905532.00,     1, 2.84, 0.41, 4.21 
+chunked list building,     0.00, 7464907.69,    -nan,         -nan,      -nan,       -nan,          -nan, 1721448.00,     1, -nan, 0.99, 4.34 
+trie building,     0.03, 92990969.58, 18138861.29, 115984476.78, 2123246.74,  725524.14,     267267.64, 22132755.00,     1, 1.25, 0.71, 4.20 
+trie intersection,     0.01,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan, 1241517.00,     1, -nan, 0.11, -nan 
+total,    38.91, 36302105799.52, 13776341630.27, 48381404784.98, 686813132.34, 298307907.63,   63002890.28, 9301947843.00,     1, 1.33, 0.24, 3.90 
+
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/4b.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/4b
+Logical Operator Tree:		π( ( ( ( ( mk ⨝ t ) ⨝ mi_idx ) ⨝ k ) ⨝ it ) )
+Logical Operator Tree:		π( FJ( mk t mi_idx k it ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi_idx.movie_id ) ( k.id ) ][ COVER( mi_idx.info_type_id ) COVER( it.id ) ]
+Num Nodes:	2
+Num Atoms:	4 2 
+Num Attributes:	2 1 
+               name, time sec,        cycles,      kcycles,  instructions,   L1-misses,  LLC-misses, branch-misses,   task-clock, scale,  IPC, CPUs,  GHz 
+materializing input,     1.93, 2466880699.10, 657995002.18, 5462172805.94, 46404195.26, 14525042.67,    1791786.03, 600081624.00,     1, 2.21, 0.31, 4.11 
+materializing input,     0.53, 537993345.48, 168869406.74, 931069670.11, 11016554.53, 3536516.77,    1363385.30, 134789242.00,     1, 1.73, 0.25, 3.99 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan, 2664646.00,     1, -nan, 0.68, -nan 
+trie building,     0.25, 619129797.33, 76100296.63, 440874253.71, 7129314.98, 3136913.35,    1188655.47, 148762334.00,     1, 0.71, 0.60, 4.16 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan, 1303565.00,     1, -nan, 0.78, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,  275777.00,     1, -nan, 1.02, -nan 
+trie building,     0.01, 18775376.60,    -nan,         -nan,      -nan,       -nan,          -nan, 4531647.00,     1, -nan, 0.42, 4.14 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   59872.00,     1, -nan, 0.47, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   16320.00,     1, -nan, 1.23, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,   31699.00,     1, -nan, 1.09, -nan 
+materializing input,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    8095.00,     1, -nan, 1.41, -nan 
+chunked list building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    4058.00,     1, -nan, 2.38, -nan 
+trie building,     0.00,   -nan,    -nan,         -nan,      -nan,       -nan,          -nan,    7574.00,     1, -nan, 1.57, -nan 
+trie intersection,     0.04, 146450027.01, 803020.04, 164906190.34, 1197275.17,  397059.28,      79282.15, 39380207.00,     1, 1.13, 1.00, 3.72 
+total,     2.77, 3836135959.82, 951910181.94, 6928145730.16, 71583499.68, 24956862.16,    5671688.87, 933357610.00,     1, 1.81, 0.34, 4.11 
+
+
+Plan: ../benchmarks/join-order-benchmark/plans/preprocessed/24a.json
+Data: ../benchmarks/join-order-benchmark/data/preprocessed/24a
+Logical Operator Tree:		π( ( ( ( ( ( ( ( mk ⨝ t ) ⨝ mi ) ⨝ mc ) ⨝ k ) ⨝ it ) ⨝ cn ) ⨝ ( ( ( ci ⨝ chn ) ⨝ rt ) ⨝ ( n ⨝ an ) ) ) )
+Logical Operator Tree:		π( FJ( mk t mi mc k it cn FJ( ci chn rt FJ( n an ) ) ) )
+Free Join Plan:	[ COVER( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( mc.movie_id ) ( k.id ) ( ci.movie_id ) ][ COVER( mi.info_type_id ) COVER( it.id ) ][ COVER( mc.company_id ) COVER( cn.id ) ]
+Num Nodes:	3
+Num Atoms:	6 2 2 
+Num Attributes:	2 1 1 
+Free Join Plan:	[ COVER( ci.person_id ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) ( n.id an.person_id ) ]
+Num Nodes:	1
+Num Atoms:	4 
+Num Attributes:	3 
+Free Join Plan:	[ COVER( n.id ) COVER( an.person_id ) ]
+Num Nodes:	1
+Num Atoms:	2 
+Num Attributes:	1 
+               name, time sec,        cycles,      kcycles,  instructions,   L1-misses, LLC-misses, branch-misses,   task-clock, scale,  IPC, CPUs,  GHz 
+materializing input,     0.74, 1726502301.96, 169912565.75, 4558846605.47, 31945021.01, 6016937.22,     474314.05, 409835936.00,     1, 2.64, 0.56, 4.21 
+materializing input,     0.37, 514861585.34, 135292071.56, 965946291.80, 10002125.87, 3110195.27,    1279211.13, 123429379.00,     1, 1.88, 0.34, 4.17 
+chunked list building,     0.00, 16416737.38,    -nan,         -nan,      -nan,       -nan,          -nan, 3788935.00,     1, -nan, 1.00, 4.33 
+trie building,     0.13, 518432635.31, 4112257.92, 353941348.81, 6277212.19, 3048454.59,    1351466.52, 122512146.00,     1, 0.68, 0.95, 4.23 
+materializing input,     0.07, 155880095.72, 41153689.41, 414978557.63, 2904050.16,  357875.90,      14267.66, 38249704.00,     1, 2.66, 0.56, 4.08 
+chunked list building,     0.01, 15388230.44, 1067829.16,         -nan,      -nan,       -nan,          -nan, 4805461.00,     1, -nan, 0.60, 3.20 

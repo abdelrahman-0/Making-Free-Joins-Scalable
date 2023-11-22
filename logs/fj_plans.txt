@@ -1,0 +1,1597 @@
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/6c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/6c
+Binary Join:		(((mk⋈t)⋈k)⋈(ci⋈n))
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( k.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( k.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( k.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( k.id ) INTMD_RES0( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/16d.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/16d
+Binary Join:		((((((mk⋈t)⋈mc)⋈k)⋈cn)⋈(ci⋈n))⋈an)
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_id n.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/29c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/29c
+Binary Join:		(((((((cc⋈cct1)⋈cct2)⋈t)⋈(mc⋈cn))⋈(mk⋈k))⋈(mi⋈it))⋈((((pi⋈an)⋈it3)⋈n)⋈((ci⋈chn)⋈rt)))
+Init Plan Phase 1:	[ ( mc.company_id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id ) ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id ) ( k.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id ) ( k.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi.info_type_id ) ] [ ( it.id ) ] 
+Init Plan Phase 2:	[ ( mi.info_type_id ) ( it.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi.info_type_id ) ( it.id ) ] 
+Optimized Plan:		[ ( mi.info_type_id ) ( it.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.person_role_id ci.role_id ) ] [ ( chn.id ) ] [ ( rt.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_role_id ci.role_id ) ( chn.id ) ] [ ( ) ( rt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_role_id ci.role_id ) ( chn.id ) ] [ ( rt.id ) ] 
+Optimized Plan:		[ ( ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) ] 
+----
+Init Plan Phase 1:	[ ( pi.info_type_id pi.person_id ) ] [ ( an.person_id ) ] [ ( it3.id ) ] [ ( n.id ) ] [ INTMD_RES3( ci.person_id ) ] 
+Init Plan Phase 2:	[ ( pi.info_type_id pi.person_id ) ( an.person_id ) ] [ ( ) ( it3.id ) ] [ ( ) ( n.id ) ] [ ( ) INTMD_RES3( ci.person_id ) ] [ INTMD_RES3( ) ] 
+Removed Empty Nodes:	[ ( pi.info_type_id pi.person_id ) ( an.person_id ) ] [ ( it3.id ) ] [ ( n.id ) ] [ INTMD_RES3( ci.person_id ) ] 
+Optimized Plan:		[ ( pi.info_type_id pi.person_id ) ( an.person_id ) ( it3.id ) ( n.id ) INTMD_RES3( ci.person_id ) ] 
+----
+Init Plan Phase 1:	[ ( cc.movie_id cc.status_id cc.subject_id ) ] [ ( cct1.id ) ] [ ( cct2.id ) ] [ ( t.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ INTMD_RES1( mk.movie_id ) ] [ INTMD_RES2( mi.movie_id ) ] [ INTMD_RES4( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( ) ( cct2.id ) ] [ ( ) ( t.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) INTMD_RES1( mk.movie_id ) ] [ INTMD_RES1( ) INTMD_RES2( mi.movie_id ) ] [ INTMD_RES2( ) INTMD_RES4( ci.movie_id ) ] [ INTMD_RES4( ) ] 
+Removed Empty Nodes:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( cct2.id ) ] [ ( t.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ INTMD_RES1( mk.movie_id ) ] [ INTMD_RES2( mi.movie_id ) ] [ INTMD_RES4( ci.movie_id ) ] 
+Optimized Plan:		[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( t.id ) INTMD_RES0( mc.movie_id ) INTMD_RES1( mk.movie_id ) INTMD_RES2( mi.movie_id ) INTMD_RES4( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/28a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/28a
+Binary Join:		((((((ci⋈n)⋈(mc⋈cn))⋈rt)⋈t)⋈chn)⋈an)
+Init Plan Phase 1:	[ ( mc.company_id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id ) ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ] [ ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( chn.id ) ] [ ( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) INTMD_RES0( mc.movie_id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/10a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/10a
+Binary Join:		(((((mc⋈t)⋈ct)⋈cn)⋈(ci⋈rt))⋈chn)
+Init Plan Phase 1:	[ ( ci.role_id ) ] [ ( rt.id ) ] 
+Init Plan Phase 2:	[ ( ci.role_id ) ( rt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.role_id ) ( rt.id ) ] 
+Optimized Plan:		[ ( ci.role_id ) ( rt.id ) ] 
+----
+Init Plan Phase 1:	[ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( t.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_role_id ) ] [ ( chn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_role_id ) ( chn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_role_id ) ( chn.id ) ] 
+Optimized Plan:		[ ( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ( ct.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_role_id ) ( chn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/25b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/25b
+Binary Join:		(((((mc⋈t)⋈ct)⋈cn)⋈(ci⋈rt))⋈chn)
+Init Plan Phase 1:	[ ( ci.role_id ) ] [ ( rt.id ) ] 
+Init Plan Phase 2:	[ ( ci.role_id ) ( rt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.role_id ) ( rt.id ) ] 
+Optimized Plan:		[ ( ci.role_id ) ( rt.id ) ] 
+----
+Init Plan Phase 1:	[ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( t.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_role_id ) ] [ ( chn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_role_id ) ( chn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_role_id ) ( chn.id ) ] 
+Optimized Plan:		[ ( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ( ct.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_role_id ) ( chn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/4a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/4a
+Binary Join:		((((mk⋈t)⋈mi_idx)⋈k)⋈it)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( k.id ) ] [ ( it.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ] [ ( ) ( it.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ] [ ( it.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ( it.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/30a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/30a
+Binary Join:		((((((((t⋈ml)⋈mk)⋈mi)⋈mc)⋈lt)⋈k)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( ml.link_type_id ml.movie_id ) ] [ ( mk.keyword_id mk.movie_id ) ] [ ( mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( lt.id ) ] [ ( k.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mi.movie_id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ] [ ( ) ( k.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mi.movie_id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ] [ ( k.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ( k.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/1c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/1c
+Binary Join:		((((t⋈mi_idx)⋈mc)⋈it)⋈ct)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( mc.company_type_id mc.movie_id ) ] [ ( it.id ) ] [ ( ct.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ) ( ct.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ct.id ) ] 
+Optimized Plan:		[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ( ct.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/18a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/18a
+Binary Join:		(((((t⋈mi_idx)⋈mi)⋈it2)⋈it1)⋈(ci⋈n))
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( it2.id ) ] [ ( it1.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( it2.id ) ] [ ( ) ( it1.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( it2.id ) ] [ ( it1.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Optimized Plan:		[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( it2.id ) ( it1.id ) INTMD_RES0( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/20b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/20b
+Binary Join:		((((((ci⋈n)⋈(mc⋈cn))⋈rt)⋈t)⋈chn)⋈an)
+Init Plan Phase 1:	[ ( mc.company_id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id ) ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ] [ ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( chn.id ) ] [ ( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) INTMD_RES0( mc.movie_id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/22b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/22b
+Binary Join:		((((((t⋈mi_idx)⋈kt)⋈it2)⋈((mc⋈cn)⋈ct))⋈(mk⋈k))⋈(mi⋈it1))
+Init Plan Phase 1:	[ ( mc.company_id mc.company_type_id ) ] [ ( cn.id ) ] [ ( ct.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id mc.company_type_id ) ( cn.id ) ] [ ( ) ( ct.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id mc.company_type_id ) ( cn.id ) ] [ ( ct.id ) ] 
+Optimized Plan:		[ ( mc.company_id mc.company_type_id ) ( cn.id ) ( ct.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id ) ( k.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id ) ( k.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi.info_type_id ) ] [ ( it1.id ) ] 
+Init Plan Phase 2:	[ ( mi.info_type_id ) ( it1.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi.info_type_id ) ( it1.id ) ] 
+Optimized Plan:		[ ( mi.info_type_id ) ( it1.id ) ] 
+----
+Init Plan Phase 1:	[ ( t.id t.kind_id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( kt.id ) ] [ ( it2.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ INTMD_RES1( mk.movie_id ) ] [ INTMD_RES2( mi.movie_id ) ] 
+Init Plan Phase 2:	[ ( t.id t.kind_id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( kt.id ) ] [ ( ) ( it2.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) INTMD_RES1( mk.movie_id ) ] [ INTMD_RES1( ) INTMD_RES2( mi.movie_id ) ] [ INTMD_RES2( ) ] 
+Removed Empty Nodes:	[ ( t.id t.kind_id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( kt.id ) ] [ ( it2.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ INTMD_RES1( mk.movie_id ) ] [ INTMD_RES2( mi.movie_id ) ] 
+Optimized Plan:		[ ( t.id t.kind_id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( kt.id ) ( it2.id ) INTMD_RES0( mc.movie_id ) INTMD_RES1( mk.movie_id ) INTMD_RES2( mi.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/33c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/33c
+Binary Join:		(((((((mi_idx1⋈it1)⋈(ml⋈lt))⋈(mi_idx2⋈it2))⋈(t1⋈kt1))⋈(t2⋈kt2))⋈(mc1⋈cn1))⋈(mc2⋈cn2))
+Init Plan Phase 1:	[ ( ml.link_type_id ) ] [ ( lt.id ) ] 
+Init Plan Phase 2:	[ ( ml.link_type_id ) ( lt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ml.link_type_id ) ( lt.id ) ] 
+Optimized Plan:		[ ( ml.link_type_id ) ( lt.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi_idx2.info_type_id ) ] [ ( it2.id ) ] 
+Init Plan Phase 2:	[ ( mi_idx2.info_type_id ) ( it2.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi_idx2.info_type_id ) ( it2.id ) ] 
+Optimized Plan:		[ ( mi_idx2.info_type_id ) ( it2.id ) ] 
+----
+Init Plan Phase 1:	[ ( t1.kind_id ) ] [ ( kt1.id ) ] 
+Init Plan Phase 2:	[ ( t1.kind_id ) ( kt1.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t1.kind_id ) ( kt1.id ) ] 
+Optimized Plan:		[ ( t1.kind_id ) ( kt1.id ) ] 
+----
+Init Plan Phase 1:	[ ( t2.kind_id ) ] [ ( kt2.id ) ] 
+Init Plan Phase 2:	[ ( t2.kind_id ) ( kt2.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t2.kind_id ) ( kt2.id ) ] 
+Optimized Plan:		[ ( t2.kind_id ) ( kt2.id ) ] 
+----
+Init Plan Phase 1:	[ ( mc1.company_id ) ] [ ( cn1.id ) ] 
+Init Plan Phase 2:	[ ( mc1.company_id ) ( cn1.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc1.company_id ) ( cn1.id ) ] 
+Optimized Plan:		[ ( mc1.company_id ) ( cn1.id ) ] 
+----
+Init Plan Phase 1:	[ ( mc2.company_id ) ] [ ( cn2.id ) ] 
+Init Plan Phase 2:	[ ( mc2.company_id ) ( cn2.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc2.company_id ) ( cn2.id ) ] 
+Optimized Plan:		[ ( mc2.company_id ) ( cn2.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi_idx1.info_type_id mi_idx1.movie_id ) ] [ ( it1.id ) ] [ INTMD_RES0( ml.linked_movie_id ml.movie_id ) ] [ INTMD_RES1( mi_idx2.movie_id ) ] [ INTMD_RES2( t1.id ) ] [ INTMD_RES3( t2.id ) ] [ INTMD_RES4( mc1.movie_id ) ] [ INTMD_RES5( mc2.movie_id ) ] 
+Init Plan Phase 2:	[ ( mi_idx1.info_type_id mi_idx1.movie_id ) ( it1.id ) ] [ ( ) INTMD_RES0( ml.movie_id ) ] [ INTMD_RES0( ml.linked_movie_id ) INTMD_RES1( mi_idx2.movie_id ) ] [ INTMD_RES1( ) INTMD_RES2( t1.id ) ] [ INTMD_RES2( ) INTMD_RES3( t2.id ) ] [ INTMD_RES3( ) INTMD_RES4( mc1.movie_id ) ] [ INTMD_RES4( ) INTMD_RES5( mc2.movie_id ) ] [ INTMD_RES5( ) ] 
+Removed Empty Nodes:	[ ( mi_idx1.info_type_id mi_idx1.movie_id ) ( it1.id ) ] [ INTMD_RES0( ml.movie_id ) ] [ INTMD_RES0( ml.linked_movie_id ) INTMD_RES1( mi_idx2.movie_id ) ] [ INTMD_RES2( t1.id ) ] [ INTMD_RES3( t2.id ) ] [ INTMD_RES4( mc1.movie_id ) ] [ INTMD_RES5( mc2.movie_id ) ] 
+Optimized Plan:		[ ( mi_idx1.info_type_id mi_idx1.movie_id ) ( it1.id ) INTMD_RES0( ml.movie_id ) ] [ INTMD_RES0( ml.linked_movie_id ) INTMD_RES1( mi_idx2.movie_id ) INTMD_RES2( t1.id ) INTMD_RES3( t2.id ) INTMD_RES4( mc1.movie_id ) INTMD_RES5( mc2.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/32a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/32a
+Binary Join:		(((((t1⋈ml)⋈t2)⋈mk)⋈lt)⋈k)
+Init Plan Phase 1:	[ ( t1.id ) ] [ ( ml.link_type_id ml.linked_movie_id ml.movie_id ) ] [ ( t2.id ) ] [ ( mk.keyword_id mk.movie_id ) ] [ ( lt.id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( t1.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ] [ ( ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( lt.id ) ] [ ( ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t1.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ] [ ( mk.movie_id ) ] [ ( mk.keyword_id ) ( lt.id ) ] [ ( k.id ) ] 
+Optimized Plan:		[ ( t1.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( lt.id ) ( k.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/4c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/4c
+Binary Join:		((((mk⋈t)⋈mi_idx)⋈k)⋈it)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( k.id ) ] [ ( it.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ] [ ( ) ( it.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ] [ ( it.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ( it.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/10b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/10b
+Binary Join:		(((((mc⋈t)⋈ct)⋈cn)⋈(ci⋈rt))⋈chn)
+Init Plan Phase 1:	[ ( ci.role_id ) ] [ ( rt.id ) ] 
+Init Plan Phase 2:	[ ( ci.role_id ) ( rt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.role_id ) ( rt.id ) ] 
+Optimized Plan:		[ ( ci.role_id ) ( rt.id ) ] 
+----
+Init Plan Phase 1:	[ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( t.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_role_id ) ] [ ( chn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_role_id ) ( chn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_role_id ) ( chn.id ) ] 
+Optimized Plan:		[ ( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ( ct.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_role_id ) ( chn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/5c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/5c
+Binary Join:		((((mk⋈t)⋈mc)⋈k)⋈cn)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/8a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/8a
+Binary Join:		(((((ci⋈n1)⋈(mc⋈cn))⋈rt)⋈t)⋈an1)
+Init Plan Phase 1:	[ ( mc.company_id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id ) ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.movie_id ci.person_id ci.role_id ) ] [ ( n1.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( an1.person_id ) ] 
+Init Plan Phase 2:	[ ( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( an1.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( an1.person_id ) ] 
+Optimized Plan:		[ ( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) INTMD_RES0( mc.movie_id ) ( rt.id ) ( t.id ) ( an1.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/3b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/3b
+Binary Join:		(((mk⋈t)⋈mi)⋈k)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mi.movie_id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mi.movie_id ) ] [ ( ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mi.movie_id ) ] [ ( k.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( k.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/9b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/9b
+Binary Join:		((((((ci⋈n)⋈(mc⋈cn))⋈rt)⋈t)⋈chn)⋈an)
+Init Plan Phase 1:	[ ( mc.company_id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id ) ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ] [ ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( chn.id ) ] [ ( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) INTMD_RES0( mc.movie_id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/21c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/21c
+Binary Join:		((((((ci⋈n)⋈(mc⋈cn))⋈rt)⋈t)⋈chn)⋈an)
+Init Plan Phase 1:	[ ( mc.company_id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id ) ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ] [ ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( chn.id ) ] [ ( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) INTMD_RES0( mc.movie_id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/17e.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/17e
+Binary Join:		(((((mk⋈t)⋈mc)⋈k)⋈cn)⋈(ci⋈n))
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/8d.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/8d
+Binary Join:		(((((ci⋈n1)⋈(mc⋈cn))⋈rt)⋈t)⋈an1)
+Init Plan Phase 1:	[ ( mc.company_id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id ) ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.movie_id ci.person_id ci.role_id ) ] [ ( n1.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( an1.person_id ) ] 
+Init Plan Phase 2:	[ ( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( an1.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( an1.person_id ) ] 
+Optimized Plan:		[ ( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) INTMD_RES0( mc.movie_id ) ( rt.id ) ( t.id ) ( an1.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/15c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/15c
+Binary Join:		((((((((mk⋈t)⋈mi)⋈mc)⋈k)⋈it1)⋈ct)⋈cn)⋈at)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( k.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ ( at.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( k.id ) ] [ ( ) ( it1.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ( at.movie_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( k.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ ( at.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( k.id ) ( it1.id ) ( ct.id ) ( cn.id ) ( at.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/29a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/29a
+Binary Join:		(((((((cc⋈cct1)⋈cct2)⋈t)⋈(mc⋈cn))⋈(mk⋈k))⋈(mi⋈it))⋈((((pi⋈an)⋈it3)⋈n)⋈((ci⋈chn)⋈rt)))
+Init Plan Phase 1:	[ ( mc.company_id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id ) ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id ) ( k.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id ) ( k.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi.info_type_id ) ] [ ( it.id ) ] 
+Init Plan Phase 2:	[ ( mi.info_type_id ) ( it.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi.info_type_id ) ( it.id ) ] 
+Optimized Plan:		[ ( mi.info_type_id ) ( it.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.person_role_id ci.role_id ) ] [ ( chn.id ) ] [ ( rt.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_role_id ci.role_id ) ( chn.id ) ] [ ( ) ( rt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_role_id ci.role_id ) ( chn.id ) ] [ ( rt.id ) ] 
+Optimized Plan:		[ ( ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) ] 
+----
+Init Plan Phase 1:	[ ( pi.info_type_id pi.person_id ) ] [ ( an.person_id ) ] [ ( it3.id ) ] [ ( n.id ) ] [ INTMD_RES3( ci.person_id ) ] 
+Init Plan Phase 2:	[ ( pi.info_type_id pi.person_id ) ( an.person_id ) ] [ ( ) ( it3.id ) ] [ ( ) ( n.id ) ] [ ( ) INTMD_RES3( ci.person_id ) ] [ INTMD_RES3( ) ] 
+Removed Empty Nodes:	[ ( pi.info_type_id pi.person_id ) ( an.person_id ) ] [ ( it3.id ) ] [ ( n.id ) ] [ INTMD_RES3( ci.person_id ) ] 
+Optimized Plan:		[ ( pi.info_type_id pi.person_id ) ( an.person_id ) ( it3.id ) ( n.id ) INTMD_RES3( ci.person_id ) ] 
+----
+Init Plan Phase 1:	[ ( cc.movie_id cc.status_id cc.subject_id ) ] [ ( cct1.id ) ] [ ( cct2.id ) ] [ ( t.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ INTMD_RES1( mk.movie_id ) ] [ INTMD_RES2( mi.movie_id ) ] [ INTMD_RES4( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( ) ( cct2.id ) ] [ ( ) ( t.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) INTMD_RES1( mk.movie_id ) ] [ INTMD_RES1( ) INTMD_RES2( mi.movie_id ) ] [ INTMD_RES2( ) INTMD_RES4( ci.movie_id ) ] [ INTMD_RES4( ) ] 
+Removed Empty Nodes:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( cct2.id ) ] [ ( t.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ INTMD_RES1( mk.movie_id ) ] [ INTMD_RES2( mi.movie_id ) ] [ INTMD_RES4( ci.movie_id ) ] 
+Optimized Plan:		[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( t.id ) INTMD_RES0( mc.movie_id ) INTMD_RES1( mk.movie_id ) INTMD_RES2( mi.movie_id ) INTMD_RES4( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/7c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/7c
+Binary Join:		(((((t⋈ml)⋈lt)⋈ci)⋈((n⋈pi)⋈it))⋈an)
+Init Plan Phase 1:	[ ( n.id ) ] [ ( pi.info_type_id pi.person_id ) ] [ ( it.id ) ] 
+Init Plan Phase 2:	[ ( n.id ) ( pi.person_id ) ] [ ( pi.info_type_id ) ( it.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( n.id ) ( pi.person_id ) ] [ ( pi.info_type_id ) ( it.id ) ] 
+Optimized Plan:		[ ( n.id ) ( pi.person_id ) ] [ ( pi.info_type_id ) ( it.id ) ] 
+----
+Init Plan Phase 1:	[ ( t.id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ] [ ( lt.id ) ] [ ( ci.movie_id ci.person_id ) ] [ INTMD_RES0( n.id pi.person_id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( ml.linked_movie_id ) ] [ ( ml.link_type_id ) ( lt.id ) ] [ ( ) ( ci.movie_id ) ] [ ( ci.person_id ) INTMD_RES0( n.id pi.person_id ) ] [ INTMD_RES0( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( ml.linked_movie_id ) ] [ ( ml.link_type_id ) ( lt.id ) ] [ ( ci.movie_id ) ] [ ( ci.person_id ) INTMD_RES0( n.id pi.person_id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( t.id ) ( ml.linked_movie_id ) ] [ ( ml.link_type_id ) ( lt.id ) ( ci.movie_id ) ] [ ( ci.person_id ) INTMD_RES0( n.id pi.person_id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/11b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/11b
+Binary Join:		(((((((t⋈ml)⋈mk)⋈mc)⋈lt)⋈k)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( ml.link_type_id ml.movie_id ) ] [ ( mk.keyword_id mk.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( lt.id ) ] [ ( k.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ] [ ( ) ( k.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ] [ ( k.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ( k.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/32b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/32b
+Binary Join:		(((((t1⋈ml)⋈t2)⋈mk)⋈lt)⋈k)
+Init Plan Phase 1:	[ ( t1.id ) ] [ ( ml.link_type_id ml.linked_movie_id ml.movie_id ) ] [ ( t2.id ) ] [ ( mk.keyword_id mk.movie_id ) ] [ ( lt.id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( t1.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ] [ ( ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( lt.id ) ] [ ( ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t1.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ] [ ( mk.movie_id ) ] [ ( mk.keyword_id ) ( lt.id ) ] [ ( k.id ) ] 
+Optimized Plan:		[ ( t1.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( lt.id ) ( k.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/22c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/22c
+Binary Join:		((((((mk⋈t)⋈mc)⋈k)⋈cn)⋈(ci⋈n))⋈an)
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_id n.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/30b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/30b
+Binary Join:		((((((((mi⋈mc)⋈it)⋈cn)⋈(ci⋈n))⋈rt)⋈t)⋈chn)⋈an)
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_id ci.person_role_id ci.role_id n.id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( chn.id ) ] [ ( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/19b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/19b
+Binary Join:		((((((((mi⋈mc)⋈it)⋈cn)⋈(ci⋈n))⋈rt)⋈t)⋈chn)⋈an)
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_id ci.person_role_id ci.role_id n.id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( chn.id ) ] [ ( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/17b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/17b
+Binary Join:		(((((mk⋈t)⋈mc)⋈k)⋈cn)⋈(ci⋈n))
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/25c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/25c
+Binary Join:		(((((mk⋈t)⋈mc)⋈k)⋈cn)⋈(ci⋈n))
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/6a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/6a
+Binary Join:		(((mk⋈t)⋈k)⋈(ci⋈n))
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( k.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( k.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( k.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( k.id ) INTMD_RES0( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/12c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/12c
+Binary Join:		(((((((t⋈mi_idx)⋈mi)⋈mc)⋈it2)⋈it1)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( it2.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( it2.id ) ] [ ( ) ( it1.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( it2.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( it2.id ) ( it1.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/4b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/4b
+Binary Join:		((((mk⋈t)⋈mi_idx)⋈k)⋈it)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( k.id ) ] [ ( it.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ] [ ( ) ( it.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ] [ ( it.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ( it.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/11d.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/11d
+Binary Join:		(((((((t⋈ml)⋈mk)⋈mc)⋈lt)⋈k)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( ml.link_type_id ml.movie_id ) ] [ ( mk.keyword_id mk.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( lt.id ) ] [ ( k.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ] [ ( ) ( k.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ] [ ( k.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ( k.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/9c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/9c
+Binary Join:		((((((ci⋈n)⋈(mc⋈cn))⋈rt)⋈t)⋈chn)⋈an)
+Init Plan Phase 1:	[ ( mc.company_id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id ) ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ] [ ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( chn.id ) ] [ ( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) INTMD_RES0( mc.movie_id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/11c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/11c
+Binary Join:		(((((((t⋈ml)⋈mk)⋈mc)⋈lt)⋈k)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( ml.link_type_id ml.movie_id ) ] [ ( mk.keyword_id mk.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( lt.id ) ] [ ( k.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ] [ ( ) ( k.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ] [ ( k.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ( k.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/33b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/33b
+Binary Join:		(((((((mi_idx1⋈it1)⋈(ml⋈lt))⋈(mi_idx2⋈it2))⋈(t1⋈kt1))⋈(t2⋈kt2))⋈(mc1⋈cn1))⋈(mc2⋈cn2))
+Init Plan Phase 1:	[ ( ml.link_type_id ) ] [ ( lt.id ) ] 
+Init Plan Phase 2:	[ ( ml.link_type_id ) ( lt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ml.link_type_id ) ( lt.id ) ] 
+Optimized Plan:		[ ( ml.link_type_id ) ( lt.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi_idx2.info_type_id ) ] [ ( it2.id ) ] 
+Init Plan Phase 2:	[ ( mi_idx2.info_type_id ) ( it2.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi_idx2.info_type_id ) ( it2.id ) ] 
+Optimized Plan:		[ ( mi_idx2.info_type_id ) ( it2.id ) ] 
+----
+Init Plan Phase 1:	[ ( t1.kind_id ) ] [ ( kt1.id ) ] 
+Init Plan Phase 2:	[ ( t1.kind_id ) ( kt1.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t1.kind_id ) ( kt1.id ) ] 
+Optimized Plan:		[ ( t1.kind_id ) ( kt1.id ) ] 
+----
+Init Plan Phase 1:	[ ( t2.kind_id ) ] [ ( kt2.id ) ] 
+Init Plan Phase 2:	[ ( t2.kind_id ) ( kt2.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t2.kind_id ) ( kt2.id ) ] 
+Optimized Plan:		[ ( t2.kind_id ) ( kt2.id ) ] 
+----
+Init Plan Phase 1:	[ ( mc1.company_id ) ] [ ( cn1.id ) ] 
+Init Plan Phase 2:	[ ( mc1.company_id ) ( cn1.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc1.company_id ) ( cn1.id ) ] 
+Optimized Plan:		[ ( mc1.company_id ) ( cn1.id ) ] 
+----
+Init Plan Phase 1:	[ ( mc2.company_id ) ] [ ( cn2.id ) ] 
+Init Plan Phase 2:	[ ( mc2.company_id ) ( cn2.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc2.company_id ) ( cn2.id ) ] 
+Optimized Plan:		[ ( mc2.company_id ) ( cn2.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi_idx1.info_type_id mi_idx1.movie_id ) ] [ ( it1.id ) ] [ INTMD_RES0( ml.linked_movie_id ml.movie_id ) ] [ INTMD_RES1( mi_idx2.movie_id ) ] [ INTMD_RES2( t1.id ) ] [ INTMD_RES3( t2.id ) ] [ INTMD_RES4( mc1.movie_id ) ] [ INTMD_RES5( mc2.movie_id ) ] 
+Init Plan Phase 2:	[ ( mi_idx1.info_type_id mi_idx1.movie_id ) ( it1.id ) ] [ ( ) INTMD_RES0( ml.movie_id ) ] [ INTMD_RES0( ml.linked_movie_id ) INTMD_RES1( mi_idx2.movie_id ) ] [ INTMD_RES1( ) INTMD_RES2( t1.id ) ] [ INTMD_RES2( ) INTMD_RES3( t2.id ) ] [ INTMD_RES3( ) INTMD_RES4( mc1.movie_id ) ] [ INTMD_RES4( ) INTMD_RES5( mc2.movie_id ) ] [ INTMD_RES5( ) ] 
+Removed Empty Nodes:	[ ( mi_idx1.info_type_id mi_idx1.movie_id ) ( it1.id ) ] [ INTMD_RES0( ml.movie_id ) ] [ INTMD_RES0( ml.linked_movie_id ) INTMD_RES1( mi_idx2.movie_id ) ] [ INTMD_RES2( t1.id ) ] [ INTMD_RES3( t2.id ) ] [ INTMD_RES4( mc1.movie_id ) ] [ INTMD_RES5( mc2.movie_id ) ] 
+Optimized Plan:		[ ( mi_idx1.info_type_id mi_idx1.movie_id ) ( it1.id ) INTMD_RES0( ml.movie_id ) ] [ INTMD_RES0( ml.linked_movie_id ) INTMD_RES1( mi_idx2.movie_id ) INTMD_RES2( t1.id ) INTMD_RES3( t2.id ) INTMD_RES4( mc1.movie_id ) INTMD_RES5( mc2.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/14a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/14a
+Binary Join:		((((((mk⋈t)⋈mc)⋈k)⋈cn)⋈(ci⋈n))⋈an)
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_id n.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/17c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/17c
+Binary Join:		(((((mk⋈t)⋈mc)⋈k)⋈cn)⋈(ci⋈n))
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/6b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/6b
+Binary Join:		(((mk⋈t)⋈mi)⋈k)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mi.movie_id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mi.movie_id ) ] [ ( ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mi.movie_id ) ] [ ( k.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ( k.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/22a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/22a
+Binary Join:		((((((t⋈mi_idx)⋈kt)⋈it2)⋈((mc⋈cn)⋈ct))⋈(mk⋈k))⋈(mi⋈it1))
+Init Plan Phase 1:	[ ( mc.company_id mc.company_type_id ) ] [ ( cn.id ) ] [ ( ct.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id mc.company_type_id ) ( cn.id ) ] [ ( ) ( ct.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id mc.company_type_id ) ( cn.id ) ] [ ( ct.id ) ] 
+Optimized Plan:		[ ( mc.company_id mc.company_type_id ) ( cn.id ) ( ct.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id ) ( k.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id ) ( k.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi.info_type_id ) ] [ ( it1.id ) ] 
+Init Plan Phase 2:	[ ( mi.info_type_id ) ( it1.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi.info_type_id ) ( it1.id ) ] 
+Optimized Plan:		[ ( mi.info_type_id ) ( it1.id ) ] 
+----
+Init Plan Phase 1:	[ ( t.id t.kind_id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( kt.id ) ] [ ( it2.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ INTMD_RES1( mk.movie_id ) ] [ INTMD_RES2( mi.movie_id ) ] 
+Init Plan Phase 2:	[ ( t.id t.kind_id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( kt.id ) ] [ ( ) ( it2.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) INTMD_RES1( mk.movie_id ) ] [ INTMD_RES1( ) INTMD_RES2( mi.movie_id ) ] [ INTMD_RES2( ) ] 
+Removed Empty Nodes:	[ ( t.id t.kind_id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( kt.id ) ] [ ( it2.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ INTMD_RES1( mk.movie_id ) ] [ INTMD_RES2( mi.movie_id ) ] 
+Optimized Plan:		[ ( t.id t.kind_id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( kt.id ) ( it2.id ) INTMD_RES0( mc.movie_id ) INTMD_RES1( mk.movie_id ) INTMD_RES2( mi.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/2c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/2c
+Binary Join:		((((mk⋈t)⋈mc)⋈k)⋈cn)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/1d.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/1d
+Binary Join:		((((t⋈mi_idx)⋈mc)⋈it)⋈ct)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( mc.company_type_id mc.movie_id ) ] [ ( it.id ) ] [ ( ct.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ) ( ct.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ct.id ) ] 
+Optimized Plan:		[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ( ct.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/19c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/19c
+Binary Join:		((((((((mi⋈mc)⋈it)⋈cn)⋈(ci⋈n))⋈rt)⋈t)⋈chn)⋈an)
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_id ci.person_role_id ci.role_id n.id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( chn.id ) ] [ ( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/2b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/2b
+Binary Join:		((((mk⋈t)⋈mc)⋈k)⋈cn)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/18c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/18c
+Binary Join:		(((((mk⋈t)⋈mc)⋈k)⋈cn)⋈(ci⋈n))
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/22d.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/22d
+Binary Join:		(((((ci⋈n1)⋈(mc⋈cn))⋈rt)⋈t)⋈an1)
+Init Plan Phase 1:	[ ( mc.company_id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id ) ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.movie_id ci.person_id ci.role_id ) ] [ ( n1.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( an1.person_id ) ] 
+Init Plan Phase 2:	[ ( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( an1.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( an1.person_id ) ] 
+Optimized Plan:		[ ( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) INTMD_RES0( mc.movie_id ) ( rt.id ) ( t.id ) ( an1.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/26c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/26c
+Binary Join:		(((((mk⋈t)⋈mc)⋈k)⋈cn)⋈(ci⋈n))
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/13a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/13a
+Binary Join:		((((((((t⋈miidx)⋈mi)⋈mc)⋈kt)⋈it2)⋈it)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id t.kind_id ) ] [ ( miidx.info_type_id miidx.movie_id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( kt.id ) ] [ ( it2.id ) ] [ ( it.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( ) ( it2.id ) ] [ ( ) ( it.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( it2.id ) ] [ ( it.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ( it2.id ) ( it.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/31c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/31c
+Binary Join:		(((((t1⋈ml)⋈t2)⋈mk)⋈lt)⋈k)
+Init Plan Phase 1:	[ ( t1.id ) ] [ ( ml.link_type_id ml.linked_movie_id ml.movie_id ) ] [ ( t2.id ) ] [ ( mk.keyword_id mk.movie_id ) ] [ ( lt.id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( t1.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ] [ ( ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( lt.id ) ] [ ( ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t1.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ] [ ( mk.movie_id ) ] [ ( mk.keyword_id ) ( lt.id ) ] [ ( k.id ) ] 
+Optimized Plan:		[ ( t1.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( lt.id ) ( k.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/25a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/25a
+Binary Join:		((((((((mi⋈mc)⋈it)⋈cn)⋈(ci⋈n))⋈rt)⋈t)⋈chn)⋈an)
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_id ci.person_role_id ci.role_id n.id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( chn.id ) ] [ ( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/24a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/24a
+Binary Join:		(((((((mk⋈t)⋈mi)⋈mc)⋈k)⋈it)⋈cn)⋈(((ci⋈chn)⋈rt)⋈(n⋈an)))
+Init Plan Phase 1:	[ ( n.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( n.id ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( n.id ) ( an.person_id ) ] 
+Optimized Plan:		[ ( n.id ) ( an.person_id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.person_id ci.person_role_id ci.role_id ) ] [ ( chn.id ) ] [ ( rt.id ) ] [ INTMD_RES0( n.id an.person_id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ci.person_role_id ci.role_id ) ( chn.id ) ] [ ( ) ( rt.id ) ] [ ( ) INTMD_RES0( n.id an.person_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ci.person_role_id ci.role_id ) ( chn.id ) ] [ ( rt.id ) ] [ INTMD_RES0( n.id an.person_id ) ] 
+Optimized Plan:		[ ( ci.person_id ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) INTMD_RES0( n.id an.person_id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES1( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( it.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES1( ci.movie_id ) ] [ INTMD_RES1( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES1( ci.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( it.id ) ( cn.id ) INTMD_RES1( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/9d.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/9d
+Binary Join:		((((((ci⋈n)⋈(mc⋈cn))⋈rt)⋈t)⋈chn)⋈an)
+Init Plan Phase 1:	[ ( mc.company_id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id ) ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ] [ ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( chn.id ) ] [ ( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) INTMD_RES0( mc.movie_id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/15b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/15b
+Binary Join:		((((((((mk⋈t)⋈mi)⋈mc)⋈k)⋈it1)⋈ct)⋈cn)⋈at)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( k.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ ( at.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( k.id ) ] [ ( ) ( it1.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ( at.movie_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( k.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ ( at.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( k.id ) ( it1.id ) ( ct.id ) ( cn.id ) ( at.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/21b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/21b
+Binary Join:		((((((((t⋈ml)⋈mk)⋈mi)⋈mc)⋈lt)⋈k)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( ml.link_type_id ml.movie_id ) ] [ ( mk.keyword_id mk.movie_id ) ] [ ( mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( lt.id ) ] [ ( k.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mi.movie_id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ] [ ( ) ( k.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mi.movie_id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ] [ ( k.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ( k.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/27b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/27b
+Binary Join:		(((((((cc⋈cct1)⋈cct2)⋈(ml⋈lt))⋈t)⋈((mc⋈ct)⋈cn))⋈(mk⋈k))⋈mi)
+Init Plan Phase 1:	[ ( ml.link_type_id ) ] [ ( lt.id ) ] 
+Init Plan Phase 2:	[ ( ml.link_type_id ) ( lt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ml.link_type_id ) ( lt.id ) ] 
+Optimized Plan:		[ ( ml.link_type_id ) ( lt.id ) ] 
+----
+Init Plan Phase 1:	[ ( mc.company_id mc.company_type_id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id mc.company_type_id ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id mc.company_type_id ) ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id ) ( k.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id ) ( k.id ) ] 
+----
+Init Plan Phase 1:	[ ( cc.movie_id cc.status_id cc.subject_id ) ] [ ( cct1.id ) ] [ ( cct2.id ) ] [ INTMD_RES0( ml.movie_id ) ] [ ( t.id ) ] [ INTMD_RES1( mc.movie_id ) ] [ INTMD_RES2( mk.movie_id ) ] [ ( mi.movie_id ) ] 
+Init Plan Phase 2:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( ) ( cct2.id ) ] [ ( ) INTMD_RES0( ml.movie_id ) ] [ INTMD_RES0( ) ( t.id ) ] [ ( ) INTMD_RES1( mc.movie_id ) ] [ INTMD_RES1( ) INTMD_RES2( mk.movie_id ) ] [ INTMD_RES2( ) ( mi.movie_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( cct2.id ) ] [ INTMD_RES0( ml.movie_id ) ] [ ( t.id ) ] [ INTMD_RES1( mc.movie_id ) ] [ INTMD_RES2( mk.movie_id ) ] [ ( mi.movie_id ) ] 
+Optimized Plan:		[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) INTMD_RES0( ml.movie_id ) ( t.id ) INTMD_RES1( mc.movie_id ) INTMD_RES2( mk.movie_id ) ( mi.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/6f.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/6f
+Binary Join:		((((t⋈mi_idx)⋈mc)⋈it)⋈ct)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( mc.company_type_id mc.movie_id ) ] [ ( it.id ) ] [ ( ct.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ) ( ct.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ct.id ) ] 
+Optimized Plan:		[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ( ct.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/3a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/3a
+Binary Join:		((((mk⋈t)⋈mi_idx)⋈k)⋈it)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( k.id ) ] [ ( it.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ] [ ( ) ( it.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ] [ ( it.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ( it.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/28c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/28c
+Binary Join:		(((((t1⋈ml)⋈t2)⋈mk)⋈lt)⋈k)
+Init Plan Phase 1:	[ ( t1.id ) ] [ ( ml.link_type_id ml.linked_movie_id ml.movie_id ) ] [ ( t2.id ) ] [ ( mk.keyword_id mk.movie_id ) ] [ ( lt.id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( t1.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ] [ ( ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( lt.id ) ] [ ( ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t1.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ] [ ( mk.movie_id ) ] [ ( mk.keyword_id ) ( lt.id ) ] [ ( k.id ) ] 
+Optimized Plan:		[ ( t1.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( lt.id ) ( k.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/16a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/16a
+Binary Join:		((((((mk⋈t)⋈mc)⋈k)⋈cn)⋈(ci⋈n))⋈an)
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_id n.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/6e.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/6e
+Binary Join:		(((mk⋈t)⋈k)⋈(ci⋈n))
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( k.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( k.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( k.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( k.id ) INTMD_RES0( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/24b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/24b
+Binary Join:		(((((((mk⋈t)⋈mi)⋈mc)⋈k)⋈it)⋈cn)⋈(((ci⋈chn)⋈rt)⋈(n⋈an)))
+Init Plan Phase 1:	[ ( n.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( n.id ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( n.id ) ( an.person_id ) ] 
+Optimized Plan:		[ ( n.id ) ( an.person_id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.person_id ci.person_role_id ci.role_id ) ] [ ( chn.id ) ] [ ( rt.id ) ] [ INTMD_RES0( n.id an.person_id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ci.person_role_id ci.role_id ) ( chn.id ) ] [ ( ) ( rt.id ) ] [ ( ) INTMD_RES0( n.id an.person_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ci.person_role_id ci.role_id ) ( chn.id ) ] [ ( rt.id ) ] [ INTMD_RES0( n.id an.person_id ) ] 
+Optimized Plan:		[ ( ci.person_id ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) INTMD_RES0( n.id an.person_id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES1( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( it.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES1( ci.movie_id ) ] [ INTMD_RES1( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES1( ci.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( it.id ) ( cn.id ) INTMD_RES1( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/17a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/17a
+Binary Join:		(((((mk⋈t)⋈mc)⋈k)⋈cn)⋈(ci⋈n))
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/1b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/1b
+Binary Join:		((((t⋈mi_idx)⋈mc)⋈it)⋈ct)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( mc.company_type_id mc.movie_id ) ] [ ( it.id ) ] [ ( ct.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ) ( ct.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ct.id ) ] 
+Optimized Plan:		[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ( ct.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/1a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/1a
+Binary Join:		((((t⋈mi_idx)⋈mc)⋈it)⋈ct)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( mc.company_type_id mc.movie_id ) ] [ ( it.id ) ] [ ( ct.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ) ( ct.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ct.id ) ] 
+Optimized Plan:		[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ( ct.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/19a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/19a
+Binary Join:		((((((((mi⋈mc)⋈it)⋈cn)⋈(ci⋈n))⋈rt)⋈t)⋈chn)⋈an)
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_id ci.person_role_id ci.role_id n.id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( chn.id ) ] [ ( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/33a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/33a
+Binary Join:		(((((((mi_idx1⋈it1)⋈(ml⋈lt))⋈(mi_idx2⋈it2))⋈(t1⋈kt1))⋈(t2⋈kt2))⋈(mc1⋈cn1))⋈(mc2⋈cn2))
+Init Plan Phase 1:	[ ( ml.link_type_id ) ] [ ( lt.id ) ] 
+Init Plan Phase 2:	[ ( ml.link_type_id ) ( lt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ml.link_type_id ) ( lt.id ) ] 
+Optimized Plan:		[ ( ml.link_type_id ) ( lt.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi_idx2.info_type_id ) ] [ ( it2.id ) ] 
+Init Plan Phase 2:	[ ( mi_idx2.info_type_id ) ( it2.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi_idx2.info_type_id ) ( it2.id ) ] 
+Optimized Plan:		[ ( mi_idx2.info_type_id ) ( it2.id ) ] 
+----
+Init Plan Phase 1:	[ ( t1.kind_id ) ] [ ( kt1.id ) ] 
+Init Plan Phase 2:	[ ( t1.kind_id ) ( kt1.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t1.kind_id ) ( kt1.id ) ] 
+Optimized Plan:		[ ( t1.kind_id ) ( kt1.id ) ] 
+----
+Init Plan Phase 1:	[ ( t2.kind_id ) ] [ ( kt2.id ) ] 
+Init Plan Phase 2:	[ ( t2.kind_id ) ( kt2.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t2.kind_id ) ( kt2.id ) ] 
+Optimized Plan:		[ ( t2.kind_id ) ( kt2.id ) ] 
+----
+Init Plan Phase 1:	[ ( mc1.company_id ) ] [ ( cn1.id ) ] 
+Init Plan Phase 2:	[ ( mc1.company_id ) ( cn1.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc1.company_id ) ( cn1.id ) ] 
+Optimized Plan:		[ ( mc1.company_id ) ( cn1.id ) ] 
+----
+Init Plan Phase 1:	[ ( mc2.company_id ) ] [ ( cn2.id ) ] 
+Init Plan Phase 2:	[ ( mc2.company_id ) ( cn2.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc2.company_id ) ( cn2.id ) ] 
+Optimized Plan:		[ ( mc2.company_id ) ( cn2.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi_idx1.info_type_id mi_idx1.movie_id ) ] [ ( it1.id ) ] [ INTMD_RES0( ml.linked_movie_id ml.movie_id ) ] [ INTMD_RES1( mi_idx2.movie_id ) ] [ INTMD_RES2( t1.id ) ] [ INTMD_RES3( t2.id ) ] [ INTMD_RES4( mc1.movie_id ) ] [ INTMD_RES5( mc2.movie_id ) ] 
+Init Plan Phase 2:	[ ( mi_idx1.info_type_id mi_idx1.movie_id ) ( it1.id ) ] [ ( ) INTMD_RES0( ml.movie_id ) ] [ INTMD_RES0( ml.linked_movie_id ) INTMD_RES1( mi_idx2.movie_id ) ] [ INTMD_RES1( ) INTMD_RES2( t1.id ) ] [ INTMD_RES2( ) INTMD_RES3( t2.id ) ] [ INTMD_RES3( ) INTMD_RES4( mc1.movie_id ) ] [ INTMD_RES4( ) INTMD_RES5( mc2.movie_id ) ] [ INTMD_RES5( ) ] 
+Removed Empty Nodes:	[ ( mi_idx1.info_type_id mi_idx1.movie_id ) ( it1.id ) ] [ INTMD_RES0( ml.movie_id ) ] [ INTMD_RES0( ml.linked_movie_id ) INTMD_RES1( mi_idx2.movie_id ) ] [ INTMD_RES2( t1.id ) ] [ INTMD_RES3( t2.id ) ] [ INTMD_RES4( mc1.movie_id ) ] [ INTMD_RES5( mc2.movie_id ) ] 
+Optimized Plan:		[ ( mi_idx1.info_type_id mi_idx1.movie_id ) ( it1.id ) INTMD_RES0( ml.movie_id ) ] [ INTMD_RES0( ml.linked_movie_id ) INTMD_RES1( mi_idx2.movie_id ) INTMD_RES2( t1.id ) INTMD_RES3( t2.id ) INTMD_RES4( mc1.movie_id ) INTMD_RES5( mc2.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/12b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/12b
+Binary Join:		(((((((t⋈mi_idx)⋈mi)⋈mc)⋈it2)⋈it1)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( it2.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( it2.id ) ] [ ( ) ( it1.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( it2.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( it2.id ) ( it1.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/13d.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/13d
+Binary Join:		((((((((t⋈miidx)⋈mi)⋈mc)⋈kt)⋈it2)⋈it)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id t.kind_id ) ] [ ( miidx.info_type_id miidx.movie_id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( kt.id ) ] [ ( it2.id ) ] [ ( it.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( ) ( it2.id ) ] [ ( ) ( it.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( it2.id ) ] [ ( it.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ( it2.id ) ( it.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/5b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/5b
+Binary Join:		((((mi⋈t)⋈mc)⋈it)⋈ct)
+Init Plan Phase 1:	[ ( mi.info_type_id mi.movie_id ) ] [ ( t.id ) ] [ ( mc.company_type_id mc.movie_id ) ] [ ( it.id ) ] [ ( ct.id ) ] 
+Init Plan Phase 2:	[ ( mi.info_type_id mi.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ) ( ct.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi.info_type_id mi.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ct.id ) ] 
+Optimized Plan:		[ ( mi.info_type_id mi.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ( ct.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/15a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/15a
+Binary Join:		((((((((mk⋈t)⋈mi)⋈mc)⋈k)⋈it1)⋈ct)⋈cn)⋈at)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( k.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ ( at.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( k.id ) ] [ ( ) ( it1.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ( at.movie_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( k.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ ( at.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( k.id ) ( it1.id ) ( ct.id ) ( cn.id ) ( at.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/11a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/11a
+Binary Join:		(((((((t⋈ml)⋈mk)⋈mc)⋈lt)⋈k)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( ml.link_type_id ml.movie_id ) ] [ ( mk.keyword_id mk.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( lt.id ) ] [ ( k.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ] [ ( ) ( k.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ] [ ( k.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ( k.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/29b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/29b
+Binary Join:		(((((((cc⋈cct1)⋈cct2)⋈t)⋈(mc⋈cn))⋈(mk⋈k))⋈(mi⋈it))⋈((((pi⋈an)⋈it3)⋈n)⋈((ci⋈chn)⋈rt)))
+Init Plan Phase 1:	[ ( mc.company_id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id ) ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id ) ( k.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id ) ( k.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi.info_type_id ) ] [ ( it.id ) ] 
+Init Plan Phase 2:	[ ( mi.info_type_id ) ( it.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi.info_type_id ) ( it.id ) ] 
+Optimized Plan:		[ ( mi.info_type_id ) ( it.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.person_role_id ci.role_id ) ] [ ( chn.id ) ] [ ( rt.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_role_id ci.role_id ) ( chn.id ) ] [ ( ) ( rt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_role_id ci.role_id ) ( chn.id ) ] [ ( rt.id ) ] 
+Optimized Plan:		[ ( ci.person_role_id ci.role_id ) ( chn.id ) ( rt.id ) ] 
+----
+Init Plan Phase 1:	[ ( pi.info_type_id pi.person_id ) ] [ ( an.person_id ) ] [ ( it3.id ) ] [ ( n.id ) ] [ INTMD_RES3( ci.person_id ) ] 
+Init Plan Phase 2:	[ ( pi.info_type_id pi.person_id ) ( an.person_id ) ] [ ( ) ( it3.id ) ] [ ( ) ( n.id ) ] [ ( ) INTMD_RES3( ci.person_id ) ] [ INTMD_RES3( ) ] 
+Removed Empty Nodes:	[ ( pi.info_type_id pi.person_id ) ( an.person_id ) ] [ ( it3.id ) ] [ ( n.id ) ] [ INTMD_RES3( ci.person_id ) ] 
+Optimized Plan:		[ ( pi.info_type_id pi.person_id ) ( an.person_id ) ( it3.id ) ( n.id ) INTMD_RES3( ci.person_id ) ] 
+----
+Init Plan Phase 1:	[ ( cc.movie_id cc.status_id cc.subject_id ) ] [ ( cct1.id ) ] [ ( cct2.id ) ] [ ( t.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ INTMD_RES1( mk.movie_id ) ] [ INTMD_RES2( mi.movie_id ) ] [ INTMD_RES4( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( ) ( cct2.id ) ] [ ( ) ( t.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) INTMD_RES1( mk.movie_id ) ] [ INTMD_RES1( ) INTMD_RES2( mi.movie_id ) ] [ INTMD_RES2( ) INTMD_RES4( ci.movie_id ) ] [ INTMD_RES4( ) ] 
+Removed Empty Nodes:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( cct2.id ) ] [ ( t.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ INTMD_RES1( mk.movie_id ) ] [ INTMD_RES2( mi.movie_id ) ] [ INTMD_RES4( ci.movie_id ) ] 
+Optimized Plan:		[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) ( t.id ) INTMD_RES0( mc.movie_id ) INTMD_RES1( mk.movie_id ) INTMD_RES2( mi.movie_id ) INTMD_RES4( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/26a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/26a
+Binary Join:		((((mk⋈t)⋈mi_idx)⋈k)⋈it)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( k.id ) ] [ ( it.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ] [ ( ) ( it.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ] [ ( it.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ( it.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/17d.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/17d
+Binary Join:		(((((mk⋈t)⋈mc)⋈k)⋈cn)⋈(ci⋈n))
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/3c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/3c
+Binary Join:		((((t⋈mi_idx)⋈mc)⋈it)⋈ct)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( mc.company_type_id mc.movie_id ) ] [ ( it.id ) ] [ ( ct.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ) ( ct.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ct.id ) ] 
+Optimized Plan:		[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ( ct.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/13c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/13c
+Binary Join:		((((((((t⋈miidx)⋈mi)⋈mc)⋈kt)⋈it2)⋈it)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id t.kind_id ) ] [ ( miidx.info_type_id miidx.movie_id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( kt.id ) ] [ ( it2.id ) ] [ ( it.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( ) ( it2.id ) ] [ ( ) ( it.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( it2.id ) ] [ ( it.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ( it2.id ) ( it.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/31a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/31a
+Binary Join:		(((((t1⋈ml)⋈t2)⋈mk)⋈lt)⋈k)
+Init Plan Phase 1:	[ ( t1.id ) ] [ ( ml.link_type_id ml.linked_movie_id ml.movie_id ) ] [ ( t2.id ) ] [ ( mk.keyword_id mk.movie_id ) ] [ ( lt.id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( t1.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ] [ ( ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( lt.id ) ] [ ( ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t1.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ] [ ( mk.movie_id ) ] [ ( mk.keyword_id ) ( lt.id ) ] [ ( k.id ) ] 
+Optimized Plan:		[ ( t1.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ( t2.id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( lt.id ) ( k.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/14b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/14b
+Binary Join:		(((mk⋈t)⋈k)⋈(ci⋈n))
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( k.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( k.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( k.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( k.id ) INTMD_RES0( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/2d.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/2d
+Binary Join:		((((mk⋈t)⋈mc)⋈k)⋈cn)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/7b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/7b
+Binary Join:		(((((t⋈ml)⋈lt)⋈ci)⋈((n⋈pi)⋈it))⋈an)
+Init Plan Phase 1:	[ ( n.id ) ] [ ( pi.info_type_id pi.person_id ) ] [ ( it.id ) ] 
+Init Plan Phase 2:	[ ( n.id ) ( pi.person_id ) ] [ ( pi.info_type_id ) ( it.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( n.id ) ( pi.person_id ) ] [ ( pi.info_type_id ) ( it.id ) ] 
+Optimized Plan:		[ ( n.id ) ( pi.person_id ) ] [ ( pi.info_type_id ) ( it.id ) ] 
+----
+Init Plan Phase 1:	[ ( t.id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ] [ ( lt.id ) ] [ ( ci.movie_id ci.person_id ) ] [ INTMD_RES0( n.id pi.person_id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( ml.linked_movie_id ) ] [ ( ml.link_type_id ) ( lt.id ) ] [ ( ) ( ci.movie_id ) ] [ ( ci.person_id ) INTMD_RES0( n.id pi.person_id ) ] [ INTMD_RES0( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( ml.linked_movie_id ) ] [ ( ml.link_type_id ) ( lt.id ) ] [ ( ci.movie_id ) ] [ ( ci.person_id ) INTMD_RES0( n.id pi.person_id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( t.id ) ( ml.linked_movie_id ) ] [ ( ml.link_type_id ) ( lt.id ) ( ci.movie_id ) ] [ ( ci.person_id ) INTMD_RES0( n.id pi.person_id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/8c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/8c
+Binary Join:		(((((ci⋈n1)⋈(mc⋈cn))⋈rt)⋈t)⋈a1)
+Init Plan Phase 1:	[ ( mc.company_id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id ) ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.movie_id ci.person_id ci.role_id ) ] [ ( n1.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( a1.person_id ) ] 
+Init Plan Phase 2:	[ ( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( a1.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( a1.person_id ) ] 
+Optimized Plan:		[ ( ci.movie_id ci.person_id ci.role_id ) ( n1.id ) INTMD_RES0( mc.movie_id ) ( rt.id ) ( t.id ) ( a1.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/23a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/23a
+Binary Join:		(((((((((mk⋈t)⋈mi)⋈mc)⋈kt)⋈k)⋈it1)⋈ct)⋈cn)⋈(cc⋈cct1))
+Init Plan Phase 1:	[ ( cc.status_id ) ] [ ( cct1.id ) ] 
+Init Plan Phase 2:	[ ( cc.status_id ) ( cct1.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( cc.status_id ) ( cct1.id ) ] 
+Optimized Plan:		[ ( cc.status_id ) ( cct1.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id t.kind_id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( kt.id ) ] [ ( k.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( cc.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( t.kind_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( ) ( k.id ) ] [ ( ) ( it1.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( cc.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( t.kind_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( k.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( cc.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( t.kind_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ( k.id ) ( it1.id ) ( ct.id ) ( cn.id ) INTMD_RES0( cc.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/30c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/30c
+Binary Join:		((((((((t⋈ml)⋈mk)⋈mi)⋈mc)⋈lt)⋈k)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( ml.link_type_id ml.movie_id ) ] [ ( mk.keyword_id mk.movie_id ) ] [ ( mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( lt.id ) ] [ ( k.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mi.movie_id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ] [ ( ) ( k.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mi.movie_id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ] [ ( k.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id ) ( ml.movie_id ) ] [ ( ml.link_type_id ) ( mk.movie_id ) ] [ ( mk.keyword_id ) ( mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( lt.id ) ( k.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/27c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/27c
+Binary Join:		(((((t⋈ml)⋈lt)⋈ci)⋈((n⋈pi)⋈it))⋈an)
+Init Plan Phase 1:	[ ( n.id ) ] [ ( pi.info_type_id pi.person_id ) ] [ ( it.id ) ] 
+Init Plan Phase 2:	[ ( n.id ) ( pi.person_id ) ] [ ( pi.info_type_id ) ( it.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( n.id ) ( pi.person_id ) ] [ ( pi.info_type_id ) ( it.id ) ] 
+Optimized Plan:		[ ( n.id ) ( pi.person_id ) ] [ ( pi.info_type_id ) ( it.id ) ] 
+----
+Init Plan Phase 1:	[ ( t.id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ] [ ( lt.id ) ] [ ( ci.movie_id ci.person_id ) ] [ INTMD_RES0( n.id pi.person_id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( ml.linked_movie_id ) ] [ ( ml.link_type_id ) ( lt.id ) ] [ ( ) ( ci.movie_id ) ] [ ( ci.person_id ) INTMD_RES0( n.id pi.person_id ) ] [ INTMD_RES0( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( ml.linked_movie_id ) ] [ ( ml.link_type_id ) ( lt.id ) ] [ ( ci.movie_id ) ] [ ( ci.person_id ) INTMD_RES0( n.id pi.person_id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( t.id ) ( ml.linked_movie_id ) ] [ ( ml.link_type_id ) ( lt.id ) ( ci.movie_id ) ] [ ( ci.person_id ) INTMD_RES0( n.id pi.person_id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/20c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/20c
+Binary Join:		((((((((t⋈miidx)⋈mi)⋈mc)⋈kt)⋈it2)⋈it)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id t.kind_id ) ] [ ( miidx.info_type_id miidx.movie_id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( kt.id ) ] [ ( it2.id ) ] [ ( it.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( ) ( it2.id ) ] [ ( ) ( it.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( it2.id ) ] [ ( it.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ( it2.id ) ( it.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/19d.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/19d
+Binary Join:		((((((((mi⋈mc)⋈it)⋈cn)⋈(ci⋈n))⋈rt)⋈t)⋈chn)⋈an)
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_id ci.person_role_id ci.role_id n.id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( chn.id ) ] [ ( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( mi.info_type_id mi.movie_id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( it.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id ci.person_role_id ci.role_id n.id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/13b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/13b
+Binary Join:		((((((((t⋈miidx)⋈mi)⋈mc)⋈kt)⋈it2)⋈it)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id t.kind_id ) ] [ ( miidx.info_type_id miidx.movie_id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( kt.id ) ] [ ( it2.id ) ] [ ( it.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( ) ( it2.id ) ] [ ( ) ( it.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( it2.id ) ] [ ( it.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ( it2.id ) ( it.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/21a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/21a
+Binary Join:		((((t⋈mi_idx)⋈mc)⋈it)⋈ct)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( mc.company_type_id mc.movie_id ) ] [ ( it.id ) ] [ ( ct.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ) ( ct.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ct.id ) ] 
+Optimized Plan:		[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ( ct.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/2a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/2a
+Binary Join:		((((mk⋈t)⋈mc)⋈k)⋈cn)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/16c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/16c
+Binary Join:		((((((mk⋈t)⋈mc)⋈k)⋈cn)⋈(ci⋈n))⋈an)
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_id n.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/23b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/23b
+Binary Join:		(((((((((mk⋈t)⋈mi)⋈mc)⋈kt)⋈k)⋈it1)⋈ct)⋈cn)⋈(cc⋈cct1))
+Init Plan Phase 1:	[ ( cc.status_id ) ] [ ( cct1.id ) ] 
+Init Plan Phase 2:	[ ( cc.status_id ) ( cct1.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( cc.status_id ) ( cct1.id ) ] 
+Optimized Plan:		[ ( cc.status_id ) ( cct1.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id t.kind_id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( kt.id ) ] [ ( k.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( cc.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( t.kind_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( ) ( k.id ) ] [ ( ) ( it1.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( cc.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( t.kind_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( k.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( cc.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( t.kind_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ( k.id ) ( it1.id ) ( ct.id ) ( cn.id ) INTMD_RES0( cc.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/5a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/5a
+Binary Join:		((((((((t⋈miidx)⋈mi)⋈mc)⋈kt)⋈it2)⋈it)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id t.kind_id ) ] [ ( miidx.info_type_id miidx.movie_id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( kt.id ) ] [ ( it2.id ) ] [ ( it.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( ) ( it2.id ) ] [ ( ) ( it.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( it2.id ) ] [ ( it.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id t.kind_id ) ( miidx.movie_id ) ] [ ( miidx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ( it2.id ) ( it.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/7a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/7a
+Binary Join:		(((((t⋈ml)⋈lt)⋈ci)⋈((n⋈pi)⋈it))⋈an)
+Init Plan Phase 1:	[ ( n.id ) ] [ ( pi.info_type_id pi.person_id ) ] [ ( it.id ) ] 
+Init Plan Phase 2:	[ ( n.id ) ( pi.person_id ) ] [ ( pi.info_type_id ) ( it.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( n.id ) ( pi.person_id ) ] [ ( pi.info_type_id ) ( it.id ) ] 
+Optimized Plan:		[ ( n.id ) ( pi.person_id ) ] [ ( pi.info_type_id ) ( it.id ) ] 
+----
+Init Plan Phase 1:	[ ( t.id ) ] [ ( ml.link_type_id ml.linked_movie_id ) ] [ ( lt.id ) ] [ ( ci.movie_id ci.person_id ) ] [ INTMD_RES0( n.id pi.person_id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( ml.linked_movie_id ) ] [ ( ml.link_type_id ) ( lt.id ) ] [ ( ) ( ci.movie_id ) ] [ ( ci.person_id ) INTMD_RES0( n.id pi.person_id ) ] [ INTMD_RES0( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( ml.linked_movie_id ) ] [ ( ml.link_type_id ) ( lt.id ) ] [ ( ci.movie_id ) ] [ ( ci.person_id ) INTMD_RES0( n.id pi.person_id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( t.id ) ( ml.linked_movie_id ) ] [ ( ml.link_type_id ) ( lt.id ) ( ci.movie_id ) ] [ ( ci.person_id ) INTMD_RES0( n.id pi.person_id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/17f.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/17f
+Binary Join:		(((((mk⋈t)⋈mc)⋈k)⋈cn)⋈(ci⋈n))
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/27a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/27a
+Binary Join:		(((((((cc⋈cct1)⋈cct2)⋈(ml⋈lt))⋈t)⋈((mc⋈ct)⋈cn))⋈(mk⋈k))⋈mi)
+Init Plan Phase 1:	[ ( ml.link_type_id ) ] [ ( lt.id ) ] 
+Init Plan Phase 2:	[ ( ml.link_type_id ) ( lt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ml.link_type_id ) ( lt.id ) ] 
+Optimized Plan:		[ ( ml.link_type_id ) ( lt.id ) ] 
+----
+Init Plan Phase 1:	[ ( mc.company_id mc.company_type_id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id mc.company_type_id ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id mc.company_type_id ) ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id mc.company_type_id ) ( ct.id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id ) ( k.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id ) ( k.id ) ] 
+----
+Init Plan Phase 1:	[ ( cc.movie_id cc.status_id cc.subject_id ) ] [ ( cct1.id ) ] [ ( cct2.id ) ] [ INTMD_RES0( ml.movie_id ) ] [ ( t.id ) ] [ INTMD_RES1( mc.movie_id ) ] [ INTMD_RES2( mk.movie_id ) ] [ ( mi.movie_id ) ] 
+Init Plan Phase 2:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( ) ( cct2.id ) ] [ ( ) INTMD_RES0( ml.movie_id ) ] [ INTMD_RES0( ) ( t.id ) ] [ ( ) INTMD_RES1( mc.movie_id ) ] [ INTMD_RES1( ) INTMD_RES2( mk.movie_id ) ] [ INTMD_RES2( ) ( mi.movie_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( cct2.id ) ] [ INTMD_RES0( ml.movie_id ) ] [ ( t.id ) ] [ INTMD_RES1( mc.movie_id ) ] [ INTMD_RES2( mk.movie_id ) ] [ ( mi.movie_id ) ] 
+Optimized Plan:		[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) INTMD_RES0( ml.movie_id ) ( t.id ) INTMD_RES1( mc.movie_id ) INTMD_RES2( mk.movie_id ) ( mi.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/6d.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/6d
+Binary Join:		(((((mc⋈t)⋈ct)⋈cn)⋈(ci⋈rt))⋈chn)
+Init Plan Phase 1:	[ ( ci.role_id ) ] [ ( rt.id ) ] 
+Init Plan Phase 2:	[ ( ci.role_id ) ( rt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.role_id ) ( rt.id ) ] 
+Optimized Plan:		[ ( ci.role_id ) ( rt.id ) ] 
+----
+Init Plan Phase 1:	[ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( t.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_role_id ) ] [ ( chn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_role_id ) ( chn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_role_id ) ( chn.id ) ] 
+Optimized Plan:		[ ( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ( ct.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_role_id ) ( chn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/8b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/8b
+Binary Join:		(((((ci⋈n)⋈(mc⋈cn))⋈rt)⋈t)⋈an)
+Init Plan Phase 1:	[ ( mc.company_id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id ) ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.movie_id ci.person_id ci.role_id ) ] [ ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( ci.movie_id ci.person_id ci.role_id ) ( n.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.movie_id ci.person_id ci.role_id ) ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( ci.movie_id ci.person_id ci.role_id ) ( n.id ) INTMD_RES0( mc.movie_id ) ( rt.id ) ( t.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/15d.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/15d
+Binary Join:		((((((((mk⋈t)⋈mi)⋈mc)⋈k)⋈it1)⋈ct)⋈cn)⋈at)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( k.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ ( at.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( k.id ) ] [ ( ) ( it1.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ( at.movie_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( k.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ ( at.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( k.id ) ( it1.id ) ( ct.id ) ( cn.id ) ( at.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/23c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/23c
+Binary Join:		(((((((((mk⋈t)⋈mi)⋈mc)⋈kt)⋈k)⋈it1)⋈ct)⋈cn)⋈(cc⋈cct1))
+Init Plan Phase 1:	[ ( cc.status_id ) ] [ ( cct1.id ) ] 
+Init Plan Phase 2:	[ ( cc.status_id ) ( cct1.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( cc.status_id ) ( cct1.id ) ] 
+Optimized Plan:		[ ( cc.status_id ) ( cct1.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id t.kind_id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( kt.id ) ] [ ( k.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( cc.movie_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( t.kind_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( ) ( k.id ) ] [ ( ) ( it1.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( cc.movie_id ) ] [ INTMD_RES0( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( t.kind_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ] [ ( k.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( cc.movie_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( t.kind_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( kt.id ) ( k.id ) ( it1.id ) ( ct.id ) ( cn.id ) INTMD_RES0( cc.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/31b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/31b
+Binary Join:		((((mk⋈t)⋈mi_idx)⋈k)⋈it)
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( k.id ) ] [ ( it.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ] [ ( ) ( it.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ] [ ( it.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( k.id ) ( it.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/28b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/28b
+Binary Join:		(((((((cc⋈cct1)⋈cct2)⋈(mi_idx⋈it2))⋈(t⋈kt))⋈((mc⋈cn)⋈ct))⋈(mk⋈k))⋈(mi⋈it1))
+Init Plan Phase 1:	[ ( mi_idx.info_type_id ) ] [ ( it2.id ) ] 
+Init Plan Phase 2:	[ ( mi_idx.info_type_id ) ( it2.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi_idx.info_type_id ) ( it2.id ) ] 
+Optimized Plan:		[ ( mi_idx.info_type_id ) ( it2.id ) ] 
+----
+Init Plan Phase 1:	[ ( t.kind_id ) ] [ ( kt.id ) ] 
+Init Plan Phase 2:	[ ( t.kind_id ) ( kt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.kind_id ) ( kt.id ) ] 
+Optimized Plan:		[ ( t.kind_id ) ( kt.id ) ] 
+----
+Init Plan Phase 1:	[ ( mc.company_id mc.company_type_id ) ] [ ( cn.id ) ] [ ( ct.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id mc.company_type_id ) ( cn.id ) ] [ ( ) ( ct.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id mc.company_type_id ) ( cn.id ) ] [ ( ct.id ) ] 
+Optimized Plan:		[ ( mc.company_id mc.company_type_id ) ( cn.id ) ( ct.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id ) ( k.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id ) ( k.id ) ] 
+----
+Init Plan Phase 1:	[ ( mi.info_type_id ) ] [ ( it1.id ) ] 
+Init Plan Phase 2:	[ ( mi.info_type_id ) ( it1.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi.info_type_id ) ( it1.id ) ] 
+Optimized Plan:		[ ( mi.info_type_id ) ( it1.id ) ] 
+----
+Init Plan Phase 1:	[ ( cc.movie_id cc.status_id cc.subject_id ) ] [ ( cct1.id ) ] [ ( cct2.id ) ] [ INTMD_RES0( mi_idx.movie_id ) ] [ INTMD_RES1( t.id ) ] [ INTMD_RES2( mc.movie_id ) ] [ INTMD_RES3( mk.movie_id ) ] [ INTMD_RES4( mi.movie_id ) ] 
+Init Plan Phase 2:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( ) ( cct2.id ) ] [ ( ) INTMD_RES0( mi_idx.movie_id ) ] [ INTMD_RES0( ) INTMD_RES1( t.id ) ] [ INTMD_RES1( ) INTMD_RES2( mc.movie_id ) ] [ INTMD_RES2( ) INTMD_RES3( mk.movie_id ) ] [ INTMD_RES3( ) INTMD_RES4( mi.movie_id ) ] [ INTMD_RES4( ) ] 
+Removed Empty Nodes:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( cct2.id ) ] [ INTMD_RES0( mi_idx.movie_id ) ] [ INTMD_RES1( t.id ) ] [ INTMD_RES2( mc.movie_id ) ] [ INTMD_RES3( mk.movie_id ) ] [ INTMD_RES4( mi.movie_id ) ] 
+Optimized Plan:		[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) INTMD_RES0( mi_idx.movie_id ) INTMD_RES1( t.id ) INTMD_RES2( mc.movie_id ) INTMD_RES3( mk.movie_id ) INTMD_RES4( mi.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/16b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/16b
+Binary Join:		((((((mk⋈t)⋈mc)⋈k)⋈cn)⋈(ci⋈n))⋈an)
+Init Plan Phase 1:	[ ( ci.person_id ) ] [ ( n.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ) ( n.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ) ( n.id ) ] 
+Optimized Plan:		[ ( ci.person_id ) ( n.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id mk.movie_id ) ] [ ( t.id ) ] [ ( mc.company_id mc.movie_id ) ] [ ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_id n.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id mk.movie_id ) ( t.id ) ] [ ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] 
+Optimized Plan:		[ ( mk.keyword_id mk.movie_id ) ( t.id ) ( mc.movie_id ) ] [ ( mc.company_id ) ( k.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_id n.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/12a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/12a
+Binary Join:		(((((((t⋈mi_idx)⋈mi)⋈mc)⋈it2)⋈it1)⋈ct)⋈cn)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( mi.info_type_id mi.movie_id ) ] [ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( it2.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( it2.id ) ] [ ( ) ( it1.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( it2.id ) ] [ ( it1.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] 
+Optimized Plan:		[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mi.movie_id ) ] [ ( mi.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_id mc.company_type_id ) ( it2.id ) ( it1.id ) ( ct.id ) ( cn.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/20a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/20a
+Binary Join:		((((((cc⋈cct1)⋈cct2)⋈(mi_idx⋈it2))⋈(t⋈kt))⋈(mk⋈k))⋈((ci⋈n)⋈chn))
+Init Plan Phase 1:	[ ( mi_idx.info_type_id ) ] [ ( it2.id ) ] 
+Init Plan Phase 2:	[ ( mi_idx.info_type_id ) ( it2.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi_idx.info_type_id ) ( it2.id ) ] 
+Optimized Plan:		[ ( mi_idx.info_type_id ) ( it2.id ) ] 
+----
+Init Plan Phase 1:	[ ( t.kind_id ) ] [ ( kt.id ) ] 
+Init Plan Phase 2:	[ ( t.kind_id ) ( kt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.kind_id ) ( kt.id ) ] 
+Optimized Plan:		[ ( t.kind_id ) ( kt.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id ) ( k.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id ) ( k.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.person_id ci.person_role_id ) ] [ ( n.id ) ] [ ( chn.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ci.person_role_id ) ( n.id ) ] [ ( ) ( chn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ci.person_role_id ) ( n.id ) ] [ ( chn.id ) ] 
+Optimized Plan:		[ ( ci.person_id ci.person_role_id ) ( n.id ) ( chn.id ) ] 
+----
+Init Plan Phase 1:	[ ( cc.movie_id cc.status_id cc.subject_id ) ] [ ( cct1.id ) ] [ ( cct2.id ) ] [ INTMD_RES0( mi_idx.movie_id ) ] [ INTMD_RES1( t.id ) ] [ INTMD_RES2( mk.movie_id ) ] [ INTMD_RES3( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( ) ( cct2.id ) ] [ ( ) INTMD_RES0( mi_idx.movie_id ) ] [ INTMD_RES0( ) INTMD_RES1( t.id ) ] [ INTMD_RES1( ) INTMD_RES2( mk.movie_id ) ] [ INTMD_RES2( ) INTMD_RES3( ci.movie_id ) ] [ INTMD_RES3( ) ] 
+Removed Empty Nodes:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( cct2.id ) ] [ INTMD_RES0( mi_idx.movie_id ) ] [ INTMD_RES1( t.id ) ] [ INTMD_RES2( mk.movie_id ) ] [ INTMD_RES3( ci.movie_id ) ] 
+Optimized Plan:		[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) INTMD_RES0( mi_idx.movie_id ) INTMD_RES1( t.id ) INTMD_RES2( mk.movie_id ) INTMD_RES3( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/26b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/26b
+Binary Join:		((((((cc⋈cct1)⋈cct2)⋈(mi_idx⋈it2))⋈(t⋈kt))⋈(mk⋈k))⋈((ci⋈n)⋈chn))
+Init Plan Phase 1:	[ ( mi_idx.info_type_id ) ] [ ( it2.id ) ] 
+Init Plan Phase 2:	[ ( mi_idx.info_type_id ) ( it2.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi_idx.info_type_id ) ( it2.id ) ] 
+Optimized Plan:		[ ( mi_idx.info_type_id ) ( it2.id ) ] 
+----
+Init Plan Phase 1:	[ ( t.kind_id ) ] [ ( kt.id ) ] 
+Init Plan Phase 2:	[ ( t.kind_id ) ( kt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.kind_id ) ( kt.id ) ] 
+Optimized Plan:		[ ( t.kind_id ) ( kt.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id ) ( k.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id ) ( k.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.person_id ci.person_role_id ) ] [ ( n.id ) ] [ ( chn.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ci.person_role_id ) ( n.id ) ] [ ( ) ( chn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ci.person_role_id ) ( n.id ) ] [ ( chn.id ) ] 
+Optimized Plan:		[ ( ci.person_id ci.person_role_id ) ( n.id ) ( chn.id ) ] 
+----
+Init Plan Phase 1:	[ ( cc.movie_id cc.status_id cc.subject_id ) ] [ ( cct1.id ) ] [ ( cct2.id ) ] [ INTMD_RES0( mi_idx.movie_id ) ] [ INTMD_RES1( t.id ) ] [ INTMD_RES2( mk.movie_id ) ] [ INTMD_RES3( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( ) ( cct2.id ) ] [ ( ) INTMD_RES0( mi_idx.movie_id ) ] [ INTMD_RES0( ) INTMD_RES1( t.id ) ] [ INTMD_RES1( ) INTMD_RES2( mk.movie_id ) ] [ INTMD_RES2( ) INTMD_RES3( ci.movie_id ) ] [ INTMD_RES3( ) ] 
+Removed Empty Nodes:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( cct2.id ) ] [ INTMD_RES0( mi_idx.movie_id ) ] [ INTMD_RES1( t.id ) ] [ INTMD_RES2( mk.movie_id ) ] [ INTMD_RES3( ci.movie_id ) ] 
+Optimized Plan:		[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) INTMD_RES0( mi_idx.movie_id ) INTMD_RES1( t.id ) INTMD_RES2( mk.movie_id ) INTMD_RES3( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/9a.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/9a
+Binary Join:		((((((ci⋈n)⋈(mc⋈cn))⋈rt)⋈t)⋈chn)⋈an)
+Init Plan Phase 1:	[ ( mc.company_id ) ] [ ( cn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id ) ( cn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id ) ( cn.id ) ] 
+Optimized Plan:		[ ( mc.company_id ) ( cn.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ] [ ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Init Plan Phase 2:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ] [ ( ) INTMD_RES0( mc.movie_id ) ] [ INTMD_RES0( ) ( rt.id ) ] [ ( ) ( t.id ) ] [ ( ) ( chn.id ) ] [ ( ) ( an.person_id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) ] [ INTMD_RES0( mc.movie_id ) ] [ ( rt.id ) ] [ ( t.id ) ] [ ( chn.id ) ] [ ( an.person_id ) ] 
+Optimized Plan:		[ ( ci.movie_id ci.person_id ci.person_role_id ci.role_id ) ( n.id ) INTMD_RES0( mc.movie_id ) ( rt.id ) ( t.id ) ( chn.id ) ( an.person_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/14c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/14c
+Binary Join:		((((((cc⋈cct1)⋈cct2)⋈(mi_idx⋈it2))⋈(t⋈kt))⋈(mk⋈k))⋈((ci⋈n)⋈chn))
+Init Plan Phase 1:	[ ( mi_idx.info_type_id ) ] [ ( it2.id ) ] 
+Init Plan Phase 2:	[ ( mi_idx.info_type_id ) ( it2.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mi_idx.info_type_id ) ( it2.id ) ] 
+Optimized Plan:		[ ( mi_idx.info_type_id ) ( it2.id ) ] 
+----
+Init Plan Phase 1:	[ ( t.kind_id ) ] [ ( kt.id ) ] 
+Init Plan Phase 2:	[ ( t.kind_id ) ( kt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.kind_id ) ( kt.id ) ] 
+Optimized Plan:		[ ( t.kind_id ) ( kt.id ) ] 
+----
+Init Plan Phase 1:	[ ( mk.keyword_id ) ] [ ( k.id ) ] 
+Init Plan Phase 2:	[ ( mk.keyword_id ) ( k.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mk.keyword_id ) ( k.id ) ] 
+Optimized Plan:		[ ( mk.keyword_id ) ( k.id ) ] 
+----
+Init Plan Phase 1:	[ ( ci.person_id ci.person_role_id ) ] [ ( n.id ) ] [ ( chn.id ) ] 
+Init Plan Phase 2:	[ ( ci.person_id ci.person_role_id ) ( n.id ) ] [ ( ) ( chn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.person_id ci.person_role_id ) ( n.id ) ] [ ( chn.id ) ] 
+Optimized Plan:		[ ( ci.person_id ci.person_role_id ) ( n.id ) ( chn.id ) ] 
+----
+Init Plan Phase 1:	[ ( cc.movie_id cc.status_id cc.subject_id ) ] [ ( cct1.id ) ] [ ( cct2.id ) ] [ INTMD_RES0( mi_idx.movie_id ) ] [ INTMD_RES1( t.id ) ] [ INTMD_RES2( mk.movie_id ) ] [ INTMD_RES3( ci.movie_id ) ] 
+Init Plan Phase 2:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( ) ( cct2.id ) ] [ ( ) INTMD_RES0( mi_idx.movie_id ) ] [ INTMD_RES0( ) INTMD_RES1( t.id ) ] [ INTMD_RES1( ) INTMD_RES2( mk.movie_id ) ] [ INTMD_RES2( ) INTMD_RES3( ci.movie_id ) ] [ INTMD_RES3( ) ] 
+Removed Empty Nodes:	[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ] [ ( cct2.id ) ] [ INTMD_RES0( mi_idx.movie_id ) ] [ INTMD_RES1( t.id ) ] [ INTMD_RES2( mk.movie_id ) ] [ INTMD_RES3( ci.movie_id ) ] 
+Optimized Plan:		[ ( cc.movie_id cc.status_id cc.subject_id ) ( cct1.id ) ( cct2.id ) INTMD_RES0( mi_idx.movie_id ) INTMD_RES1( t.id ) INTMD_RES2( mk.movie_id ) INTMD_RES3( ci.movie_id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/18b.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/18b
+Binary Join:		((((t⋈mi_idx)⋈mc)⋈it)⋈ct)
+Init Plan Phase 1:	[ ( t.id ) ] [ ( mi_idx.info_type_id mi_idx.movie_id ) ] [ ( mc.company_type_id mc.movie_id ) ] [ ( it.id ) ] [ ( ct.id ) ] 
+Init Plan Phase 2:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ) ( ct.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ] [ ( ct.id ) ] 
+Optimized Plan:		[ ( t.id ) ( mi_idx.movie_id ) ] [ ( mi_idx.info_type_id ) ( mc.movie_id ) ] [ ( mc.company_type_id ) ( it.id ) ( ct.id ) ] 
+----
+-----------------
+Plan:		../benchmarks/join-order-benchmark/plans/preprocessed/10c.json
+Data:		../benchmarks/join-order-benchmark/data/preprocessed/10c
+Binary Join:		(((((mc⋈t)⋈ct)⋈cn)⋈(ci⋈rt))⋈chn)
+Init Plan Phase 1:	[ ( ci.role_id ) ] [ ( rt.id ) ] 
+Init Plan Phase 2:	[ ( ci.role_id ) ( rt.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( ci.role_id ) ( rt.id ) ] 
+Optimized Plan:		[ ( ci.role_id ) ( rt.id ) ] 
+----
+Init Plan Phase 1:	[ ( mc.company_id mc.company_type_id mc.movie_id ) ] [ ( t.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ci.person_role_id ) ] [ ( chn.id ) ] 
+Init Plan Phase 2:	[ ( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ] [ ( ) ( ct.id ) ] [ ( ) ( cn.id ) ] [ ( ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_role_id ) ( chn.id ) ] [ ( ) ] 
+Removed Empty Nodes:	[ ( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ] [ ( ct.id ) ] [ ( cn.id ) ] [ INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_role_id ) ( chn.id ) ] 
+Optimized Plan:		[ ( mc.company_id mc.company_type_id mc.movie_id ) ( t.id ) ( ct.id ) ( cn.id ) INTMD_RES0( ci.movie_id ) ] [ INTMD_RES0( ci.person_role_id ) ( chn.id ) ] 
+----
+-----------------
